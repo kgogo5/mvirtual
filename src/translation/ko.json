@@ -1,6 +1,8 @@
 {
   "header": [
     { "title": "홈", "address": "/" },
+    { "title": "엠버추얼 소개", "address": "/" },
+    { "title": "가상인간 제작예시", "address": "/" },
     {
       "title": "상품관리",
       "sub": [

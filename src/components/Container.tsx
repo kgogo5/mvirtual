@@ -20,13 +20,7 @@ const ContainerWrap = styled(Box)`
     justify-content: center;
     align-items: stretch;
     text-align: center;
-    background: rgb(170, 75, 107);
-    background: linear-gradient(
-      135deg,
-      rgba(170, 75, 107, 1) 0%,
-      rgba(107, 107, 131, 1) 35%,
-      rgba(59, 141, 153, 1) 100%
-    );
+    background: #333;
     box-sizing: border-box;
 
     &.mobile {

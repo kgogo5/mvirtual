@@ -1,6 +1,8 @@
 {
   "header": [
     { "title": "Home", "address": "/" },
+    { "title": "ABOUT M VIRTUAL", "address": "/" },
+    { "title": "VIRTUAL HUMAN SAMPLE", "address": "/" },
     {
       "title": "Product",
       "sub": [

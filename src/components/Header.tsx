@@ -11,6 +11,8 @@ import {
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu } from "@material-ui/icons";
 import clsx from "clsx";
+import { useTranslation } from "react-i18next";
+import i18n from "../i18n";
 
 const navItems = {
   menuList: [
@@ -145,6 +147,12 @@ const _ = ({ isMobile }: Iplatform) => {
   const location = useLocation();
   const [mobileMenu, setMobileMenu] = useState<boolean>(false);
 
+  const { t } = useTranslation();
+
+  const onChangeLang = (lang: "ko" | "en") => {
+    i18n.changeLanguage(lang);
+  };
+
   // useState
   const [scrollTopAnimation, setScrollTopAnimation] = useState(
     location.pathname === "/" ? true : false
@@ -229,11 +237,39 @@ const _ = ({ isMobile }: Iplatform) => {
         ) : (
           <MenuList>
             <Box component="ul">
-              {navItems.menuList.map((props, i) => (
-                <Box component="li" key={i}>
-                  <LinkList to={props.address}>{props.title}</LinkList>
-                </Box>
-              ))}
+              <Box component="li">
+                <LinkList to={String(t(`header.0.address`))}>
+                  {t(`header.0.title`)}
+                </LinkList>
+              </Box>
+              <Box component="li">
+                <LinkList to={String(t(`header.1.address`))}>
+                  {t(`header.1.title`)}
+                </LinkList>
+              </Box>
+              <Box component="li">
+                <LinkList to={String(t(`header.2.address`))}>
+                  {t(`header.2.title`)}
+                </LinkList>
+              </Box>
+            </Box>
+            <Box>
+              <Button
+                onClick={() => {
+                  onChangeLang("ko");
+                }}
+              >
+                Korean
+              </Button>
+            </Box>
+            <Box>
+              <Button
+                onClick={() => {
+                  onChangeLang("en");
+                }}
+              >
+                English
+              </Button>
             </Box>
           </MenuList>
         )}
