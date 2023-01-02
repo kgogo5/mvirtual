@@ -1,0 +1,74 @@
+{
+  "header": [
+    { "title": "홈", "address": "/" },
+    {
+      "title": "상품관리",
+      "sub": [
+        { "title": "상품조회/수정", "address": "/product/inquiries" },
+        { "title": "상품등록", "address": "/product/create" }
+      ]
+    },
+    {
+      "title": "판매관리",
+      "sub": [
+        { "title": "주문통합검색", "address": "/order/search" },
+        { "title": "발주확인/발송 관리", "address": "/order/management" },
+        { "title": "배송현황관리", "address": "/order/delivery" },
+        { "title": "구매확정 내역", "address": "/order/salescompletion" },
+        { "title": "취소관리", "address": "/order/cancel" },
+        { "title": "반품 관리", "address": "/order/return" },
+        { "title": "교환 관리", "address": "/order/exchange" }
+      ]
+    },
+    {
+      "title": "정산관리",
+      "sub": [
+        { "title": "정산/판매현황", "address": "/settlement/status" },
+        {
+          "title": "정산(송금)처리 상태확인",
+          "address": "/settlement/remittance"
+        },
+        { "title": "부가세 신고내역", "address": "/settlement/vat" },
+        {
+          "title": "매입 세금계산서",
+          "address": "/settlement/purchasetax"
+        }
+      ]
+    },
+    {
+      "title": "문의/리뷰관리",
+      "sub": [
+        { "title": "고객문의관리", "address": "/review/customerinquiry" },
+        { "title": "리뷰관리", "address": "/review/management" }
+      ]
+    },
+    {
+      "title": "판매자 정보",
+      "sub": [
+        { "title": "판매자 정보/수정", "address": "/store/sellerinformation" }
+      ]
+    },
+    {
+      "title": "스토어관리",
+      "sub": [{ "title": "메타스토어관리", "address": "/store/metastore" }]
+    },
+    { "title": "공지사항", "address": "/notice" }
+  ],
+
+  "main": {
+    "dataGrid": {
+      "id": "ID",
+      "name": "상품명",
+      "num": "상품번호",
+      "status": "판매상태",
+      "quantity": "상품개수",
+      "price": "판매가"
+    }
+  },
+
+  "member": {
+    "login": "로그인",
+    "profile": "프로필",
+    "logout": "로그아웃"
+  }
+}

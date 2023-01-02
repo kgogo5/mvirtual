@@ -1,0 +1,73 @@
+{
+  "header": [
+    { "title": "Home", "address": "/" },
+    {
+      "title": "Product",
+      "sub": [
+        { "title": "Regist", "address": "/product/regist" },
+        { "title": "Inquiry", "address": "/product/inquiry" }
+      ]
+    },
+    {
+      "title": "Order",
+      "sub": [
+        { "title": "Order Combined Search", "address": "/order/search" },
+        { "title": "Order Management", "address": "/order/management" },
+        { "title": "Delivery", "address": "/order/delivery" },
+        { "title": "Sales Completion", "address": "/order/salescompletion" },
+        { "title": "Cancellation", "address": "/order/cancel" },
+        { "title": "Return", "address": "/order/return" }
+      ]
+    },
+    {
+      "title": "Settlement",
+      "address": "/settlement",
+      "sub": [
+        { "title": "Calculate Status", "address": "/order/calculate" },
+        {
+          "title": "Settlement Details",
+          "address": "/order/settlementdetails"
+        },
+        { "title": "VAT Report", "address": "/order/vat" },
+        { "title": "Tax Invoice Receipt", "address": "/order/taxbill" }
+      ]
+    },
+    {
+      "title": "Inquiries/Review",
+      "sub": [
+        { "title": "Customer Inquiry", "address": "/review/customerinquiry" },
+        { "title": "Review Management", "address": "/review/management" }
+      ]
+    },
+    {
+      "title": "Store Management",
+      "sub": [
+        {
+          "title": "Seller information",
+          "address": "/store/sellerinformation"
+        },
+        { "title": "Metastore", "address": "/store/metastore" },
+        { "title": "Sales Authority", "address": "/store/salesauthority" },
+        { "title": "Manager", "address": "/store/management" }
+      ]
+    },
+    { "title": "Notice", "address": "/notice" }
+  ],
+
+  "main": {
+    "dataGrid": {
+      "id": "ID",
+      "name": "Product name",
+      "num": "Product number",
+      "status": "Sales status",
+      "quantity": "Quantity",
+      "price": "Price"
+    }
+  },
+
+  "member": {
+    "login": "Login",
+    "profile": "Profile",
+    "logout": "Logout"
+  }
+}
