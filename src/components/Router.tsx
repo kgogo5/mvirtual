@@ -3,6 +3,8 @@ import platform from "platform";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Container from "./Container";
+import NotFound from "./NotFound";
+import Market from "./market/Market";
 
 const Main = lazy(() => import("./main/Main"));
 
@@ -22,6 +24,7 @@ const _ = () => {
         <Container isMobile={isMobile}>
           <Routes>
             <Route path="/" element={<Main />} />
+            <Route path="/market" element={<Market />} />
 
             {/* <Route path="/product">
               <Route
@@ -33,7 +36,7 @@ const _ = () => {
                 }
               />
             </Route> */}
-            {/* <Route path="*" element={<NotFound />} /> */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Container>
       </Router>

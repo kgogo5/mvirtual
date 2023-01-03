@@ -23,13 +23,11 @@ const FooterWrap = styled.footer`
     width: 100%;
     height: 264px;
     align-items: center;
-    background-color: #2c3e50;
+    background-color: #141414;
     /* opacity: 0; */
 
     &.mobile {
-      transform: translate(0px, 50px);
-      width: 140px;
-      height: 140px;
+      /* transform: translate(0px, 50px); */
       & br {
         display: none;
       }
@@ -78,11 +76,13 @@ const LinkList = styled(Link)`
   }
 
   & img {
-    width: 80px;
+    width: 143px;
+    height: 23px;
   }
 
   &.mobile img {
-    width: 50px;
+    width: 143px;
+    height: 23px;
   }
 `;
 interface Iplatform {
@@ -95,7 +95,7 @@ const _ = ({ isMobile }: Iplatform) => {
       <FooterWrap>
         <Box className={clsx("animationBox", isMobile)}>
           <LinkList className={isMobile} to="/">
-            {!isMobile ? <img alt="로고" /> : <img alt="로고" />}
+            <img src="/image/logo.png" alt="로고" />
           </LinkList>
           <GridBox className={isMobile}>
             <Inner className={isMobile}>
@@ -106,10 +106,7 @@ const _ = ({ isMobile }: Iplatform) => {
               대표 전화 : <a href="tel:01080336920">010-8033-6920</a>
             </Typography> */}
               <Typography>
-                Copyright
-                <br /> © <br />
-                2021 Bunda team. <br />
-                모든 권리 보유.
+                Copyright © 2023 Mvirtual. 모든 권리 보유.
               </Typography>
             </Inner>
           </GridBox>

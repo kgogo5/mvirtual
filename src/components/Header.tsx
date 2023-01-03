@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import {
   Box,
@@ -8,19 +8,21 @@ import {
   ListItem,
   ListItemText,
 } from "@material-ui/core";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Menu } from "@material-ui/icons";
 import clsx from "clsx";
 import { useTranslation } from "react-i18next";
 import i18n from "../i18n";
+import { useRecoilState, useSetRecoilState } from "recoil";
+import { language } from "../atom";
 
-const navItems = {
-  menuList: [
-    { title: "Home", address: "/" },
-    { title: "About", address: "/about" },
-    { title: "Login", address: "/login" },
-  ],
-};
+interface Iplatform {
+  isMobile: string | undefined;
+}
+interface ToggleTypeInterface {
+  type: string;
+  key: string;
+}
 
 const HeaderWrap = styled.header`
   && {
@@ -29,10 +31,8 @@ const HeaderWrap = styled.header`
     left: 0;
     right: 0;
     margin: 0 auto;
-    padding: 1rem 2rem;
-    max-width: 1280px;
     width: 100%;
-    /* background-color: rgba(52, 73, 94, 0.2); */
+    background-color: #000;
     text-align: center;
     color: #fff;
     box-sizing: border-box;
@@ -44,29 +44,41 @@ const HeaderWrap = styled.header`
   }
 `;
 
+const Inner = styled.div`
+  position: relative;
+  margin: 0 auto;
+  padding: 32px 20px 32px 173px;
+  max-width: 1164px;
+`;
+
 // 로고 정의
 const LogoArea = styled(Box)`
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  width: 143px;
+  height: 23px;
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: translateY(-50%);
 
   &.active .inner {
-    width: 156px;
-    height: 153px;
-    /* height: 104px; */
+    width: 143px;
+    height: 23px;
     &:hover {
-      transform: rotate3d(1, 1, 1, 25deg);
+      transform: rotate3d(1, 1, 1, 3deg);
     }
   }
 
   &.mobile .inner {
-    width: 106px;
-    height: 104px;
+    width: 143px;
+    height: 23px;
   }
 
   .inner {
-    width: 106px;
-    height: 153px;
+    width: 143px;
+    height: 23px;
     overflow: hidden;
     transition: 0.3s;
   }
@@ -85,24 +97,28 @@ const LinkList = styled(Link)`
 `;
 
 const MenuList = styled.nav`
-  position: absolute;
-  right: 40px;
-  top: 30px;
-  bottom: 0;
   display: flex;
+  justify-content: center;
   & ul {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 10px 4vw;
 
-    li + li {
-      margin-left: 1rem;
+    @media screen and (min-width: 1921px) {
+      gap: 10px 72px;
+    }
+
+    & a {
+      font-size: 15px;
     }
   }
 `;
 
 const MobileMenuArea = styled.nav`
   position: absolute;
-  right: 20px;
-  top: 20px;
+  right: 10px;
+  top: 10px;
   bottom: 0;
 `;
 
@@ -123,156 +139,199 @@ const MobileMenuButton = styled(Button)`
 const MobileMenuList = styled(Box)`
   display: flex;
   padding: 0;
-  width: 150px;
+  width: 180px;
   justify-content: center;
 
   & ul {
     width: 100%;
   }
 
+  & li span {
+    font-size: 24px;
+    color: #fff;
+  }
+
   & .MuiListItem-button {
     text-align: center;
   }
 `;
-interface Iplatform {
-  isMobile: string | undefined;
-}
-interface ToggleTypeInterface {
-  type: string;
-  key: string;
-}
+
+const LanguageStyle = styled.div`
+  display: flex;
+  align-items: center;
+
+  & button {
+    margin: 0 10px;
+    padding: 0;
+    min-width: auto;
+    line-height: inherit;
+  }
+  & span {
+    color: #b9b9b9;
+    font-weight: 300;
+    font-size: 15px;
+  }
+
+  & .active span {
+    font-weight: bold;
+  }
+`;
+
+const MobileLanguageStyle = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  && span {
+    font-size: 15px;
+  }
+
+  & .active span {
+    font-weight: bold;
+  }
+`;
 
 const _ = ({ isMobile }: Iplatform) => {
   const navigator = useNavigate();
-  const location = useLocation();
   const [mobileMenu, setMobileMenu] = useState<boolean>(false);
 
   const { t } = useTranslation();
+  const menuLists: any = t("header", { returnObjects: true });
+  const setLang = useSetRecoilState(language);
 
   const onChangeLang = (lang: "ko" | "en") => {
     i18n.changeLanguage(lang);
+    setLang(lang);
   };
 
-  // useState
-  const [scrollTopAnimation, setScrollTopAnimation] = useState(
-    location.pathname === "/" ? true : false
-  );
-
   // variable
-  const toggleDrawer = useCallback(
-    (open: boolean) => (event: ToggleTypeInterface) => {
-      if (
-        event.type === "keydown" &&
-        (event.key === "Tab" || event.key === "Shift")
-      ) {
-        return;
-      }
-
-      setMobileMenu(open);
-    },
-    []
-  );
-
-  const mobileLinkClick = useCallback(
-    (address: string) => {
-      navigator(address);
-      toggleDrawer(false);
-    },
-    [navigator, toggleDrawer]
-  );
-
-  useEffect(() => {
-    if (location.pathname !== "/") {
-      setScrollTopAnimation(true);
-    } else if (location.pathname === "/") {
-      setScrollTopAnimation(false);
+  const toggleDrawer = (event: ToggleTypeInterface) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
     }
-  }, [location.pathname]);
+    setMobileMenu(!mobileMenu);
+  };
+
+  const mobileLinkClick = (address: string) => {
+    navigator(address);
+    setMobileMenu(false);
+  };
 
   return (
     <>
       <HeaderWrap className={isMobile}>
-        <LogoArea
-          className={clsx(scrollTopAnimation ? "active" : "", isMobile)}
-        >
-          <Box className="inner">
-            <LinkList to="/">
-              <img alt="로고" />
-            </LinkList>
-          </Box>
-        </LogoArea>
+        <Inner>
+          <LogoArea className={clsx("active", isMobile)}>
+            <Box className="inner">
+              <LinkList to="/">
+                <img src="/image/logo.png" alt="Mvirtual Logo" />
+              </LinkList>
+            </Box>
+          </LogoArea>
 
-        {isMobile === "mobile" ? (
-          <>
-            <MobileMenuArea>
-              <MobileMenuButton onClick={() => toggleDrawer(true)}>
-                <Menu />
-              </MobileMenuButton>
-            </MobileMenuArea>
+          {isMobile === "mobile" ? (
+            <>
+              <MobileMenuArea>
+                <MobileMenuButton onClick={(e: any) => toggleDrawer(e)}>
+                  <Menu />
+                </MobileMenuButton>
+              </MobileMenuArea>
 
-            <Drawer
-              anchor="right"
-              open={mobileMenu}
-              onClose={toggleDrawer(false)}
-            >
-              <MobileMenuList>
-                <List>
-                  {navItems.menuList.map((props, i) => (
-                    <Box component="li" key={i}>
-                      <ListItem
-                        button
+              <Drawer
+                anchor="right"
+                open={mobileMenu}
+                onClose={(e: any) => toggleDrawer(e)}
+              >
+                <MobileMenuList>
+                  <List>
+                    {menuLists.map((item: any, index: number) => (
+                      <Box component="li" key={index}>
+                        <ListItem
+                          button
+                          onClick={() => {
+                            mobileLinkClick(
+                              String(t(`header.${index}.address`))
+                            );
+                            setMobileMenu(false);
+                          }}
+                        >
+                          <ListItemText
+                            primary={String(t(`header.${index}.title`))}
+                          />
+                        </ListItem>
+                      </Box>
+                    ))}
+                    <Box component="li">
+                      <MobileLanguageStyle>
+                        <Box>
+                          <Button
+                            className={i18n.language === "ko" ? "active" : ""}
+                            onClick={() => {
+                              onChangeLang("ko");
+                            }}
+                          >
+                            KOR
+                          </Button>
+                        </Box>
+                        <span>|</span>
+                        <Box>
+                          <Button
+                            className={i18n.language === "en" ? "active" : ""}
+                            onClick={() => {
+                              onChangeLang("en");
+                            }}
+                          >
+                            ENG
+                          </Button>
+                        </Box>
+                      </MobileLanguageStyle>
+                    </Box>
+                  </List>
+                </MobileMenuList>
+              </Drawer>
+            </>
+          ) : (
+            <MenuList>
+              <Box component="ul">
+                {menuLists.map((item: any, index: number) => (
+                  <Box component="li" key={index}>
+                    <LinkList to={String(t(`header.${index}.address`))}>
+                      {t(`header.${index}.title`)}
+                    </LinkList>
+                  </Box>
+                ))}
+                <Box component="li">
+                  <LanguageStyle>
+                    <Box>
+                      <Button
+                        className={i18n.language === "ko" ? "active" : ""}
                         onClick={() => {
-                          mobileLinkClick(props.address);
-                          setMobileMenu(false);
+                          onChangeLang("ko");
                         }}
                       >
-                        <ListItemText primary={props.title} />
-                      </ListItem>
+                        KOR
+                      </Button>
                     </Box>
-                  ))}
-                </List>
-              </MobileMenuList>
-            </Drawer>
-          </>
-        ) : (
-          <MenuList>
-            <Box component="ul">
-              <Box component="li">
-                <LinkList to={String(t(`header.0.address`))}>
-                  {t(`header.0.title`)}
-                </LinkList>
+                    <span>|</span>
+                    <Box>
+                      <Button
+                        className={i18n.language === "en" ? "active" : ""}
+                        onClick={() => {
+                          onChangeLang("en");
+                        }}
+                      >
+                        ENG
+                      </Button>
+                    </Box>
+                  </LanguageStyle>
+                </Box>
               </Box>
-              <Box component="li">
-                <LinkList to={String(t(`header.1.address`))}>
-                  {t(`header.1.title`)}
-                </LinkList>
-              </Box>
-              <Box component="li">
-                <LinkList to={String(t(`header.2.address`))}>
-                  {t(`header.2.title`)}
-                </LinkList>
-              </Box>
-            </Box>
-            <Box>
-              <Button
-                onClick={() => {
-                  onChangeLang("ko");
-                }}
-              >
-                Korean
-              </Button>
-            </Box>
-            <Box>
-              <Button
-                onClick={() => {
-                  onChangeLang("en");
-                }}
-              >
-                English
-              </Button>
-            </Box>
-          </MenuList>
-        )}
+            </MenuList>
+          )}
+        </Inner>
       </HeaderWrap>
     </>
   );

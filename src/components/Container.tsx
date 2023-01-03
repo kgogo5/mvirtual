@@ -1,10 +1,7 @@
-import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { Box } from "@material-ui/core";
 import GlobalStyle from "../styles/common";
 import { ThemeProvider } from "@material-ui/core/styles";
-import clsx from "clsx";
 
 import theme from "../theme";
 import Header from "./Header";
@@ -13,7 +10,7 @@ import Footer from "./Footer";
 const ContainerWrap = styled(Box)`
   && {
     position: relative;
-    padding: 200px 0 380px;
+    padding: 80px 0 264px;
     max-width: none;
     min-height: 100vh;
     display: flex;
@@ -25,11 +22,6 @@ const ContainerWrap = styled(Box)`
 
     &.mobile {
       padding: 200px 0;
-    }
-
-    &.isAbout {
-      padding: 200px 0 0;
-      display: block;
     }
   }
   main {
@@ -47,21 +39,10 @@ interface ContainerInterface {
 }
 
 const _ = ({ children, isMobile }: ContainerInterface) => {
-  const location = useLocation();
-  const [mainAction, setMainAction] = useState(false);
-
-  useEffect(() => {
-    if (location.pathname === "/about") {
-      setMainAction(true);
-    } else {
-      setMainAction(false);
-    }
-  }, [location.pathname]);
-
   return (
     <>
       <ThemeProvider theme={theme}>
-        <ContainerWrap className={clsx(isMobile, mainAction ? "isAbout" : "")}>
+        <ContainerWrap className={isMobile}>
           <GlobalStyle />
           <Header isMobile={isMobile} />
           <Box component="main">{children}</Box>
