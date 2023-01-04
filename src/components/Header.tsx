@@ -13,7 +13,7 @@ import { Menu } from "@material-ui/icons";
 import clsx from "clsx";
 import { useTranslation } from "react-i18next";
 import i18n from "../i18n";
-import { useRecoilState, useSetRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 import { language } from "../atom";
 
 interface Iplatform {
@@ -30,7 +30,6 @@ const HeaderWrap = styled.header`
     top: 0;
     left: 0;
     right: 0;
-    margin: 0 auto;
     width: 100%;
     background-color: #000;
     text-align: center;
@@ -47,15 +46,20 @@ const HeaderWrap = styled.header`
 const Inner = styled.div`
   position: relative;
   margin: 0 auto;
-  padding: 32px 20px 32px 173px;
+  padding: 32px 20px 32px 183px;
   max-width: 1164px;
+
+  @media screen and (max-width: 768px) {
+    padding: 32px 0 32px 183px;
+    max-width: auto;
+  }
 `;
 
 // 로고 정의
 const LogoArea = styled(Box)`
   position: absolute;
   top: 50%;
-  left: 10px;
+  left: 20px;
   width: 143px;
   height: 23px;
   display: flex;

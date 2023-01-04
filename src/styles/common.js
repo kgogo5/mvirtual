@@ -54,4 +54,24 @@ const PointColor = styled.span`
   color: #26d9c7;
 `;
 
-export { DefaultButton, PointColor };
+const HalfBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 1080px) {
+    flex-wrap: wrap;
+  }
+`;
+
+const Chip = styled.div`
+  padding: 0 28px;
+  width: auto;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  border-radius: 17px;
+  background-color: #fff;
+`;
+
+export { DefaultButton, PointColor, HalfBox, Chip };
