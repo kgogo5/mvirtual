@@ -29,7 +29,9 @@ const Animation = styled(motion.div)`
 `;
 
 const AnimationText = styled(motion.strong)`
+  display: inline-block;
   font-size: 18px;
+  line-height: 1.5;
   color: #fff;
 `;
 
