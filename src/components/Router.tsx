@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Container from "./Container";
 import NotFound from "./NotFound";
 import Market from "./market/Market";
+import AboutUs from "./aboutUs/AboutUs";
 
 const Main = lazy(() => import("./main/Main"));
 
@@ -24,6 +25,7 @@ const _ = () => {
         <Container isMobile={isMobile}>
           <Routes>
             <Route path="/" element={<Main />} />
+            <Route path="/aboutus" element={<AboutUs />} />
             <Route path="/market" element={<Market />} />
 
             {/* <Route path="/product">

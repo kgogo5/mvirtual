@@ -4,28 +4,30 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Box } from "@mui/material";
 
-const Wrap = styled.section<{ bg: "main" | "sub" }>`
-  padding: 250px 15px;
+const Wrap = styled.section<{
+  bg: "main" | "sub";
+  sectionPadding: "default" | string;
+}>`
+  padding: ${(props) =>
+    props.sectionPadding === "default" ? `250px 15px` : props.sectionPadding};
   display: flex;
   align-items: center;
   justify-content: space-around;
   min-height: 20vh;
   flex-direction: column;
   background-color: ${(props) => (props.bg === "main" ? "#000" : "#141414")};
-
-  /* & .box {
-    width: 200px;
-    height: 200px;
-    background: var(--accent);
-  } */
 `;
 
 const Section = ({
   children,
   color = "main",
+  sectionPadding = "default",
+  animation = true,
 }: {
   children: JSX.Element;
   color?: "main" | "sub";
+  sectionPadding?: "default" | string;
+  animation?: boolean;
 }) => {
   const [observer, setObserver] = useState(false);
   const { ref } = useInView({
@@ -37,45 +39,32 @@ const Section = ({
   });
 
   return (
-    <Wrap ref={ref} bg={color}>
+    <Wrap ref={ref} bg={color} sectionPadding={sectionPadding}>
       <Box>
-        <motion.div
-          animate={observer ? "on" : "off"}
-          variants={{
-            off: {
-              y: 50,
-              opacity: 0,
-            },
-            on: {
-              y: 0,
-              opacity: 1,
-              transition: {
-                type: "spring",
-                bounce: 0.4,
-                duration: 1,
+        {animation ? (
+          <motion.div
+            animate={observer ? "on" : "off"}
+            variants={{
+              off: {
+                y: 50,
+                opacity: 0,
               },
-            },
-          }}
-        >
-          <>
-            {children}
-            {/* <motion.div
-              className="box"
-              animate={{
-                scale: [1, 2, 2, 1, 1],
-                rotate: [0, 0, 180, 180, 0],
-                borderRadius: ["0%", "0%", "50%", "50%", "0%"],
-              }}
-              transition={{
-                duration: 2,
-                ease: "easeInOut",
-                times: [0, 0.2, 0.5, 0.8, 1],
-                repeat: Infinity,
-                repeatDelay: 1,
-              }}
-            /> */}
-          </>
-        </motion.div>
+              on: {
+                y: 0,
+                opacity: 1,
+                transition: {
+                  type: "spring",
+                  bounce: 0.4,
+                  duration: 1,
+                },
+              },
+            }}
+          >
+            <>{children}</>
+          </motion.div>
+        ) : (
+          <>{children}</>
+        )}
       </Box>
     </Wrap>
   );

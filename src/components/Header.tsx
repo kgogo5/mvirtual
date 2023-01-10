@@ -8,13 +8,15 @@ import {
   ListItem,
   ListItemText,
 } from "@material-ui/core";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Menu } from "@material-ui/icons";
 import clsx from "clsx";
 import { useTranslation } from "react-i18next";
 import i18n from "../i18n";
 import { useSetRecoilState } from "recoil";
 import { language } from "../atom";
+
+import lodash from "lodash";
 
 interface Iplatform {
   isMobile: string | undefined;
@@ -95,8 +97,12 @@ const LogoArea = styled(Box)`
 const LinkList = styled(Link)`
   color: #fff;
   text-shadow: 0px 0px 4px black;
+  transition: 0.5s;
   & + & {
     margin-left: 1rem;
+  }
+  &.active {
+    color: #26d9c7;
   }
 `;
 
@@ -197,6 +203,7 @@ const MobileLanguageStyle = styled.div`
 
 const _ = ({ isMobile }: Iplatform) => {
   const navigator = useNavigate();
+  const location = useLocation();
   const [mobileMenu, setMobileMenu] = useState<boolean>(false);
 
   const { t } = useTranslation();
@@ -302,9 +309,20 @@ const _ = ({ isMobile }: Iplatform) => {
               <Box component="ul">
                 {menuLists.map((item: any, index: number) => (
                   <Box component="li" key={index}>
-                    <LinkList to={String(t(`header.${index}.address`))}>
-                      {t(`header.${index}.title`)}
-                    </LinkList>
+                    <>
+                      <LinkList
+                        className={
+                          lodash.findIndex([item], {
+                            address: location.pathname,
+                          }) !== -1
+                            ? "active"
+                            : ""
+                        }
+                        to={String(t(`header.${index}.address`))}
+                      >
+                        {t(`header.${index}.title`)}
+                      </LinkList>
+                    </>
                   </Box>
                 ))}
                 <Box component="li">
