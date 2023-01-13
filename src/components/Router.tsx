@@ -6,6 +6,8 @@ import Container from "./Container";
 import NotFound from "./NotFound";
 import Market from "./market/Market";
 import AboutUs from "./aboutUs/AboutUs";
+import Reference from "./reference/Reference";
+import Service from "./service/Service";
 
 const Main = lazy(() => import("./main/Main"));
 
@@ -26,6 +28,8 @@ const _ = () => {
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/aboutus" element={<AboutUs />} />
+            <Route path="/reference" element={<Reference />} />
+            <Route path="/service" element={<Service />} />
             <Route path="/market" element={<Market />} />
 
             {/* <Route path="/product">

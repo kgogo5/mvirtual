@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
 import ReactPlayer from "react-player";
 
-const Player = (props: { url: string; active: boolean }) => {
+const Player = (props: {
+  url: string;
+  active: boolean;
+  controls?: boolean;
+}) => {
   const { url, active } = props;
   const [player, setPlayer] = useState({
     pip: false,
     playing: false,
-    controls: false,
     light: false,
     volume: 0.8,
     muted: true,
@@ -19,7 +22,6 @@ const Player = (props: { url: string; active: boolean }) => {
   const {
     pip,
     playing,
-    controls,
     light,
     volume,
     muted,
@@ -27,6 +29,8 @@ const Player = (props: { url: string; active: boolean }) => {
     loop,
     playsinline,
   } = player;
+
+  const { controls = false } = props;
 
   useEffect(() => {
     if (active) {

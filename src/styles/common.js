@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Button as MuiButton } from "@mui/material";
 import styled, { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 
@@ -38,7 +38,7 @@ const GlobalStyle = createGlobalStyle`
 
 export default GlobalStyle;
 
-const DefaultButton = styled(Button)`
+const DefaultButton = styled(MuiButton)`
   && {
     padding: 8px 10px;
     width: 100%;
@@ -74,4 +74,31 @@ const Chip = styled.div`
   background-color: #fff;
 `;
 
-export { DefaultButton, PointColor, HalfBox, Chip };
+const Button = styled(MuiButton)`
+  && {
+    padding: 8px 10px;
+    height: 100%;
+    min-width: 128px;
+    display: inline-block;
+    border-radius: 0;
+    box-shadow: none;
+    width: auto;
+    color: #26d9c7;
+    transition: 0.5s;
+
+    & img {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    & span {
+      font-size: 17px;
+    }
+    &:hover,
+    &:focus {
+      color: #068175;
+    }
+  }
+`;
+
+export { DefaultButton, PointColor, HalfBox, Chip, Button };

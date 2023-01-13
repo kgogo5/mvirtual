@@ -1,7 +1,7 @@
 {
   "header": [
     { "title": "About us", "address": "/aboutus" },
-    { "title": "Example", "address": "/example" },
+    { "title": "Reference", "address": "/reference" },
     { "title": "Service", "address": "/service" },
     { "title": "Technology", "address": "/technology" },
     { "title": "Market", "address": "/market" },

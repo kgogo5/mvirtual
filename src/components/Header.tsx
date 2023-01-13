@@ -13,7 +13,7 @@ import { Menu } from "@material-ui/icons";
 import clsx from "clsx";
 import { useTranslation } from "react-i18next";
 import i18n from "../i18n";
-import { useSetRecoilState } from "recoil";
+import { useRecoilState } from "recoil";
 import { language } from "../atom";
 
 import lodash from "lodash";
@@ -208,7 +208,8 @@ const _ = ({ isMobile }: Iplatform) => {
 
   const { t } = useTranslation();
   const menuLists: any = t("header", { returnObjects: true });
-  const setLang = useSetRecoilState(language);
+  // const setLang = useSetRecoilState(language);
+  const [lang, setLang] = useRecoilState(language);
 
   const onChangeLang = (lang: "ko" | "en") => {
     i18n.changeLanguage(lang);
@@ -329,7 +330,7 @@ const _ = ({ isMobile }: Iplatform) => {
                   <LanguageStyle>
                     <Box>
                       <Button
-                        className={i18n.language === "ko" ? "active" : ""}
+                        className={lang === "ko" ? "active" : ""}
                         onClick={() => {
                           onChangeLang("ko");
                         }}
@@ -340,7 +341,7 @@ const _ = ({ isMobile }: Iplatform) => {
                     <span>|</span>
                     <Box>
                       <Button
-                        className={i18n.language === "en" ? "active" : ""}
+                        className={lang === "en" ? "active" : ""}
                         onClick={() => {
                           onChangeLang("en");
                         }}
