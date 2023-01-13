@@ -54,6 +54,10 @@ const Player = (props: {
         volume={volume}
         muted={muted}
         playsinline={playsinline}
+        config={{
+          file: { attributes: { controlsList: "nodownload" } },
+        }}
+        onContextMenu={(e: any) => e.preventDefault()}
       />
     </>
   );

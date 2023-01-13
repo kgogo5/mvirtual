@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import { PointColor } from "../../styles/common";
 import { useRecoilValue } from "recoil";
 import { language } from "../../atom";
@@ -6,6 +6,7 @@ import Section from "../elements/Section";
 import styled, { keyframes } from "styled-components";
 import { Add, Check } from "@material-ui/icons";
 import { motion } from "framer-motion";
+import Text from "../elements/Text";
 
 const opacities = keyframes`
 0%{
@@ -96,8 +97,10 @@ const CircleBox = styled.div`
     align-items: center;
     color: #000;
     font-size: 23px;
+    font-weight: bold;
     line-height: 1.6;
     z-index: 3;
+    font-family: "Pretendard", sans-serif;
   }
 `;
 
@@ -161,13 +164,13 @@ const AboutUs = () => {
             </Box>
 
             <Box mt="50px">
-              <Typography color="#fff" fontSize={35} fontWeight="bold">
+              <Text type="title" color="#fff">
                 {lang === "ko" ? (
                   <>가상인간 영상 제작부터 마케팅까지</>
                 ) : (
                   <>From virtual human video production to marketing</>
                 )}
-              </Typography>
+              </Text>
             </Box>
 
             <Box
@@ -181,37 +184,37 @@ const AboutUs = () => {
               <Box display="flex" alignItems="center">
                 <Check />
                 <Box ml="12px">
-                  <Typography fontSize={23} color="#fff">
+                  <Text type="sub" color="#fff" fontWeight={400}>
                     {lang === "ko" ? (
                       <>가상인간 영상 제작</>
                     ) : (
                       <>Virtual human video production</>
                     )}
-                  </Typography>
+                  </Text>
                 </Box>
               </Box>
               <Box display="flex" alignItems="center">
                 <Check />
                 <Box ml="12px">
-                  <Typography fontSize={23} color="#fff">
+                  <Text type="sub" color="#fff" fontWeight={400}>
                     {lang === "ko" ? (
                       <>가상인간 SNS운영</>
                     ) : (
                       <>Virtual human SNS operation</>
                     )}
-                  </Typography>
+                  </Text>
                 </Box>
               </Box>
               <Box display="flex" alignItems="center">
                 <Check />
                 <Box ml="12px">
-                  <Typography fontSize={23} color="#fff">
+                  <Text type="sub" color="#fff" fontWeight={400}>
                     {lang === "ko" ? (
                       <>가상인간을 활용한 기업마케팅</>
                     ) : (
                       <>Corporate Marketing Using Virtual Humans</>
                     )}
-                  </Typography>
+                  </Text>
                 </Box>
               </Box>
             </Box>
@@ -352,13 +355,8 @@ const AboutUs = () => {
         </Visual>
 
         <Section sectionPadding="40px 15px 180px" animation={false}>
-          <>
-            <Typography
-              color="#fff"
-              fontSize={18}
-              textAlign="left"
-              maxWidth="1164px"
-            >
+          <Box maxWidth="1164px" textAlign="left">
+            <Text type="description" color="#fff" fontWeight={400}>
               {lang === "ko" ? (
                 <>
                   엠버추얼은 단순히 가상인간 제작만을 하지 않습니다.
@@ -394,28 +392,23 @@ const AboutUs = () => {
                   in annual sales.
                 </>
               )}
-            </Typography>
-          </>
+            </Text>
+          </Box>
         </Section>
 
         <Section color="sub">
           <BgAnimation>
             <BgImage />
             <Box p="30px 20px 30px 70px" zIndex={2} maxWidth="660px">
-              <Box>
-                <Typography
-                  fontSize={35}
-                  fontWeight="bold"
-                  color="#fff"
-                  textAlign="left"
-                >
+              <Box textAlign="left">
+                <Text type="title" color="#fff">
                   엠버추얼의 신념은 우리의 성공보다
                   <br />
                   파트너의 성공을 돕는 것입니다.{" "}
-                </Typography>
+                </Text>
               </Box>
-              <Box mt="50px">
-                <Typography fontSize={18} color="#fff" textAlign="left">
+              <Box mt="50px" textAlign="left">
+                <Text type="description" color="#fff" fontWeight={400}>
                   저희는 단순히 가상인간 제작 수주를 받는 것이 목적이 아닙니다.
                   <br />
                   저희의 가상인간 기술을 도입하는 기업들에게 매출 활성화와
@@ -432,7 +425,7 @@ const AboutUs = () => {
                   가상인간과 마케팅 관련해서는 언제나 Giver의 마인드로 협업하는
                   기업들의 가상인간 프로젝트가 성공 할 수 있도록 최선을 다해
                   도와드리겠습니다.
-                </Typography>
+                </Text>
               </Box>
             </Box>
             <Dim />

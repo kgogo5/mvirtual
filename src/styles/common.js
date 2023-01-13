@@ -101,4 +101,15 @@ const Button = styled(MuiButton)`
   }
 `;
 
-export { DefaultButton, PointColor, HalfBox, Chip, Button };
+const Article = styled.div`
+  padding: 0 50px;
+  max-width: 551px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  align-items: flex-start;
+  flex-direction: column;
+`;
+
+export { DefaultButton, PointColor, HalfBox, Chip, Button, Article };

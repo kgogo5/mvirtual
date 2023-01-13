@@ -1,5 +1,5 @@
-import { Box, Typography } from "@mui/material";
-import { Chip, HalfBox, PointColor } from "../../styles/common";
+import { Box } from "@mui/material";
+import { Article, HalfBox, PointColor } from "../../styles/common";
 import VideoPane from "./element/VideoPane";
 import { useRecoilValue } from "recoil";
 import { language } from "../../atom";
@@ -7,6 +7,7 @@ import Section from "../elements/Section";
 import styled from "styled-components";
 import { HashLink as Link } from "react-router-hash-link";
 import MainAnimation from "./element/MainAnimation";
+import Text from "../elements/Text";
 
 const Button = styled(Link)`
   && {
@@ -35,20 +36,9 @@ const Button = styled(Link)`
   }
 `;
 
-const Article = styled.div`
-  padding: 0 50px;
-  max-width: 551px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  text-align: left;
-  align-items: flex-start;
-  flex-direction: column;
-`;
-
 const ImageBox = styled.div`
   & img {
-    max-width: 100%;
+    max-width: 584px;
     width: 100%;
     height: auto;
   }
@@ -62,281 +52,291 @@ const Main = () => {
       <Box width="100%">
         <VideoPane />
 
+        {/* Ai가상인간 모델 에이전시 서비스 */}
         <Section>
           <>
-            <Typography color="#fff" fontSize={35} fontWeight="bold">
-              {lang === "ko" ? (
-                <>
-                  우리가 모르는 사이, 다른 기업은 가상인간을 활용하여
-                  <br />
-                  <PointColor>연 6000억원의 매출</PointColor>을 올리고 있습니다.
-                </>
-              ) : (
-                <>
-                  Without our knowledge, other companies are using virtual
-                  humans. It <PointColor>generates 600 billion won</PointColor>{" "}
-                  in annual sales.
-                </>
-              )}
-            </Typography>
-            <Box mt="30px">
-              <Button to="market#ludomagalu">
-                <Box
-                  component="span"
-                  display="flex"
-                  justifyContent="center"
-                  alignItems="center"
-                >
-                  <Box component="span" mr="10px">
-                    {lang === "ko" ? <>자세히 보기</> : <>See more</>}
-                  </Box>
-                  <img src="/image/mint_arrow.png" alt="arrow icon" />
-                </Box>
-              </Button>
-            </Box>
-
-            <Box mt="15px">
-              <Typography color="#fff" fontSize={18} fontWeight="bold">
+            <Box mb="60px">
+              <Text component="h2" type="title" color="#26d9c7">
                 {lang === "ko" ? (
-                  <>
-                    가상인간을 활용한 영상 제작 부터 마케팅까지 엠버추얼이
-                    도와드리겠습니다.
-                  </>
+                  <>Ai가상인간 모델 에이전시 서비스</>
                 ) : (
-                  <>
-                    From video production using virtual humans to marketing,
-                    Amber Tual will help you.
-                  </>
+                  <>Ai Virtual Human Model Agency Services</>
                 )}
-              </Typography>
+              </Text>
             </Box>
+            <HalfBox>
+              <ImageBox>
+                <img
+                  src="/image/section_01.jpg"
+                  alt="Ai가상인간으로 구현한 가상인간 모델"
+                />
+              </ImageBox>
+              <Article>
+                <Box width="100%">
+                  <Text type="description" color="#fff">
+                    {lang === "ko" ? (
+                      <>원하는 이미지의 모델을 찾기 힘드신가요?</>
+                    ) : (
+                      <>Is it hard to find the model of the image you want?</>
+                    )}
+                  </Text>
+                </Box>
+
+                <Box mt="18px">
+                  <Text type="title" color="#fff">
+                    {lang === "ko" ? (
+                      <>
+                        기업이 원하는 모든 모델 이미지를 Ai가상인간으로 구현하여
+                        영구적으로 사용할 수 있는 가상인간 모델을 공급해드립니다
+                      </>
+                    ) : (
+                      <>
+                        A video featuring an Ai virtual human with a similarity
+                        of 98% to a human becomes a big issue and is a great
+                        help in publicity.
+                      </>
+                    )}
+                  </Text>
+                </Box>
+
+                <Box mt="30px" width="100%">
+                  <Button to="market#ludomagalu">
+                    <Box
+                      component="span"
+                      display="flex"
+                      justifyContent="start"
+                      alignItems="center"
+                    >
+                      <Box component="span" mr="10px">
+                        {lang === "ko" ? <>자세히 보기</> : <>See more</>}
+                      </Box>
+                      <img src="/image/mint_arrow.png" alt="arrow icon" />
+                    </Box>
+                  </Button>
+                </Box>
+              </Article>
+            </HalfBox>
           </>
         </Section>
 
+        {/* Ai가상인간 영상제작 서비스 */}
         <Section color="sub">
-          <HalfBox>
-            <ImageBox>
-              <img src="/image/section_01.jpg" alt="virtual human bella" />
-            </ImageBox>
-            <Article>
-              <Box>
-                <Chip>
-                  <Typography color="#1f1f1f" fontSize={18} fontWeight="bold">
+          <>
+            <Box mb="60px">
+              <Text component="h2" type="title" color="#26d9c7">
+                {lang === "ko" ? (
+                  <>Ai가상인간 영상제작 서비스</>
+                ) : (
+                  <>Ai Virtual Human Video Production Service</>
+                )}
+              </Text>
+            </Box>
+            <HalfBox>
+              <Article>
+                <Box mt="18px" width="100%">
+                  <Text type="description" color="#fff">
                     {lang === "ko" ? (
-                      <>가상인간 영상제작</>
+                      <>특별한 영상을 제작하고 싶으신가요?</>
                     ) : (
-                      <>Virtual human video production</>
+                      <>Do you want to create a special video?</>
                     )}
-                  </Typography>
-                </Chip>
-              </Box>
-              <Box mt="18px" width="100%">
-                <Typography color="#fff" fontSize={18} fontWeight="bold">
-                  {lang === "ko" ? (
-                    <>특별한 영상을 제작하고 싶으신가요?</>
-                  ) : (
-                    <>Do you want to create a special video?</>
-                  )}
-                </Typography>
-              </Box>
+                  </Text>
+                </Box>
 
-              <Box mt="18px">
-                <Typography
-                  color="#fff"
-                  fontSize={35}
-                  fontWeight="700"
-                  lineHeight="1.2"
-                >
-                  {lang === "ko" ? (
-                    <>
-                      사람과 유사도 98%의 Ai가상인간이
-                      <br />
-                      출연하는 영상은 큰 이슈가 되어
-                      <br />
-                      홍보에 큰 도움이 됩니다.
-                    </>
-                  ) : (
-                    <>
-                      A video featuring an Ai virtual human with a similarity of
-                      98% to a human becomes a big issue and is a great help in
-                      publicity.
-                    </>
-                  )}
-                </Typography>
-              </Box>
+                <Box mt="18px">
+                  <Text type="title" color="#fff">
+                    {lang === "ko" ? (
+                      <>
+                        사람과 유사도 98%의 Ai가상인간이 출연하는 영상은 큰
+                        이슈가 되어 홍보에 큰 도움이 됩니다.
+                      </>
+                    ) : (
+                      <>
+                        A video featuring an Ai virtual human with a similarity
+                        of 98% to a human becomes a big issue and is a great
+                        help in publicity.
+                      </>
+                    )}
+                  </Text>
+                </Box>
 
-              <Box mt="30px" width="100%">
-                <Button to="market#ludomagalu">
-                  <Box
-                    component="span"
-                    display="flex"
-                    justifyContent="start"
-                    alignItems="center"
-                  >
-                    <Box component="span" mr="10px">
-                      {lang === "ko" ? <>자세히 보기</> : <>See more</>}
+                <Box mt="30px" width="100%">
+                  <Button to="market#ludomagalu">
+                    <Box
+                      component="span"
+                      display="flex"
+                      justifyContent="start"
+                      alignItems="center"
+                    >
+                      <Box component="span" mr="10px">
+                        {lang === "ko" ? <>자세히 보기</> : <>See more</>}
+                      </Box>
+                      <img src="/image/mint_arrow.png" alt="arrow icon" />
                     </Box>
-                    <img src="/image/mint_arrow.png" alt="arrow icon" />
-                  </Box>
-                </Button>
-              </Box>
-            </Article>
-          </HalfBox>
+                  </Button>
+                </Box>
+              </Article>
+              <ImageBox>
+                <img
+                  src="/image/section_02.jpg"
+                  alt="Ai가상인간이 출연하는 영상"
+                />
+              </ImageBox>
+            </HalfBox>
+          </>
         </Section>
 
-        <Section>
-          <HalfBox>
-            <Article>
-              <Box>
-                <Chip>
-                  <Typography color="#1f1f1f" fontSize={18} fontWeight="bold">
-                    {lang === "ko" ? (
-                      <>가상인간 SNS운영대행</>
-                    ) : (
-                      <>Virtual human video production</>
-                    )}
-                  </Typography>
-                </Chip>
-              </Box>
-              <Box mt="18px" width="100%">
-                <Typography color="#fff" fontSize={18} fontWeight="bold">
-                  {lang === "ko" ? (
-                    <>인스타그램, 유튜브 채널 활성화가 안되시나요?</>
-                  ) : (
-                    <>Do you want to create a special video?</>
-                  )}
-                </Typography>
-              </Box>
-
-              <Box mt="18px">
-                <Typography
-                  color="#fff"
-                  fontSize={35}
-                  fontWeight="700"
-                  lineHeight="1.2"
-                >
-                  {lang === "ko" ? (
-                    <>
-                      Ai가상인간으로 SNS를 운영하면
-                      <br />
-                      좋아요가 약 500% 증가합니다.
-                    </>
-                  ) : (
-                    <>
-                      A video featuring an Ai virtual human with a similarity of
-                      98% to a human becomes a big issue and is a great help in
-                      publicity.
-                    </>
-                  )}
-                </Typography>
-              </Box>
-
-              <Box mt="30px" width="100%">
-                <Button to="market#ludomagalu">
-                  <Box
-                    component="span"
-                    display="flex"
-                    justifyContent="start"
-                    alignItems="center"
-                  >
-                    <Box component="span" mr="10px">
-                      {lang === "ko" ? <>자세히 보기</> : <>See more</>}
-                    </Box>
-                    <img src="/image/mint_arrow.png" alt="arrow icon" />
-                  </Box>
-                </Button>
-              </Box>
-            </Article>
-            <ImageBox>
-              <img src="/image/section_02.jpg" alt="virtual human bella" />
-            </ImageBox>
-          </HalfBox>
-        </Section>
-
-        <Section color="sub">
-          <HalfBox>
-            <ImageBox>
-              <img src="/image/section_03.jpg" alt="virtual human bella" />
-            </ImageBox>
-            <Article>
-              <Box>
-                <Chip>
-                  <Typography color="#1f1f1f" fontSize={18} fontWeight="bold">
-                    {lang === "ko" ? (
-                      <>가상인간 영상제작</>
-                    ) : (
-                      <>Virtual human video production</>
-                    )}
-                  </Typography>
-                </Chip>
-              </Box>
-              <Box mt="18px" width="100%">
-                <Typography color="#fff" fontSize={18} fontWeight="bold">
-                  {lang === "ko" ? (
-                    <>마케팅이 안되어서 어려움을 겪고 있으신가요?</>
-                  ) : (
-                    <>Do you want to create a special video?</>
-                  )}
-                </Typography>
-              </Box>
-
-              <Box mt="18px">
-                <Typography
-                  color="#fff"
-                  fontSize={35}
-                  fontWeight="700"
-                  lineHeight="1.2"
-                >
-                  {lang === "ko" ? (
-                    <>
-                      월매출 <PointColor>80억 매출</PointColor>을 만들어낸 전문
-                      <br />
-                      마케팅팀이 Ai가상인간을 활용하여
-                      <br />
-                      기업의 마케팅 고민을 해결해드리겠습니다.
-                    </>
-                  ) : (
-                    <>
-                      A video featuring an Ai virtual human with a similarity of
-                      98% to a human becomes a big issue and is a great help in
-                      publicity.
-                    </>
-                  )}
-                </Typography>
-              </Box>
-
-              <Box mt="30px" width="100%">
-                <Button to="market#ludomagalu">
-                  <Box
-                    component="span"
-                    display="flex"
-                    justifyContent="start"
-                    alignItems="center"
-                  >
-                    <Box component="span" mr="10px">
-                      {lang === "ko" ? <>자세히 보기</> : <>See more</>}
-                    </Box>
-                    <img src="/image/mint_arrow.png" alt="arrow icon" />
-                  </Box>
-                </Button>
-              </Box>
-            </Article>
-          </HalfBox>
-        </Section>
-
+        {/* Ai가상인간 SNS운영 서비스 */}
         <Section>
           <>
-            <Typography
-              color="#fff"
-              fontSize={35}
-              fontWeight="bold"
-              lineHeight="1.4"
-            >
+            <Box mb="60px">
+              <Text component="h2" type="title" color="#26d9c7">
+                {lang === "ko" ? (
+                  <>Ai가상인간 SNS운영 서비스</>
+                ) : (
+                  <>Ai Virtual Human SNS Operation Service</>
+                )}
+              </Text>
+            </Box>
+            <HalfBox>
+              <ImageBox>
+                <img src="/image/section_03.jpg" alt="인스타그램 채널" />
+              </ImageBox>
+              <Article>
+                <Box mt="18px" width="100%">
+                  <Text type="description" color="#fff">
+                    {lang === "ko" ? (
+                      <>인스타그램, 유튜브 채널 활성화가 안되시나요?</>
+                    ) : (
+                      <>Do you want to create a special video?</>
+                    )}
+                  </Text>
+                </Box>
+
+                <Box mt="18px">
+                  <Text type="title" color="#fff">
+                    {lang === "ko" ? (
+                      <>
+                        사람보다 가상인간이 인스타그램 좋아요, 댓글 팔로워수가
+                        약 400% 높게 나옵니다.
+                      </>
+                    ) : (
+                      <>
+                        A video featuring an Ai virtual human with a similarity
+                        of 98% to a human becomes a big issue and is a great
+                        help in publicity.
+                      </>
+                    )}
+                  </Text>
+                </Box>
+
+                <Box mt="30px" width="100%">
+                  <Button to="market#ludomagalu">
+                    <Box
+                      component="span"
+                      display="flex"
+                      justifyContent="start"
+                      alignItems="center"
+                    >
+                      <Box component="span" mr="10px">
+                        {lang === "ko" ? <>자세히 보기</> : <>See more</>}
+                      </Box>
+                      <img src="/image/mint_arrow.png" alt="arrow icon" />
+                    </Box>
+                  </Button>
+                </Box>
+              </Article>
+            </HalfBox>
+          </>
+        </Section>
+
+        {/* Ai가상인간 마케팅 서비스 */}
+        <Section color="sub">
+          <>
+            <Box mb="60px">
+              <Text component="h2" type="title" color="#26d9c7">
+                {lang === "ko" ? (
+                  <>Ai가상인간 마케팅 서비스</>
+                ) : (
+                  <>Ai Virtual Human Marketing Services</>
+                )}
+              </Text>
+            </Box>
+            <HalfBox>
+              <Article>
+                <Box mt="18px" width="100%">
+                  <Text type="description" color="#fff">
+                    {lang === "ko" ? (
+                      <>마케팅이 안되어서 어려움을 겪고 있으신가요?</>
+                    ) : (
+                      <>Do you want to create a special video?</>
+                    )}
+                  </Text>
+                </Box>
+
+                <Box mt="18px">
+                  <Text type="title" color="#fff">
+                    {lang === "ko" ? (
+                      <>
+                        월매출 <PointColor>80억 매출</PointColor>을 만들어낸
+                        전문 마케팅팀이 Ai가상인간을 활용하여 기업의 마케팅
+                        고민을 해결해드리겠습니다.
+                      </>
+                    ) : (
+                      <>
+                        A video featuring an Ai virtual human with a similarity
+                        of 98% to a human becomes a big issue and is a great
+                        help in publicity.
+                      </>
+                    )}
+                  </Text>
+                </Box>
+
+                <Box mt="30px" width="100%">
+                  <Button to="market#ludomagalu">
+                    <Box
+                      component="span"
+                      display="flex"
+                      justifyContent="start"
+                      alignItems="center"
+                    >
+                      <Box component="span" mr="10px">
+                        {lang === "ko" ? <>자세히 보기</> : <>See more</>}
+                      </Box>
+                      <img src="/image/mint_arrow.png" alt="arrow icon" />
+                    </Box>
+                  </Button>
+                </Box>
+              </Article>
+              <ImageBox>
+                <img
+                  src="/image/section_04.jpg"
+                  alt="Ai가상인간을 활용한 기업의 마케팅"
+                />
+              </ImageBox>
+            </HalfBox>
+          </>
+        </Section>
+
+        {/* 엠버추얼 가상인간 기술 */}
+        <Section>
+          <>
+            <Box mb="40px">
+              <Text component="h2" type="title" color="#26d9c7">
+                {lang === "ko" ? (
+                  <>엠버추얼 가상인간 기술</>
+                ) : (
+                  <>Emerging Virtual Human Technology</>
+                )}
+              </Text>
+            </Box>
+
+            <Text type="title" color="#fff">
               {lang === "ko" ? (
                 <>
                   우리의 가상인간 기술은 너무 사람 같아서
                   <br />
-                  <PointColor>사람과 구분을 하지 못합니다.</PointColor>
+                  사람과 구분을 하지 못합니다.
                 </>
               ) : (
                 <>
@@ -345,10 +345,10 @@ const Main = () => {
                   in annual sales.
                 </>
               )}
-            </Typography>
+            </Text>
 
-            <Box mt="15px">
-              <Typography color="#fff" fontSize={18} fontWeight="bold">
+            <Box mt="20px">
+              <Text type="description" color="#fff">
                 {lang === "ko" ? (
                   <>
                     우리의 가상인간 제작기술은 부자연스러운
@@ -363,10 +363,10 @@ const Main = () => {
                     Amber Tual will help you.
                   </>
                 )}
-              </Typography>
+              </Text>
             </Box>
 
-            <Box mt="120px">
+            <Box mt="130px">
               <MainAnimation />
             </Box>
           </>

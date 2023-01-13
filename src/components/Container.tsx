@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import styled from "styled-components";
 import { Box } from "@material-ui/core";
 import GlobalStyle from "../styles/common";
@@ -6,6 +7,7 @@ import { ThemeProvider } from "@material-ui/core/styles";
 import theme from "../theme";
 import Header from "./Header";
 import Footer from "./Footer";
+import { useLocation } from "react-router";
 
 const ContainerWrap = styled(Box)`
   && {
@@ -39,6 +41,12 @@ interface ContainerInterface {
 }
 
 const _ = ({ children, isMobile }: ContainerInterface) => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <>
       <ThemeProvider theme={theme}>

@@ -2,9 +2,10 @@ import { useState } from "react";
 import styled from "styled-components";
 import Player from "../../elements/Player";
 import { useInView } from "react-intersection-observer";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import { PointColor } from "../../../styles/common";
 import { motion } from "framer-motion";
+import Text from "../../elements/Text";
 
 const Wrap = styled.div`
   width: 100%;
@@ -67,13 +68,15 @@ const MainAnimation = () => {
             <Player url="/video/sample.mp4" active={observer} />
           </ViewVideo>
           <Box mt="15px">
-            <Typography color="#fff" fontWeight="bold">
+            <Text type="description" color="#fff">
               <PointColor>타사 3D 제작방식(CG) 가상인간</PointColor>
-            </Typography>
+            </Text>
           </Box>
         </Box>
-        <Box mx="45px">
-          <Typography color="#fff">가상인간 사람과 유사도 비교</Typography>
+        <Box mx="45px" minWidth="270px">
+          <Text type="description" color="#fff">
+            가상인간 사람과 유사도 비교
+          </Text>
           <Animation
             variants={{
               on: {
@@ -158,9 +161,9 @@ const MainAnimation = () => {
           </Animation>
 
           <Box mt="24px" display="flex" justifyContent="space-between">
-            <Typography fontSize="18px" color="#fff">
+            <Text type="description" color="#fff" fontWeight={400}>
               40%
-            </Typography>
+            </Text>
             <AnimationText
               variants={{
                 off: {
@@ -186,9 +189,9 @@ const MainAnimation = () => {
             <Player url="/video/sample.mp4" active={observer} />
           </ViewVideo>
           <Box mt="15px">
-            <Typography color="#fff" fontWeight="bold">
+            <Text type="description" color="#fff">
               <PointColor>엠버추얼 Ai제작방식 가상인간</PointColor>
-            </Typography>
+            </Text>
           </Box>
         </Box>
       </Box>

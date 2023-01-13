@@ -1,26 +1,35 @@
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import { HalfBox, PointColor } from "../../styles/common";
 import { useRecoilValue } from "recoil";
 import { language } from "../../atom";
 import Section from "../elements/Section";
 import styled from "styled-components";
 import Player from "../elements/Player";
+import Text from "../elements/Text";
 
-const Wrap = styled(Box)`
-  & section:nth-child(3) > div {
-    width: 100%;
-  }
-`;
-
-const Hr = styled.div`
-  & hr {
-    margin: 0;
-    border-color: #3e3e3e;
-  }
-`;
+const Wrap = styled(Box)``;
 
 const CustomHalfBox = styled(HalfBox)`
+  max-width: 1164px;
+  width: 100%;
   gap: 20px;
+  margin: 0 auto;
+
+  & .reactPlayer {
+    width: 100% !important;
+    height: auto !important;
+  }
+`;
+
+const HrStyle = styled.div`
+  padding: 40px 0;
+  width: 100%;
+  background: #000;
+  & hr {
+    margin: 0 auto;
+    max-width: 1164px;
+    border-color: #626262;
+  }
 `;
 
 const Reference = () => {
@@ -32,7 +41,7 @@ const Reference = () => {
         <Section sectionPadding="40px 15px" animation={false}>
           <>
             <Box mb="60px">
-              <Typography fontSize={35} fontWeight="bold">
+              <Text type="title" color="#fff">
                 <PointColor>
                   {lang === "ko" ? (
                     <>
@@ -43,93 +52,75 @@ const Reference = () => {
                     <>Virtual human production reference</>
                   )}
                 </PointColor>
-              </Typography>
+              </Text>
             </Box>
             <CustomHalfBox>
               <Box>
                 <Player url="/video/sample.mp4" active={false} controls />
-                <Typography
-                  color="#fff"
-                  fontSize={18}
-                  textAlign="left"
-                  maxWidth="1164px"
-                >
-                  {lang === "ko" ? (
-                    <>
-                      가상인간 벨라 화보촬영 영상
-                      <br />
-                    </>
-                  ) : (
-                    <>Virtual human Bella photoshoot video</>
-                  )}
-                </Typography>
+                <Box textAlign="left">
+                  <Text component="strong" fontSize="26px" color="#fff">
+                    {lang === "ko" ? (
+                      <>가상인간 벨라 화보촬영 영상</>
+                    ) : (
+                      <>Virtual human Bella photoshoot video</>
+                    )}
+                  </Text>
+                </Box>
               </Box>
               <Box>
                 <Player url="/video/sample.mp4" active={false} controls />
-                <Typography
-                  color="#fff"
-                  fontSize={18}
-                  textAlign="left"
-                  maxWidth="1164px"
-                >
-                  {lang === "ko" ? (
-                    <>
-                      50대여자를 젊은 가상인간으로 제작
-                      <br />
-                    </>
-                  ) : (
-                    <>Virtual human Bella photoshoot video</>
-                  )}
-                </Typography>
+                <Box textAlign="left">
+                  <Text component="strong" fontSize="26px" color="#fff">
+                    {lang === "ko" ? (
+                      <>가상인간 벨라 댄스영상</>
+                    ) : (
+                      <>Virtual human Bella photoshoot video</>
+                    )}
+                  </Text>
+                </Box>
               </Box>
             </CustomHalfBox>
           </>
         </Section>
-        <Hr>
+
+        <HrStyle>
           <hr />
-        </Hr>
+        </HrStyle>
+
         <Section sectionPadding="40px 15px 180px" animation={false}>
           <>
             <CustomHalfBox>
               <Box>
                 <Player url="/video/sample.mp4" active={false} controls />
-                <Typography
-                  color="#fff"
-                  fontSize={18}
-                  textAlign="left"
-                  maxWidth="1164px"
-                >
-                  {lang === "ko" ? (
-                    <>
-                      싱가포르 남자를 가상인간으로 제작
-                      <br />
-                    </>
-                  ) : (
-                    <>Virtual human Bella photoshoot video</>
-                  )}
-                </Typography>
+                <Box textAlign="left">
+                  <Text component="strong" fontSize="26px" color="#fff">
+                    {lang === "ko" ? (
+                      <>50대여자를 젊은 가상인간으로 제작</>
+                    ) : (
+                      <>Virtual human Bella photoshoot video</>
+                    )}
+                  </Text>
+                </Box>
               </Box>
               <Box>
                 <Player url="/video/sample.mp4" active={false} controls />
-                <Typography
-                  color="#fff"
-                  fontSize={18}
-                  textAlign="left"
-                  maxWidth="1164px"
-                >
-                  {lang === "ko" ? (
-                    <>
-                      가상인간 벨라 댄스영상
-                      <br />
-                    </>
-                  ) : (
-                    <>Virtual human Bella photoshoot video</>
-                  )}
-                </Typography>
+                <Box textAlign="left">
+                  <Text component="strong" fontSize="26px" color="#fff">
+                    {lang === "ko" ? (
+                      <>싱가포르 남자를 가상인간으로 제작</>
+                    ) : (
+                      <>Virtual human Bella photoshoot video</>
+                    )}
+                  </Text>
+                </Box>
               </Box>
             </CustomHalfBox>
           </>
         </Section>
+
+        <HrStyle>
+          <hr />
+        </HrStyle>
       </Wrap>
     </>
   );
