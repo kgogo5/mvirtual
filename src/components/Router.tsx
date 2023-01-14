@@ -8,6 +8,7 @@ import Market from "./market/Market";
 import AboutUs from "./aboutUs/AboutUs";
 import Reference from "./reference/Reference";
 import Service from "./service/Service";
+import Technology from "./technology/Technology";
 
 const Main = lazy(() => import("./main/Main"));
 
@@ -30,6 +31,7 @@ const _ = () => {
             <Route path="/aboutus" element={<AboutUs />} />
             <Route path="/reference" element={<Reference />} />
             <Route path="/service" element={<Service />} />
+            <Route path="/technology" element={<Technology />} />
             <Route path="/market" element={<Market />} />
 
             {/* <Route path="/product">

@@ -7,8 +7,6 @@ import styled from "styled-components";
 import Player from "../elements/Player";
 import Text from "../elements/Text";
 
-const Wrap = styled(Box)``;
-
 const CustomHalfBox = styled(HalfBox)`
   max-width: 1164px;
   width: 100%;
@@ -37,17 +35,14 @@ const Reference = () => {
 
   return (
     <>
-      <Wrap width="100%">
+      <Box width="100%">
         <Section sectionPadding="40px 15px" animation={false}>
           <>
             <Box mb="60px">
               <Text type="title" color="#fff">
                 <PointColor>
                   {lang === "ko" ? (
-                    <>
-                      가상인간 제작 레퍼런스
-                      <br />
-                    </>
+                    <>가상인간 제작 레퍼런스</>
                   ) : (
                     <>Virtual human production reference</>
                   )}
@@ -121,7 +116,7 @@ const Reference = () => {
         <HrStyle>
           <hr />
         </HrStyle>
-      </Wrap>
+      </Box>
     </>
   );
 };

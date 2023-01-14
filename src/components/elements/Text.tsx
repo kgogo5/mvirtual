@@ -33,7 +33,6 @@ const Wrap = styled(Typography)`
 
 const Title = (props: ITitle) => {
   const { children, type, fontWeight } = props;
-  console.log(fontWeight);
   return (
     <Wrap className={type || ""} fontWeight={fontWeight || "bold"} {...props}>
       {children}

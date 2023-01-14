@@ -4,6 +4,14 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Box } from "@mui/material";
 
+interface ISection {
+  children: JSX.Element;
+  color?: "main" | "sub";
+  sectionPadding?: "default" | string;
+  animation?: boolean;
+  id?: string;
+}
+
 const Wrap = styled.section<{
   bg: "main" | "sub";
   sectionPadding: "default" | string;
@@ -18,17 +26,14 @@ const Wrap = styled.section<{
   background-color: ${(props) => (props.bg === "main" ? "#000" : "#141414")};
 `;
 
-const Section = ({
-  children,
-  color = "main",
-  sectionPadding = "default",
-  animation = true,
-}: {
-  children: JSX.Element;
-  color?: "main" | "sub";
-  sectionPadding?: "default" | string;
-  animation?: boolean;
-}) => {
+const Section = (props: ISection) => {
+  const {
+    children,
+    color = "main",
+    sectionPadding = "default",
+    animation = true,
+  } = props;
+
   const [observer, setObserver] = useState(false);
   const { ref } = useInView({
     // threshold: 1,
@@ -39,7 +44,7 @@ const Section = ({
   });
 
   return (
-    <Wrap ref={ref} bg={color} sectionPadding={sectionPadding}>
+    <Wrap {...props} ref={ref} bg={color} sectionPadding={sectionPadding}>
       <Box>
         {animation ? (
           <motion.div

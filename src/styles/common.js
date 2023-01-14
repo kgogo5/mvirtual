@@ -34,6 +34,14 @@ const GlobalStyle = createGlobalStyle`
     .MuiPaper-root.MuiDrawer-paper.MuiDrawer-paperAnchorRight {
         background-color:#141414;
     }
+
+    * {
+      box-sizing: border-box;
+    }
+    
+    img {
+      vertical-align: top;
+    }
 `;
 
 export default GlobalStyle;

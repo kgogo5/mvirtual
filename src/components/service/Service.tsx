@@ -39,6 +39,14 @@ const CircleBox = styled.div`
   }
 `;
 
+const ImgGrid = styled(Box)`
+  img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+`;
+
 const ImageBox = styled.div`
   & img {
     max-width: 584px;
@@ -223,9 +231,9 @@ const Service = () => {
               </Text>
             </Box>
 
-            <Box mt="100px">
+            <ImgGrid mt="100px">
               <img src="/image/service_grid.png" alt="Service Grid" />
-            </Box>
+            </ImgGrid>
           </>
         </Section>
 
