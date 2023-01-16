@@ -25,6 +25,10 @@ const HighLightBox = styled.div`
 
   & .MuiTypography-root {
     width: 100%;
+
+    @media screen and (max-width: 1080px) {
+      font-size: 15px;
+    }
   }
 `;
 

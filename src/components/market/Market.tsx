@@ -15,6 +15,12 @@ const ImageBox = styled.div`
   }
 `;
 
+const HalfBoxMobile = styled(HalfBox)`
+  @media screen and (max-width: 1080px) {
+    gap: 20px;
+  }
+`;
+
 const Market = () => {
   const lang = useRecoilValue(language);
 
@@ -32,7 +38,7 @@ const Market = () => {
               )}
             </Text>
           </Box>
-          <HalfBox>
+          <HalfBoxMobile>
             <ImageBox>
               <img
                 src="/image/market_section_01.png"
@@ -78,7 +84,7 @@ const Market = () => {
                 </Text>
               </Box>
             </Article>
-          </HalfBox>
+          </HalfBoxMobile>
         </>
       </Section>
 
@@ -112,7 +118,7 @@ const Market = () => {
               </Text>
             </Box>
           </Box>
-          <HalfBox>
+          <HalfBoxMobile>
             <Instagram
               title={
                 lang === "ko" ? "루 두 마갈루(Lu do Magalu)" : "Lu do Magalu"
@@ -133,7 +139,7 @@ const Market = () => {
                 alt="Ai가상인간이 출연하는 영상"
               />
             </ImageBox>
-          </HalfBox>
+          </HalfBoxMobile>
         </>
       </Section>
 
@@ -158,7 +164,7 @@ const Market = () => {
               </Text>
             </Box>
           </Box>
-          <HalfBox>
+          <HalfBoxMobile>
             <Instagram
               title={lang === "ko" ? "릴 미켈라(Lil miquela)" : "Lil miquela"}
               name="@lilmiquela"
@@ -179,7 +185,7 @@ const Market = () => {
                 alt="Ai가상인간이 출연하는 영상"
               />
             </ImageBox>
-          </HalfBox>
+          </HalfBoxMobile>
         </>
       </Section>
 
@@ -204,7 +210,7 @@ const Market = () => {
               </Text>
             </Box>
           </Box>
-          <HalfBox>
+          <HalfBoxMobile>
             <Instagram
               title={lang === "ko" ? "슈두(Shudu)" : "Shudu"}
               name="@shudu.gram"
@@ -225,7 +231,7 @@ const Market = () => {
                 alt="Ai가상인간이 출연하는 영상"
               />
             </ImageBox>
-          </HalfBox>
+          </HalfBoxMobile>
         </>
       </Section>
 
@@ -250,7 +256,7 @@ const Market = () => {
               </Text>
             </Box>
           </Box>
-          <HalfBox>
+          <HalfBoxMobile>
             <Instagram
               title={lang === "ko" ? "이마(Imma)" : "Imma"}
               name="@imma.gram"
@@ -271,7 +277,7 @@ const Market = () => {
                 alt="Ai가상인간이 출연하는 영상"
               />
             </ImageBox>
-          </HalfBox>
+          </HalfBoxMobile>
         </>
       </Section>
     </Box>

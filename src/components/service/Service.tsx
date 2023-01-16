@@ -15,10 +15,20 @@ const CircleBox = styled.div`
   width: 240px;
   height: 240px;
 
+  @media screen and (max-width: 1080px) {
+    width: 180px;
+    height: 180px;
+  }
+
   & .animate {
     width: 240px;
     height: 240px;
     background: #fff;
+
+    @media screen and (max-width: 1080px) {
+      width: 180px;
+      height: 180px;
+    }
   }
 
   & .text {
@@ -36,6 +46,10 @@ const CircleBox = styled.div`
     line-height: 1.6;
     z-index: 3;
     font-family: "Pretendard", sans-serif;
+
+    @media screen and (max-width: 1080px) {
+      font-size: 18px;
+    }
   }
 `;
 
@@ -52,6 +66,21 @@ const ImageBox = styled.div`
     max-width: 584px;
     width: 100%;
     height: auto;
+  }
+`;
+
+const VisualList = styled(Box)`
+  && {
+    @media screen and (max-width: 1080px) {
+      flex-direction: column;
+      gap: 48px 0;
+    }
+  }
+`;
+
+const HalfBoxReverse = styled(HalfBox)`
+  @media screen and (max-width: 1080px) {
+    flex-direction: column-reverse;
   }
 `;
 
@@ -72,7 +101,7 @@ const Service = () => {
               </Text>
             </Box>
 
-            <Box
+            <VisualList
               mt="60px"
               display="flex"
               justifyContent="center"
@@ -189,7 +218,7 @@ const Service = () => {
                   }}
                 />
               </CircleBox>
-            </Box>
+            </VisualList>
           </>
         </Section>
 
@@ -308,7 +337,7 @@ const Service = () => {
                 )}
               </Text>
             </Box>
-            <HalfBox>
+            <HalfBoxReverse>
               <Article>
                 <Box>
                   <Text type="description" color="#fff">
@@ -343,7 +372,7 @@ const Service = () => {
                   alt="가상인간을 활용한 마케팅 프로세스"
                 />
               </ImageBox>
-            </HalfBox>
+            </HalfBoxReverse>
           </>
         </Section>
       </Wrap>

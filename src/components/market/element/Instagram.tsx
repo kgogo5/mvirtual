@@ -27,6 +27,10 @@ const Wrap = styled.div`
   flex-direction: column;
   background-color: #1a1a1a;
   border-radius: 20px;
+  @media screen and (max-width: 1080px) {
+    margin: 0;
+    padding: 20px;
+  }
 `;
 
 const Title = styled.div`
@@ -50,6 +54,27 @@ const Info = styled(Text)<{ border?: string }>`
     solid #fff;
 `;
 
+const FlexBox = styled(Box)`
+  @media screen and (max-width: 1080px) {
+    flex-direction: column;
+    gap: 20px 0;
+  }
+`;
+
+const InstagramBox = styled(Box)`
+  padding-left: 28px;
+  @media screen and (max-width: 1080px) {
+    padding: 0;
+    text-align: center;
+  }
+`;
+
+const ContentsBox = styled(Box)`
+  @media screen and (max-width: 1080px) {
+    text-align: center;
+  }
+`;
+
 const Instagram = (props: IInstagram) => {
   const { title, image, name, follower, income, activity, description } = props;
   const [observer, setObserver] = useState(false);
@@ -67,7 +92,7 @@ const Instagram = (props: IInstagram) => {
         <Text fontSize={24}>{title}</Text>
       </Title>
 
-      <Box
+      <FlexBox
         mt="40px"
         width="100%"
         display="flex"
@@ -95,7 +120,7 @@ const Instagram = (props: IInstagram) => {
             animate={observer ? "on" : "off"}
           />
         </ImageBox>
-        <Box width="100%" pl="28px">
+        <InstagramBox width="100%">
           <Info
             type="description"
             color="#fff"
@@ -119,14 +144,14 @@ const Instagram = (props: IInstagram) => {
               border="0"
             >{`광고 모델 활동: ${activity}`}</Info>
           )}
-        </Box>
-      </Box>
+        </InstagramBox>
+      </FlexBox>
 
-      <Box mt="50px">
+      <ContentsBox mt="50px">
         <Text type="description" color="#fff" fontWeight="400">
           {description}
         </Text>
-      </Box>
+      </ContentsBox>
     </Wrap>
   );
 };

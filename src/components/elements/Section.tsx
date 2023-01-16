@@ -50,7 +50,7 @@ const Section = (props: ISection) => {
 
   return (
     <Wrap {...props} ref={ref} bg={color} sectionPadding={sectionPadding}>
-      <Box>
+      <Box width="100%">
         {animation ? (
           <motion.div
             animate={observer ? "on" : "off"}
