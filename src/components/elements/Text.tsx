@@ -18,16 +18,28 @@ const Wrap = styled(Typography)`
     font-size: 35px;
     line-height: 1.2;
     font-weight: bold;
+
+    @media screen and (max-width: 768px) {
+      font-size: 24px;
+    }
   }
 
   &.description {
     font-size: 18px;
     line-height: 1.6;
+
+    @media screen and (max-width: 768px) {
+      font-size: 15px;
+    }
   }
 
   &.sub {
     font-size: 23px;
     line-height: 1.4;
+
+    @media screen and (max-width: 768px) {
+      font-size: 18px;
+    }
   }
 `;
 

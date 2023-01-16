@@ -8,6 +8,8 @@ import theme from "../theme";
 import Header from "./Header";
 import Footer from "./Footer";
 import { useLocation } from "react-router";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { mobile } from "../atom";
 
 const ContainerWrap = styled(Box)`
   && {
@@ -23,7 +25,7 @@ const ContainerWrap = styled(Box)`
     box-sizing: border-box;
 
     &.mobile {
-      padding: 200px 0;
+      padding: 80px 0 264px;
     }
   }
   main {
@@ -37,11 +39,12 @@ const ContainerWrap = styled(Box)`
 
 interface ContainerInterface {
   children: JSX.Element;
-  isMobile?: string;
 }
 
-const _ = ({ children, isMobile }: ContainerInterface) => {
+const _ = ({ children }: ContainerInterface) => {
   const { pathname } = useLocation();
+
+  const isMobile = useRecoilValue(mobile);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -52,9 +55,9 @@ const _ = ({ children, isMobile }: ContainerInterface) => {
       <ThemeProvider theme={theme}>
         <ContainerWrap className={isMobile}>
           <GlobalStyle />
-          <Header isMobile={isMobile} />
+          <Header />
           <Box component="main">{children}</Box>
-          <Footer isMobile={isMobile} />
+          <Footer />
         </ContainerWrap>
       </ThemeProvider>
     </>

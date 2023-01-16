@@ -13,14 +13,11 @@ import { Menu } from "@material-ui/icons";
 import clsx from "clsx";
 import { useTranslation } from "react-i18next";
 import i18n from "../i18n";
-import { useRecoilState } from "recoil";
-import { language } from "../atom";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { language, mobile } from "../atom";
 
 import lodash from "lodash";
 
-interface Iplatform {
-  isMobile: string | undefined;
-}
 interface ToggleTypeInterface {
   type: string;
   key: string;
@@ -148,7 +145,7 @@ const MobileMenuButton = styled(Button)`
 
 const MobileMenuList = styled(Box)`
   display: flex;
-  padding: 0;
+  padding: 40px 10px;
   width: 180px;
   justify-content: center;
 
@@ -201,9 +198,12 @@ const MobileLanguageStyle = styled.div`
   }
 `;
 
-const _ = ({ isMobile }: Iplatform) => {
+const _ = () => {
   const navigator = useNavigate();
   const location = useLocation();
+
+  const isMobile = useRecoilValue(mobile);
+
   const [mobileMenu, setMobileMenu] = useState<boolean>(false);
 
   const { t } = useTranslation();

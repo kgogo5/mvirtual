@@ -9,23 +9,28 @@ import AboutUs from "./aboutUs/AboutUs";
 import Reference from "./reference/Reference";
 import Service from "./service/Service";
 import Technology from "./technology/Technology";
+import Contact from "./contact/Contact";
+import { useRecoilState } from "recoil";
+import { mobile } from "../atom";
 
 const Main = lazy(() => import("./main/Main"));
 
 const _ = () => {
   const platformProp = platform && platform.os && platform.os.family;
-  const [isMobile, setIsMobile] = useState<string>();
+  const [mo, setMo] = useRecoilState(mobile);
 
   useEffect(() => {
     if (platformProp === "iOS" || platformProp === "Android") {
-      setIsMobile("mobile");
+      setMo("mobile");
+    } else {
+      setMo("");
     }
-  }, [platformProp]);
+  }, [platformProp, setMo]);
 
   return (
     <>
       <Router>
-        <Container isMobile={isMobile}>
+        <Container>
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/aboutus" element={<AboutUs />} />
@@ -33,17 +38,8 @@ const _ = () => {
             <Route path="/service" element={<Service />} />
             <Route path="/technology" element={<Technology />} />
             <Route path="/market" element={<Market />} />
+            <Route path="/contact" element={<Contact />} />
 
-            {/* <Route path="/product">
-              <Route
-                path="/product/create"
-                element={
-                  <PrivateRoute>
-                    <Create />
-                  </PrivateRoute>
-                }
-              />
-            </Route> */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Container>

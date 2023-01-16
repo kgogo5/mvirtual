@@ -8,6 +8,7 @@ import styled from "styled-components";
 import { HashLink as Link } from "react-router-hash-link";
 import MainAnimation from "./element/MainAnimation";
 import Text from "../elements/Text";
+import Br from "../elements/Br";
 
 const Button = styled(Link)`
   && {
@@ -41,6 +42,12 @@ const ImageBox = styled.div`
     max-width: 584px;
     width: 100%;
     height: auto;
+  }
+`;
+
+const HalfBoxReverse = styled(HalfBox)`
+  @media screen and (max-width: 1080px) {
+    flex-direction: column-reverse;
   }
 `;
 
@@ -131,7 +138,7 @@ const Main = () => {
                 )}
               </Text>
             </Box>
-            <HalfBox>
+            <HalfBoxReverse>
               <Article>
                 <Box mt="18px" width="100%">
                   <Text type="description" color="#fff">
@@ -182,7 +189,7 @@ const Main = () => {
                   alt="Ai가상인간이 출연하는 영상"
                 />
               </ImageBox>
-            </HalfBox>
+            </HalfBoxReverse>
           </>
         </Section>
 
@@ -262,7 +269,7 @@ const Main = () => {
                 )}
               </Text>
             </Box>
-            <HalfBox>
+            <HalfBoxReverse>
               <Article>
                 <Box mt="18px" width="100%">
                   <Text type="description" color="#fff">
@@ -314,7 +321,7 @@ const Main = () => {
                   alt="Ai가상인간을 활용한 기업의 마케팅"
                 />
               </ImageBox>
-            </HalfBox>
+            </HalfBoxReverse>
           </>
         </Section>
 
@@ -335,7 +342,7 @@ const Main = () => {
               {lang === "ko" ? (
                 <>
                   우리의 가상인간 기술은 너무 사람 같아서
-                  <br />
+                  <Br />
                   사람과 구분을 하지 못합니다.
                 </>
               ) : (
@@ -353,7 +360,7 @@ const Main = () => {
                   <>
                     우리의 가상인간 제작기술은 부자연스러운
                     3D컴퓨터그래픽(CG)으로 제작하는 방식이 아닌
-                    <br />
+                    <Br />
                     Ai제작방식으로 사람과 구분하지 못할 정도로 사람과
                     98%유사합니다.
                   </>

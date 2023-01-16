@@ -93,6 +93,7 @@ const Button = styled(MuiButton)`
     width: auto;
     color: #26d9c7;
     transition: 0.5s;
+    font-family: "Pretendard", sans-serif;
 
     & img {
       display: inline-block;
@@ -118,6 +119,11 @@ const Article = styled.div`
   text-align: left;
   align-items: flex-start;
   flex-direction: column;
+
+  @media screen and (max-width: 1080px) {
+    margin-top: 24px;
+    padding: 0;
+  }
 `;
 
 export { DefaultButton, PointColor, HalfBox, Chip, Button, Article };

@@ -67,14 +67,7 @@ const Service = () => {
             <Box mb="60px">
               <Text type="title" color="#fff">
                 <PointColor>
-                  {lang === "ko" ? (
-                    <>
-                      엠버추얼 서비스
-                      <br />
-                    </>
-                  ) : (
-                    <>MVirtual service</>
-                  )}
+                  {lang === "ko" ? <>엠버추얼 서비스</> : <>MVirtual service</>}
                 </PointColor>
               </Text>
             </Box>

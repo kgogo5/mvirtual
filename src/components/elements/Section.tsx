@@ -24,6 +24,11 @@ const Wrap = styled.section<{
   min-height: 20vh;
   flex-direction: column;
   background-color: ${(props) => (props.bg === "main" ? "#000" : "#141414")};
+
+  @media screen and (max-width: 768px) {
+    padding: ${(props) =>
+      props.sectionPadding === "default" ? `120px 20px` : props.sectionPadding};
+  }
 `;
 
 const Section = (props: ISection) => {

@@ -11,6 +11,12 @@ const Wrap = styled.div`
   width: 100%;
 `;
 
+const FlexBox = styled(Box)`
+  @media screen and (max-width: 1080px) {
+    flex-direction: column;
+  }
+`;
+
 const ViewVideo = styled.div`
   margin: 0 auto;
   max-width: 470px;
@@ -57,7 +63,7 @@ const MainAnimation = () => {
 
   return (
     <Wrap ref={ref}>
-      <Box
+      <FlexBox
         display="flex"
         justifyContent="center"
         alignItems="center"
@@ -194,7 +200,7 @@ const MainAnimation = () => {
             </Text>
           </Box>
         </Box>
-      </Box>
+      </FlexBox>
     </Wrap>
   );
 };

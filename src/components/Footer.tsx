@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { Box, Typography } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
+import { useRecoilValue } from "recoil";
+import { mobile } from "../atom";
 
 const FooterWrap = styled.footer`
   position: absolute;
@@ -85,11 +87,10 @@ const LinkList = styled(Link)`
     height: 23px;
   }
 `;
-interface Iplatform {
-  isMobile: string | undefined;
-}
 
-const _ = ({ isMobile }: Iplatform) => {
+const _ = () => {
+  const isMobile = useRecoilValue(mobile);
+
   return (
     <>
       <FooterWrap>

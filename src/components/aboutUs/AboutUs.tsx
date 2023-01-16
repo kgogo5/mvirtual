@@ -7,6 +7,7 @@ import styled, { keyframes } from "styled-components";
 import { Add, Check } from "@material-ui/icons";
 import { motion } from "framer-motion";
 import Text from "../elements/Text";
+import Br from "../elements/Br";
 
 const opacities = keyframes`
 0%{
@@ -73,6 +74,16 @@ const Visual = styled.section`
     height: auto;
     fill: #fff;
   }
+
+  @media screen and (max-width: 1080px) {
+    padding: 70px 15px;
+    & img {
+      max-width: 100%;
+      width: 100%;
+    }
+    flex-direction: column;
+    gap: 20px 0;
+  }
 `;
 
 const CircleBox = styled.div`
@@ -129,6 +140,11 @@ const BgImage = styled.div`
   background-size: contain;
   background-position: 0% 0%;
   z-index: 2;
+
+  @media screen and (max-width: 1080px) {
+    opacity: 0.1;
+    background-size: cover;
+  }
 `;
 
 const Dim = styled.div`
@@ -149,6 +165,33 @@ const Dim = styled.div`
   opacity: 0.2;
   animation: ${dimAnimation} 10s ease infinite;
   transform: translateZ(10px);
+`;
+
+const VisualList = styled(Box)`
+  && {
+    @media screen and (max-width: 1080px) {
+      flex-direction: column;
+      gap: 20px 0;
+    }
+  }
+`;
+
+const VisualAnimation = styled(Box)`
+  && {
+    @media screen and (max-width: 1080px) {
+      position: static;
+      flex-direction: column;
+      gap: 48px 0;
+    }
+  }
+`;
+
+const BgBox = styled(Box)`
+  && {
+    @media screen and (max-width: 1080px) {
+      padding: 30px;
+    }
+  }
 `;
 
 const AboutUs = () => {
@@ -173,7 +216,7 @@ const AboutUs = () => {
               </Text>
             </Box>
 
-            <Box
+            <VisualList
               mt="40px"
               paddingBottom="180px"
               display="flex"
@@ -217,9 +260,9 @@ const AboutUs = () => {
                   </Text>
                 </Box>
               </Box>
-            </Box>
+            </VisualList>
 
-            <Box
+            <VisualAnimation
               display="flex"
               justifyContent="center"
               alignItems="center"
@@ -350,11 +393,11 @@ const AboutUs = () => {
                   }}
                 />
               </CircleBox>
-            </Box>
+            </VisualAnimation>
           </Box>
         </Visual>
 
-        <Section sectionPadding="40px 15px 180px" animation={false}>
+        <Section sectionPadding="40px 15px 140px" animation={false}>
           <Box maxWidth="1164px" textAlign="left">
             <Text type="description" color="#fff" fontWeight={400}>
               {lang === "ko" ? (
@@ -399,11 +442,11 @@ const AboutUs = () => {
         <Section color="sub">
           <BgAnimation>
             <BgImage />
-            <Box p="30px 20px 30px 70px" zIndex={2} maxWidth="660px">
+            <BgBox p="30px 20px 30px 70px" zIndex={2} maxWidth="660px">
               <Box textAlign="left">
                 <Text type="title" color="#fff">
                   엠버추얼의 신념은 우리의 성공보다
-                  <br />
+                  <Br />
                   파트너의 성공을 돕는 것입니다.{" "}
                 </Text>
               </Box>
@@ -427,7 +470,7 @@ const AboutUs = () => {
                   도와드리겠습니다.
                 </Text>
               </Box>
-            </Box>
+            </BgBox>
             <Dim />
           </BgAnimation>
         </Section>
