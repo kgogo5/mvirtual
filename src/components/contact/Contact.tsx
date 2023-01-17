@@ -14,7 +14,8 @@ import styled from "styled-components";
 import Text from "../elements/Text";
 import { Button } from "../../styles/common";
 import axios from "axios";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
+import { useState } from "react";
 
 const Wrap = styled.div`
   width: 100%;
@@ -149,29 +150,38 @@ const SubmitButton = styled(Button)`
 
 const Contact = () => {
   const lang = useRecoilValue(language);
-  const { register, handleSubmit, reset } = useForm();
+  const { control, setValue, register, handleSubmit, reset } = useForm();
+
+  const [videoChecked, setVideoChecked] = useState(false);
+  const [snsChecked, setSnsChecked] = useState(false);
+  const [marketingChecked, setMarketingChecked] = useState(false);
 
   const onSubmit = handleSubmit(async (item: any) => {
     const data = {
-      email: item.name,
+      name: item.name,
       phone: item.phone,
       budget: item.budget || 0,
-      first: item.first ? "Y" : "N",
-      secound: item.secound ? "Y" : "N",
-      third: item.third ? "Y" : "N",
+      video: item.video ? "Y" : "N",
+      sns: item.sns ? "Y" : "N",
+      marketing: item.marketing ? "Y" : "N",
       content: item.content || "",
     };
-    console.log(data);
 
-    // await axios
-    //   .post(
-    //     "https://sheet.best/api/sheets/5869f7bc-8ec2-4ba1-9bc1-fd7b691ba023",
-    //     data
-    //   )
-    //   .then((response) => {
-    //     console.log(response);
-    //     reset();
-    //   });
+    await axios
+      .post(
+        "https://sheet.best/api/sheets/0185cc7b-8a38-4342-9a40-d890f21e9ef1",
+        data
+      )
+      .then(() => {
+        setVideoChecked(false);
+        setSnsChecked(false);
+        setMarketingChecked(false);
+        setValue("video", false);
+        setValue("sns", false);
+        setValue("marketing", false);
+        alert("문의하기가 완료되었습니다.");
+        reset();
+      });
   });
 
   return (
@@ -199,7 +209,7 @@ const Contact = () => {
               )}
             </Text>
           </Box>
-          <Box mt="40px">
+          <Box mt="40px" display="flex" justifyContent="center">
             <KakaoText
               onClick={() =>
                 window.open("http://pf.kakao.com/_HWFnxj/chat", "_blank")
@@ -279,38 +289,77 @@ const Contact = () => {
         </Box>
 
         <Box mt="10px" width="100%">
-          <FormControlLabel
-            {...register("first")}
-            control={<Checkbox />}
-            label={
-              lang === "ko"
-                ? "가상인간 영상제작"
-                : "Virtual human video production"
-            }
+          <Controller
+            control={control}
+            name="video"
+            render={({ field }: any) => (
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    onChange={() => {
+                      setVideoChecked(!field.value);
+                      setValue("video", !field.value);
+                    }}
+                    checked={videoChecked}
+                  />
+                }
+                label={
+                  lang === "ko"
+                    ? "가상인간 영상제작"
+                    : "Virtual human video production"
+                }
+              />
+            )}
           />
         </Box>
 
         <Box mt="10px" width="100%">
-          <FormControlLabel
-            {...register("secound")}
-            control={<Checkbox />}
-            label={
-              lang === "ko"
-                ? "가상인간 SNS 운영 대행"
-                : "Acting Virtual Human SNS Management"
-            }
+          <Controller
+            control={control}
+            name="sns"
+            render={({ field }: any) => (
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    onChange={() => {
+                      setSnsChecked(!field.value);
+                      setValue("sns", !field.value);
+                    }}
+                    checked={snsChecked}
+                  />
+                }
+                label={
+                  lang === "ko"
+                    ? "가상인간 SNS 운영 대행"
+                    : "Acting Virtual Human SNS Management"
+                }
+              />
+            )}
           />
         </Box>
 
         <Box mt="10px" width="100%">
-          <FormControlLabel
-            {...register("third")}
-            control={<Checkbox />}
-            label={
-              lang === "ko"
-                ? "가상인간 활용한 기업 마케팅"
-                : "Enterprise Marketing Using Virtual Humans"
-            }
+          <Controller
+            control={control}
+            name="marketing"
+            render={({ field }: any) => (
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    onChange={() => {
+                      setMarketingChecked(!field.value);
+                      setValue("marketing", !field.value);
+                    }}
+                    checked={marketingChecked}
+                  />
+                }
+                label={
+                  lang === "ko"
+                    ? "가상인간 활용한 기업 마케팅"
+                    : "Enterprise Marketing Using Virtual Humans"
+                }
+              />
+            )}
           />
         </Box>
 

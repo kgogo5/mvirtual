@@ -398,7 +398,7 @@ const AboutUs = () => {
         </Visual>
 
         <Section sectionPadding="40px 15px 140px" animation={false}>
-          <Box maxWidth="1164px" textAlign="left">
+          <Box m="0 auto" maxWidth="1164px" textAlign="left">
             <Text type="description" color="#fff" fontWeight={400}>
               {lang === "ko" ? (
                 <>

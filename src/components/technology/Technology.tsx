@@ -71,7 +71,13 @@ const Technology = () => {
 
       <Section sectionPadding="30px 15px" animation={false}>
         <>
-          <Box mb="60px" width="100%" maxWidth="1164px" textAlign="left">
+          <Box
+            mb="60px"
+            width="100%"
+            m="0 auto"
+            maxWidth="1164px"
+            textAlign="left"
+          >
             <Text type="description" color="#fff">
               {lang === "ko" ? (
                 <>
