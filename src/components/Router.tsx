@@ -1,4 +1,4 @@
-import { useState, useEffect, lazy } from "react";
+import { useEffect, lazy } from "react";
 import platform from "platform";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -10,14 +10,14 @@ import Reference from "./reference/Reference";
 import Service from "./service/Service";
 import Technology from "./technology/Technology";
 import Contact from "./contact/Contact";
-import { useRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 import { mobile } from "../atom";
 
 const Main = lazy(() => import("./main/Main"));
 
 const _ = () => {
   const platformProp = platform && platform.os && platform.os.family;
-  const [mo, setMo] = useRecoilState(mobile);
+  const setMo = useSetRecoilState(mobile);
 
   useEffect(() => {
     if (platformProp === "iOS" || platformProp === "Android") {

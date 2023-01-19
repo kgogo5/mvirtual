@@ -2,7 +2,6 @@ import { useState } from "react";
 import styled from "styled-components";
 import Player from "../../elements/Player";
 import { useInView } from "react-intersection-observer";
-import Text from "../../elements/Text";
 import { useRecoilValue } from "recoil";
 import { language } from "../../../atom";
 import Br from "../../elements/Br";

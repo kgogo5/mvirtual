@@ -8,7 +8,7 @@ import theme from "../theme";
 import Header from "./Header";
 import Footer from "./Footer";
 import { useLocation } from "react-router";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilValue } from "recoil";
 import { mobile } from "../atom";
 
 const ContainerWrap = styled(Box)`

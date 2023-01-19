@@ -1,10 +1,9 @@
 import { Box } from "@mui/material";
-import { PointColor } from "../../styles/common";
 import { useRecoilValue } from "recoil";
 import { language } from "../../atom";
 import Section from "../elements/Section";
 import styled, { keyframes } from "styled-components";
-import { Add, Check } from "@material-ui/icons";
+import { Add } from "@material-ui/icons";
 import { motion } from "framer-motion";
 import Text from "../elements/Text";
 import Br from "../elements/Br";
