@@ -233,7 +233,7 @@ const Service = () => {
               <ServiceVideo />
             </Box>
 
-            <Box mt="100px" m="0 auto" maxWidth="1080px" textAlign="left">
+            <Box m="100px auto 0" maxWidth="1080px" textAlign="left">
               <Text type="description" color="#fff">
                 차별화된 기획력으로 가상인간을 활용한 유튜브 영상, 기업 홍보
                 영상, 광고CF영상등이 제작 가능하며 이미 촬영 된 영상의 인물을

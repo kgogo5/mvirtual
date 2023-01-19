@@ -163,7 +163,7 @@ const Dim = styled.div`
   );
   z-index: 1;
   opacity: 0.2;
-  animation: ${dimAnimation} 10s ease infinite;
+  animation: ${dimAnimation} 5s ease infinite;
   transform: translateZ(10px);
 `;
 
@@ -209,9 +209,12 @@ const AboutUs = () => {
             <Box mt="50px">
               <Text type="title" color="#fff">
                 {lang === "ko" ? (
-                  <>가상인간 영상 제작부터 마케팅까지</>
+                  <>Ai가상인간 모델 공급부터 영상제작, 마케팅 까지</>
                 ) : (
-                  <>From virtual human video production to marketing</>
+                  <>
+                    From Ai Virtual Human Model Creation to <Br />
+                    Video Production & Marketing Solution
+                  </>
                 )}
               </Text>
             </Box>
@@ -224,7 +227,7 @@ const AboutUs = () => {
               alignItems="center"
               gap="0 48px"
             >
-              <Box display="flex" alignItems="center">
+              {/* <Box display="flex" alignItems="center">
                 <Check />
                 <Box ml="12px">
                   <Text type="sub" color="#fff" fontWeight={400}>
@@ -259,7 +262,7 @@ const AboutUs = () => {
                     )}
                   </Text>
                 </Box>
-              </Box>
+              </Box> */}
             </VisualList>
 
             <VisualAnimation
@@ -287,9 +290,23 @@ const AboutUs = () => {
                     repeatDelay: 3,
                   }}
                 >
-                  사람과 유사도 98%
-                  <br />
-                  가상인간 제작 기술
+                  {lang === "ko" ? (
+                    <>
+                      사람과 유사도 98%
+                      <br />
+                      가상인간 제작 기술
+                    </>
+                  ) : (
+                    <Text fontSize="18px">
+                      Virtual Human
+                      <br />
+                      Creation Tech
+                      <br />
+                      With 98% Similarity
+                      <br />
+                      rate To human
+                    </Text>
+                  )}
                 </motion.span>
                 <motion.div
                   className="animate"
@@ -326,11 +343,28 @@ const AboutUs = () => {
                     delay: 1,
                   }}
                 >
-                  100만 조회수가 넘는
-                  <br />
-                  인기 영상을 제작했던
-                  <br />
-                  전문 PD, 작가, 촬영팀
+                  {lang === "ko" ? (
+                    <>
+                      100만 조회수가 넘는
+                      <br />
+                      인기 영상을 제작했던
+                      <br />
+                      전문 PD, 작가, 촬영팀
+                    </>
+                  ) : (
+                    <Text fontSize="16px">
+                      Expert team of <br />
+                      producers, Script writers &
+                      <br />
+                      production crew
+                      <br />
+                      who created many
+                      <br />
+                      viral videos with
+                      <br />
+                      millions of views
+                    </Text>
+                  )}
                 </motion.span>
                 <motion.div
                   className="animate"
@@ -369,11 +403,24 @@ const AboutUs = () => {
                     delay: 2,
                   }}
                 >
-                  월 80억 매출을
-                  <br />
-                  만들어 낸 전문
-                  <br />
-                  마케팅팀
+                  {lang === "ko" ? (
+                    <>
+                      월 80억 매출을
+                      <br />
+                      만들어 낸 전문
+                      <br />
+                      마케팅팀
+                    </>
+                  ) : (
+                    <Text fontSize="18px">
+                      Experienced Marketing
+                      <br />
+                      team With average
+                      <br />
+                      revenue growth of
+                      <br />$ 6 million / month
+                    </Text>
+                  )}
                 </motion.span>
                 <motion.div
                   className="animate"
@@ -399,6 +446,12 @@ const AboutUs = () => {
 
         <Section sectionPadding="40px 15px 140px" animation={false}>
           <Box m="0 auto" maxWidth="1164px" textAlign="left">
+            <Box mb="60px" textAlign="center">
+              <Text component="h2" type="title" color="#26d9c7">
+                {lang === "ko" ? <>엠버추얼 소개</> : <>About M.Virtual</>}
+              </Text>
+            </Box>
+
             <Text type="description" color="#fff" fontWeight={400}>
               {lang === "ko" ? (
                 <>
@@ -430,9 +483,34 @@ const AboutUs = () => {
                 </>
               ) : (
                 <>
-                  Without our knowledge, other companies are using virtual
-                  humans. It <PointColor>generates 600 billion won</PointColor>{" "}
-                  in annual sales.
+                  M.Virtual is providing Virtual Human models for enterprises
+                  from different industries that needs specific image from the
+                  model, implemented by customizable Ai Virtual Human template.
+                  <br />
+                  <br />
+                  M.Virtual’s Virtual Human Solution uses Ai deep learning
+                  production method, which reduced
+                  <br />
+                  Existing 3D CGI production’s speed of 2 months per
+                  1-minute-long video to 24 hours, and has 98% similarity rate
+                  to human being.
+                  <br />
+                  <br />
+                  Also, our teams include marketing experts who increased $ 6
+                  million monthly revenue in average of 7 months period,
+                  professional production crew who created many viral videos
+                  with millions of views.
+                  <br />
+                  <br />
+                  M.Virtual not only offers the creation of Ai Virtual Human,
+                  but also video productions and marketing management to
+                  clients.
+                  <br />
+                  <br />
+                  Current Virtual Human production with CGI method costs
+                  immensely and can only be funded by conglomerates. However, we
+                  have reduced the Virtual Human production cost 10 times, so
+                  more enterprises can utilize our Ai Virtual Human.
                 </>
               )}
             </Text>
@@ -440,39 +518,87 @@ const AboutUs = () => {
         </Section>
 
         <Section color="sub">
-          <BgAnimation>
-            <BgImage />
-            <BgBox p="30px 20px 30px 70px" zIndex={2} maxWidth="660px">
-              <Box textAlign="left">
-                <Text type="title" color="#fff">
-                  엠버추얼의 신념은 우리의 성공보다
-                  <Br />
-                  파트너의 성공을 돕는 것입니다.{" "}
-                </Text>
-              </Box>
-              <Box mt="50px" textAlign="left">
-                <Text type="description" color="#fff" fontWeight={400}>
-                  저희는 단순히 가상인간 제작 수주를 받는 것이 목적이 아닙니다.
-                  <br />
-                  저희의 가상인간 기술을 도입하는 기업들에게 매출 활성화와
-                  마케팅에 큰 도움을 드리는 것이 목표이자 신념입니다.
-                  <br />
-                  <br />
-                  엠버추얼은 진심으로 파트너를 성공시켜드리는 기업이 되고
-                  싶습니다.
-                  <br />
-                  파트너의 성공을 돕는 마인드, 파트너의 고민을 해결해주려는
-                  마인드, 파트너를 성장시켜주려는 마인드는 저희가 여러분들을
-                  대하는 마음입니다.
-                  <br />
-                  가상인간과 마케팅 관련해서는 언제나 Giver의 마인드로 협업하는
-                  기업들의 가상인간 프로젝트가 성공 할 수 있도록 최선을 다해
-                  도와드리겠습니다.
-                </Text>
-              </Box>
-            </BgBox>
-            <Dim />
-          </BgAnimation>
+          <>
+            <Box mb="60px" textAlign="center">
+              <Text component="h2" type="title" color="#26d9c7">
+                {lang === "ko" ? (
+                  <>엠버추얼 신념</>
+                ) : (
+                  <>M.Virtual Mission Statement</>
+                )}
+              </Text>
+            </Box>
+            <BgAnimation>
+              <BgImage />
+              <BgBox p="30px 20px 30px 70px" zIndex={2} maxWidth="660px">
+                <Box textAlign="left">
+                  <Text type="title" color="#fff">
+                    {lang === "ko" ? (
+                      <>
+                        엠버추얼의 신념은 우리의 성공보다
+                        <Br />
+                        파트너의 성공을 돕는 것입니다.
+                      </>
+                    ) : (
+                      <>
+                        M.Virtual’s Mission is to help and prioritize our
+                        partner’s success before our success.
+                      </>
+                    )}
+                  </Text>
+                </Box>
+                <Box mt="50px" textAlign="left">
+                  <Text type="description" color="#fff" fontWeight={400}>
+                    {lang === "ko" ? (
+                      <>
+                        저희는 단순히 가상인간 제작 수주를 받는 것이 목적이
+                        아닙니다.
+                        <br />
+                        저희의 가상인간 기술을 도입하는 기업들에게 매출 활성화와
+                        마케팅에 큰 도움을 드리는 것이 목표이자 신념입니다.
+                        <br />
+                        <br />
+                        엠버추얼은 진심으로 파트너를 성공시켜드리는 기업이 되고
+                        싶습니다.
+                        <br />
+                        파트너의 성공을 돕는 마인드, 파트너의 고민을
+                        해결해주려는 마인드, 파트너를 성장시켜주려는 마인드는
+                        저희가 여러분들을 대하는 마음입니다.
+                        <br />
+                        가상인간과 마케팅 관련해서는 언제나 Giver의 마인드로
+                        협업하는 기업들의 가상인간 프로젝트가 성공 할 수 있도록
+                        최선을 다해 도와드리겠습니다.
+                      </>
+                    ) : (
+                      <>
+                        Our goal is not simply getting more Virtual Human
+                        production orders.
+                        <br />
+                        Our goal is to significantly increase revenue and
+                        marketing traffic for enterprises Who implement our Ai
+                        Virtual Human Technology.
+                        <br />
+                        <br />
+                        M.Virtual wants to be a company that sincerely
+                        contributes to partner’s success.
+                        <br />
+                        The mindset that helps our partners succeed, the mindset
+                        to offer solution for partner’s problems, and the
+                        mindset to accelerate partner’s growth, are all how we
+                        intend to approach clients.
+                        <br />
+                        We thrive to pursuit the mind of “Giver” for each of our
+                        collaboration with clients regarding Virtual Human and
+                        marketing solution, to do our best in bringing success
+                        to your Virtual Human projects.
+                      </>
+                    )}
+                  </Text>
+                </Box>
+              </BgBox>
+              <Dim />
+            </BgAnimation>
+          </>
         </Section>
       </Wrap>
     </>

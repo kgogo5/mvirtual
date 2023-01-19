@@ -112,7 +112,7 @@ const Button = styled(MuiButton)`
 
 const Article = styled.div`
   padding: 0 50px;
-  max-width: 551px;
+  max-width: 611px;
   width: 100%;
   display: flex;
   align-items: center;

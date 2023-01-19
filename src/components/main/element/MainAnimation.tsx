@@ -71,7 +71,7 @@ const MainAnimation = () => {
       >
         <Box>
           <ViewVideo>
-            <Player url="/video/sample.mp4" active={observer} />
+            <Player url="/video/main02.mp4" active={observer} />
           </ViewVideo>
           <Box mt="15px">
             <Text type="description" color="#fff">
@@ -192,7 +192,7 @@ const MainAnimation = () => {
         </Box>
         <Box>
           <ViewVideo>
-            <Player url="/video/sample.mp4" active={observer} />
+            <Player url="/video/main03.mp4" active={observer} />
           </ViewVideo>
           <Box mt="15px">
             <Text type="description" color="#fff">

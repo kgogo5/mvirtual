@@ -5,6 +5,7 @@ import { language } from "../../atom";
 import { PointColor } from "../../styles/common";
 import Section from "../elements/Section";
 import Text from "../elements/Text";
+import TechnologyVideo from "./element/TechnologyVideo";
 
 const Wrap = styled(Box)`
   background-color: #000;
@@ -102,11 +103,7 @@ const Technology = () => {
         </>
       </Section>
 
-      <Section sectionPadding="30px 15px">
-        <>
-          <Box mb="60px" width="100%" maxWidth="1164px" textAlign="left"></Box>
-        </>
-      </Section>
+      <TechnologyVideo />
     </Wrap>
   );
 };

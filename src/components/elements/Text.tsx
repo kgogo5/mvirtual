@@ -12,6 +12,7 @@ interface ITitle {
 const Wrap = styled(Typography)`
   && {
     font-family: "Pretendard", sans-serif;
+    word-break: keep-all;
   }
 
   &.title {

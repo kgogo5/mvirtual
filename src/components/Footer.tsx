@@ -1,9 +1,11 @@
 import styled from "styled-components";
-import { Box, Typography } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
 import { useRecoilValue } from "recoil";
 import { mobile } from "../atom";
+import Text from "./elements/Text";
+import { Box } from "@mui/material";
+import { DefaultButton } from "../styles/common";
 
 const FooterWrap = styled.footer`
   position: absolute;
@@ -14,18 +16,20 @@ const FooterWrap = styled.footer`
   text-align: center;
   z-index: 1000;
   overflow: hidden;
+  background-color: #000;
 
   & .animationBox {
     /* transform: translate(0px, -20px); */
     margin: 0 auto;
+    max-width: 1164px;
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     height: 264px;
     align-items: center;
-    background-color: #141414;
+    background-color: #000;
     /* opacity: 0; */
 
     &.mobile {
@@ -54,6 +58,10 @@ const GridBox = styled(Box)`
 `;
 
 const Inner = styled(Box)`
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
   & p {
     font-size: 14px;
     color: #fff;
@@ -88,6 +96,21 @@ const LinkList = styled(Link)`
   }
 `;
 
+const IconButton = styled(DefaultButton)`
+  && {
+    padding: 10px;
+    min-width: auto;
+    width: 61px;
+    height: 61px;
+    border-radius: 41px;
+    transition: 0.5s;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+`;
+
 const _ = () => {
   const isMobile = useRecoilValue(mobile);
 
@@ -95,22 +118,57 @@ const _ = () => {
     <>
       <FooterWrap>
         <Box className={clsx("animationBox", isMobile)}>
-          <LinkList className={isMobile} to="/">
-            <img src="/image/logo.png" alt="로고" />
-          </LinkList>
-          <GridBox className={isMobile}>
-            <Inner className={isMobile}>
-              {/* <Typography>
-              <Box mr={2} component="span">
-                대표 : 한범희
-              </Box>
-              대표 전화 : <a href="tel:01080336920">010-8033-6920</a>
-            </Typography> */}
-              <Typography>
-                Copyright © 2023 Mvirtual. 모든 권리 보유.
-              </Typography>
-            </Inner>
-          </GridBox>
+          <Box textAlign="left">
+            <LinkList className={isMobile} to="/">
+              <img src="/image/logo.png" alt="로고" />
+            </LinkList>
+            <GridBox className={isMobile}>
+              <Inner className={isMobile}>
+                <Box textAlign="left">
+                  <Box>
+                    <Text component="span" fontSize="15px" fontWeight="400">
+                      (주)엠버추얼
+                    </Text>
+                  </Box>
+                  <Box mt="10px">
+                    <Text component="span" fontSize="15px" fontWeight="400">
+                      대표이사: 이화영 | 서울시 강남구 테헤란로 5길 7 KG타워
+                      (우)06134
+                    </Text>
+                  </Box>
+                  <Box mt="4px">
+                    <Text component="span" fontSize="15px" fontWeight="400">
+                      사업자등록번호: 321-880-2709 | TEL:{" "}
+                      <a href="tel:07043481972">070-4348-1972</a>
+                    </Text>
+                  </Box>
+                  <Box mt="20px">
+                    <Text component="span" fontSize="15px" fontWeight="400">
+                      ⓒ MVIRTUAL, ALL RIGHTS RESERVED.
+                    </Text>
+                  </Box>
+                </Box>
+              </Inner>
+            </GridBox>
+          </Box>
+          <Box display="flex">
+            <IconButton
+              onClick={() =>
+                window.open("http://pf.kakao.com/_HWFnxj/chat", "_blank")
+              }
+            >
+              <img src="/image/footer_icon01.png" alt="kakaotalk icon" />
+            </IconButton>
+            <IconButton>
+              <img src="/image/footer_icon02.png" alt="blog icon" />
+            </IconButton>
+            <IconButton>
+              <img src="/image/footer_icon03.png" alt="telegram icon" />
+            </IconButton>
+            <IconButton>
+              <img src="/image/footer_icon04.png" alt="watchapp icon" />
+            </IconButton>
+          </Box>
         </Box>
       </FooterWrap>
     </>

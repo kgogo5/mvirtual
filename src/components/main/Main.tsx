@@ -67,7 +67,7 @@ const Main = () => {
                 {lang === "ko" ? (
                   <>Ai가상인간 모델 에이전시 서비스</>
                 ) : (
-                  <>Ai Virtual Human Model Agency Services</>
+                  <>Ai Virtual Human Video Production Service</>
                 )}
               </Text>
             </Box>
@@ -84,7 +84,7 @@ const Main = () => {
                     {lang === "ko" ? (
                       <>원하는 이미지의 모델을 찾기 힘드신가요?</>
                     ) : (
-                      <>Is it hard to find the model of the image you want?</>
+                      <>Trouble hiring the fitting model with right image?</>
                     )}
                   </Text>
                 </Box>
@@ -98,9 +98,9 @@ const Main = () => {
                       </>
                     ) : (
                       <>
-                        A video featuring an Ai virtual human with a similarity
-                        of 98% to a human becomes a big issue and is a great
-                        help in publicity.
+                        Our Ai Virtual Human Solution will provide customized
+                        Virtual Human Of your desired model image, and is
+                        permanently available.
                       </>
                     )}
                   </Text>
@@ -115,7 +115,7 @@ const Main = () => {
                       alignItems="center"
                     >
                       <Box component="span" mr="10px">
-                        {lang === "ko" ? <>자세히 보기</> : <>See more</>}
+                        {lang === "ko" ? <>자세히 보기</> : <>More detail</>}
                       </Box>
                       <img src="/image/mint_arrow.png" alt="arrow icon" />
                     </Box>
@@ -134,7 +134,7 @@ const Main = () => {
                 {lang === "ko" ? (
                   <>Ai가상인간 영상제작 서비스</>
                 ) : (
-                  <>Ai Virtual Human Video Production Service</>
+                  <>Wanting to create unique video?</>
                 )}
               </Text>
             </Box>
@@ -145,7 +145,7 @@ const Main = () => {
                     {lang === "ko" ? (
                       <>특별한 영상을 제작하고 싶으신가요?</>
                     ) : (
-                      <>Do you want to create a special video?</>
+                      <>Wanting to create unique video?</>
                     )}
                   </Text>
                 </Box>
@@ -176,7 +176,7 @@ const Main = () => {
                       alignItems="center"
                     >
                       <Box component="span" mr="10px">
-                        {lang === "ko" ? <>자세히 보기</> : <>See more</>}
+                        {lang === "ko" ? <>자세히 보기</> : <>More detail</>}
                       </Box>
                       <img src="/image/mint_arrow.png" alt="arrow icon" />
                     </Box>
@@ -246,7 +246,7 @@ const Main = () => {
                       alignItems="center"
                     >
                       <Box component="span" mr="10px">
-                        {lang === "ko" ? <>자세히 보기</> : <>See more</>}
+                        {lang === "ko" ? <>자세히 보기</> : <>More detail</>}
                       </Box>
                       <img src="/image/mint_arrow.png" alt="arrow icon" />
                     </Box>
@@ -308,7 +308,7 @@ const Main = () => {
                       alignItems="center"
                     >
                       <Box component="span" mr="10px">
-                        {lang === "ko" ? <>자세히 보기</> : <>See more</>}
+                        {lang === "ko" ? <>자세히 보기</> : <>More detail</>}
                       </Box>
                       <img src="/image/mint_arrow.png" alt="arrow icon" />
                     </Box>

@@ -32,7 +32,7 @@ const ServiceVideo = () => {
     <>
       <Wrap ref={ref}>
         <ViewVideo>
-          <Player url="/video/sample.mp4" active={observer} />
+          <Player url="/video/service01.mp4" active={observer} />
         </ViewVideo>
       </Wrap>
     </>

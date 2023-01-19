@@ -9,7 +9,7 @@ import Br from "../../elements/Br";
 
 const Wrap = styled.div`
   width: 100%;
-  background-color: #141414;
+  background-color: #000;
 `;
 
 const ViewVideo = styled.div`
@@ -42,25 +42,6 @@ const TitleBox = styled.h2`
   }
 `;
 
-const DescriptionBox = styled.strong`
-  position: absolute;
-  left: 40px;
-  bottom: 40px;
-  display: flex;
-  align-items: flex-end;
-  gap: 10px;
-
-  && * {
-    font-weight: 400;
-  }
-
-  @media screen and (max-width: 1164px) {
-    left: 10px;
-    bottom: 10px;
-    font-size: 15px;
-  }
-`;
-
 const VideoPane = () => {
   const lang = useRecoilValue(language);
   const [observer, setObserver] = useState(false);
@@ -75,7 +56,7 @@ const VideoPane = () => {
   return (
     <Wrap ref={ref}>
       <ViewVideo>
-        <Player url="/video/sample.mp4" active={observer} />
+        <Player url="/video/main01.mp4" active={observer} />
         <TitleBox>
           {lang === "ko" ? (
             <>Ai가상인간 모델 공급부터 영상제작, 마케팅까지</>
@@ -86,14 +67,6 @@ const VideoPane = () => {
             </>
           )}
         </TitleBox>
-        <DescriptionBox>
-          <Text type="description" color="#fff">
-            Virtual Human
-          </Text>
-          <Text type="title" color="#fff" fontWeight="400">
-            'Bella'
-          </Text>
-        </DescriptionBox>
       </ViewVideo>
     </Wrap>
   );
