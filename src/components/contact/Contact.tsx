@@ -108,7 +108,7 @@ const FormWrap = styled.form`
 const KakaoText = styled(Button)`
   && {
     padding: 0 20px;
-    max-width: 380px;
+    max-width: 436px;
     width: 100%;
     height: 48px;
     display: flex;
@@ -145,6 +145,33 @@ const SubmitButton = styled(Button)`
     }
   }
   & .MuiTouchRipple-root {
+  }
+`;
+
+const Tell = styled.a`
+  && {
+    padding: 0 20px;
+    max-width: 436px;
+    width: 100%;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 12px;
+    border-radius: 24px;
+    background-color: #26d9c7;
+    transition: 0.5s;
+
+    &:hover {
+      background-color: #0faa9b;
+    }
+  }
+  & .MuiTouchRipple-root {
+  }
+
+  &:hover,
+  &:focus {
+    background-color: #0faa9b;
   }
 `;
 
@@ -186,7 +213,7 @@ const Contact = () => {
 
   return (
     <Wrap>
-      <Section sectionPadding="160px 15px">
+      <Section sectionPadding="160px 15px 110px">
         <>
           <Text type="title" color="#26d9c7">
             CONTACT US
@@ -200,27 +227,48 @@ const Contact = () => {
               )}
             </Text>
           </Box>
-          <Box mt="100px">
-            <Text type="description" color="#fff" fontWeight="400">
-              {lang === "ko" ? (
-                <>전화상담 : 070-4348-1972 (오전 9시 ~ 오후 6시)</>
-              ) : (
-                <>Phone consultation: 070-4348-1972 (9 a.m. to 6 p.m.)</>
-              )}
-            </Text>
-          </Box>
-          <Box mt="40px" display="flex" justifyContent="center">
-            <KakaoText
-              onClick={() =>
-                window.open("http://pf.kakao.com/_HWFnxj/chat", "_blank")
-              }
-            >
-              <img src="/image/kakao.png" alt="kakao logo" />
-              <Text type="description" color="#391b1b">
-                카톡상담 : 실시간 카톡 상담 문의
-              </Text>
-            </KakaoText>
-          </Box>
+          {lang === "ko" ? (
+            <>
+              <Box mt="80px" display="flex" justifyContent="center">
+                <Tell href="tel:07043481972">
+                  <Text type="description" color="#000">
+                    전화상담 : 070-4348-1972 (오전 9시 ~ 오후 6시)
+                  </Text>
+                </Tell>
+              </Box>
+              <Box mt="15px" display="flex" justifyContent="center">
+                <KakaoText
+                  onClick={() =>
+                    window.open("http://pf.kakao.com/_HWFnxj/chat", "_blank")
+                  }
+                >
+                  <img src="/image/kakao.png" alt="kakao logo" />
+                  <Text type="description" color="#391b1b">
+                    카톡상담 : 실시간 카톡 상담 문의
+                  </Text>
+                </KakaoText>
+              </Box>
+            </>
+          ) : (
+            <Box mt="30px" display="flex" justifyContent="center" gap="0 40px">
+              <Box>
+                <img src="/image/telegram.png" alt="telegram" />
+                <Box mt="10px">
+                  <Text type="description" color="#fff" fontWeight="400">
+                    Telegram
+                  </Text>
+                </Box>
+              </Box>
+              <Box>
+                <img src="/image/watchapp.png" alt="watchapp" />
+                <Box mt="10px">
+                  <Text type="description" color="#fff" fontWeight="400">
+                    Watchapp
+                  </Text>
+                </Box>
+              </Box>
+            </Box>
+          )}
         </>
       </Section>
 

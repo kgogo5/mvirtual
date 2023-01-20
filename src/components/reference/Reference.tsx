@@ -13,6 +13,14 @@ const CustomHalfBox = styled(HalfBox)`
   gap: 20px;
   margin: 0 auto;
 
+  & > div {
+    width: 50%;
+
+    @media screen and (max-width: 1164px) {
+      width: 100%;
+    }
+  }
+
   & .reactPlayer {
     width: 100% !important;
     height: auto !important;
@@ -51,7 +59,7 @@ const Reference = () => {
             </Box>
             <CustomHalfBox>
               <Box>
-                <Player url="/video/sample.mp4" active={false} controls />
+                <Player url="/video/main01.mp4" active={false} controls />
                 <Box textAlign="left">
                   <Text component="strong" fontSize="26px" color="#fff">
                     {lang === "ko" ? (
@@ -63,7 +71,7 @@ const Reference = () => {
                 </Box>
               </Box>
               <Box>
-                <Player url="/video/sample.mp4" active={false} controls />
+                <Player url="/video/reference01.mp4" active={false} controls />
                 <Box textAlign="left">
                   <Text component="strong" fontSize="26px" color="#fff">
                     {lang === "ko" ? (
@@ -86,7 +94,7 @@ const Reference = () => {
           <>
             <CustomHalfBox>
               <Box>
-                <Player url="/video/sample.mp4" active={false} controls />
+                <Player url="/video/reference02.mp4" active={false} controls />
                 <Box textAlign="left">
                   <Text component="strong" fontSize="26px" color="#fff">
                     {lang === "ko" ? (
@@ -98,7 +106,7 @@ const Reference = () => {
                 </Box>
               </Box>
               <Box>
-                <Player url="/video/sample.mp4" active={false} controls />
+                <Player url="/video/reference03.mp4" active={false} controls />
                 <Box textAlign="left">
                   <Text component="strong" fontSize="26px" color="#fff">
                     {lang === "ko" ? (

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
 import { useRecoilValue } from "recoil";
-import { mobile } from "../atom";
+import { language, mobile } from "../atom";
 import Text from "./elements/Text";
 import { Box } from "@mui/material";
 import { DefaultButton } from "../styles/common";
@@ -112,6 +112,7 @@ const IconButton = styled(DefaultButton)`
 `;
 
 const _ = () => {
+  const lang = useRecoilValue(language);
   const isMobile = useRecoilValue(mobile);
 
   return (
@@ -127,19 +128,29 @@ const _ = () => {
                 <Box textAlign="left">
                   <Box>
                     <Text component="span" fontSize="15px" fontWeight="400">
-                      (주)엠버추얼
+                      {lang === "ko" ? "(주)엠버추얼" : "Mvirtual"}
                     </Text>
                   </Box>
                   <Box mt="10px">
                     <Text component="span" fontSize="15px" fontWeight="400">
-                      대표이사: 이화영 | 서울시 강남구 테헤란로 5길 7 KG타워
-                      (우)06134
+                      {lang === "ko"
+                        ? "대표이사: 이화영 | 서울시 강남구 테헤란로 5길 7 KG타워 (우)06134"
+                        : "CEO: hwa-young Lee | #9F 118, KG tower,  Teheran-ro 5-gil 7 Gangnam-gu, Seoul."}
                     </Text>
                   </Box>
                   <Box mt="4px">
                     <Text component="span" fontSize="15px" fontWeight="400">
-                      사업자등록번호: 321-880-2709 | TEL:{" "}
-                      <a href="tel:07043481972">070-4348-1972</a>
+                      {lang === "ko" ? (
+                        <>
+                          사업자등록번호: 321-880-2709 | TEL:{" "}
+                          <a href="tel:07043481972">070-4348-1972</a>
+                        </>
+                      ) : (
+                        <>
+                          Corporate registration number : 321-88-02709 | TEL:{" "}
+                          <a href="tel:07043481972">070-4348-1972</a>
+                        </>
+                      )}
                     </Text>
                   </Box>
                   <Box mt="20px">
