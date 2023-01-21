@@ -6,6 +6,8 @@ import { Box } from "@mui/material";
 import { PointColor } from "../../../styles/common";
 import { motion } from "framer-motion";
 import Text from "../../elements/Text";
+import { useRecoilValue } from "recoil";
+import { language } from "../../../atom";
 
 const Wrap = styled.div`
   width: 100%;
@@ -44,6 +46,7 @@ const AnimationText = styled(motion.strong)`
 `;
 
 const MainAnimation = () => {
+  const lang = useRecoilValue(language);
   const [observer, setObserver] = useState(false);
   const [arrowObserver, setArrowObserver] = useState(false);
   const { ref } = useInView({
@@ -76,13 +79,23 @@ const MainAnimation = () => {
           </ViewVideo>
           <Box mt="15px">
             <Text type="description" color="#fff">
-              <PointColor>타사 3D 제작방식(CG) 가상인간</PointColor>
+              <PointColor>
+                {lang === "ko" ? (
+                  <>타사 3D 제작방식(CG) 가상인간</>
+                ) : (
+                  <>Third-Party 3D Production (CG) Virtual Human</>
+                )}
+              </PointColor>
             </Text>
           </Box>
         </Box>
         <Box mx="45px" minWidth="270px">
           <Text type="description" color="#fff">
-            가상인간 사람과 유사도 비교
+            {lang === "ko" ? (
+              <>가상인간 사람과 유사도 비교</>
+            ) : (
+              <>Comparison of similarities with virtual human beings</>
+            )}
           </Text>
           <Animation
             variants={{
@@ -197,7 +210,13 @@ const MainAnimation = () => {
           </ViewVideo>
           <Box mt="15px">
             <Text type="description" color="#fff">
-              <PointColor>엠버추얼 Ai제작방식 가상인간</PointColor>
+              <PointColor>
+                {lang === "ko" ? (
+                  <>엠버추얼 Ai제작방식 가상인간</>
+                ) : (
+                  <>Ambassadorial Ai Production Method Virtual Human</>
+                )}
+              </PointColor>
             </Text>
           </Box>
         </Box>

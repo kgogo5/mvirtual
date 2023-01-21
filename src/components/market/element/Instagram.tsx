@@ -4,6 +4,8 @@ import Text from "../../elements/Text";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
+import { useRecoilValue } from "recoil";
+import { language } from "../../../atom";
 
 interface IInstagram {
   title?: string;
@@ -76,6 +78,7 @@ const ContentsBox = styled(Box)`
 `;
 
 const Instagram = (props: IInstagram) => {
+  const lang = useRecoilValue(language);
   const { title, image, name, follower, income, activity, description } = props;
   const [observer, setObserver] = useState(false);
   const { ref } = useInView({
@@ -121,28 +124,26 @@ const Instagram = (props: IInstagram) => {
           />
         </ImageBox>
         <InstagramBox width="100%">
-          <Info
-            type="description"
-            color="#fff"
-            fontWeight="400"
-          >{`인스타그램: ${name}`}</Info>
-          <Info
-            type="description"
-            color="#fff"
-            fontWeight="400"
-          >{`팔로워: ${follower}`}</Info>
-          <Info
-            type="description"
-            color="#fff"
-            fontWeight="400"
-          >{`게시물당 예상 수입: ${income}`}</Info>
+          <Info type="description" color="#fff" fontWeight="400">{`${
+            lang === "ko" ? "인스타그램" : "Instagram"
+          }: ${name}`}</Info>
+          <Info type="description" color="#fff" fontWeight="400">{`${
+            lang === "ko" ? "팔로워" : "Followers"
+          }: ${follower}`}</Info>
+          <Info type="description" color="#fff" fontWeight="400">{`${
+            lang === "ko" ? "게시물당 예상 수입" : "Estimated income per post"
+          }: ${income}`}</Info>
           {activity && (
             <Info
               type="description"
               color="#fff"
               fontWeight="400"
               border="0"
-            >{`광고 모델 활동: ${activity}`}</Info>
+            >{`${
+              lang === "ko"
+                ? "광고 모델 활동"
+                : "advertising modeling activities"
+            }: ${activity}`}</Info>
           )}
         </InstagramBox>
       </FlexBox>

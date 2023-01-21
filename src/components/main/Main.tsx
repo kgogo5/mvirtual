@@ -29,6 +29,9 @@ const Button = styled(Link)`
 
     & span {
       font-size: 17px;
+      @media screen and (max-width: 768px) {
+        font-size: 16px;
+      }
     }
     &:hover,
     &:focus {

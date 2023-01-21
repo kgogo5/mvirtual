@@ -7,6 +7,16 @@ import styled from "styled-components";
 import Player from "../elements/Player";
 import Text from "../elements/Text";
 
+const Wrap = styled.div`
+  width: 100%;
+
+  & section {
+    @media screen and (max-width: 768px) {
+      padding-bottom: 40px;
+    }
+  }
+`;
+
 const CustomHalfBox = styled(HalfBox)`
   max-width: 1164px;
   width: 100%;
@@ -43,7 +53,7 @@ const Reference = () => {
 
   return (
     <>
-      <Box width="100%">
+      <Wrap>
         <Section sectionPadding="40px 15px" animation={false}>
           <>
             <Box mb="110px">
@@ -124,7 +134,7 @@ const Reference = () => {
         <HrStyle>
           <hr />
         </HrStyle>
-      </Box>
+      </Wrap>
     </>
   );
 };

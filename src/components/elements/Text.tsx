@@ -21,7 +21,7 @@ const Wrap = styled(Typography)`
     font-weight: bold;
 
     @media screen and (max-width: 768px) {
-      font-size: 24px;
+      font-size: 28px;
     }
   }
 
@@ -30,7 +30,7 @@ const Wrap = styled(Typography)`
     line-height: 1.6;
 
     @media screen and (max-width: 768px) {
-      font-size: 15px;
+      font-size: 16px;
     }
   }
 
@@ -39,7 +39,7 @@ const Wrap = styled(Typography)`
     line-height: 1.4;
 
     @media screen and (max-width: 768px) {
-      font-size: 18px;
+      font-size: 22px;
     }
   }
 `;

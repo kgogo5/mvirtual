@@ -24,8 +24,13 @@ const ContainerWrap = styled(Box)`
     background: #333;
     box-sizing: border-box;
 
+    @media screen and (max-width: 768px) {
+      flex-wrap: wrap;
+      padding: 80px 0 500px;
+    }
+
     &.mobile {
-      padding: 80px 0 264px;
+      padding: 80px 0 500px;
     }
   }
   main {

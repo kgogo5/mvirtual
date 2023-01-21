@@ -161,6 +161,10 @@ const MobileMenuList = styled(Box)`
   & .MuiListItem-button {
     text-align: center;
   }
+
+  & .active .MuiTypography-root {
+    color: #26d9c7;
+  }
 `;
 
 const LanguageStyle = styled.div`
@@ -195,6 +199,10 @@ const MobileLanguageStyle = styled.div`
 
   & .active span {
     font-weight: bold;
+
+    @media screen and (max-width: 768px) {
+      color: #26d9c7;
+    }
   }
 `;
 
@@ -262,6 +270,13 @@ const _ = () => {
                     {menuLists.map((item: any, index: number) => (
                       <Box component="li" key={index}>
                         <ListItem
+                          className={
+                            lodash.findIndex([item], {
+                              address: location.pathname,
+                            }) !== -1
+                              ? "active"
+                              : ""
+                          }
                           button
                           onClick={() => {
                             mobileLinkClick(

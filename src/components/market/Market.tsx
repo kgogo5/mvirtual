@@ -110,7 +110,7 @@ const Market = () => {
               )}
             </Text>
             <Box mt="8px">
-              <Text fontSize="24px" color="#fff" fontWeight="400">
+              <Text type="sub" color="#fff" fontWeight="400">
                 {lang === "ko" ? (
                   <>- 루 두 마갈루 가상인간 쇼핑몰 매출 : 연간 약 6000억원</>
                 ) : (
@@ -156,7 +156,7 @@ const Market = () => {
               )}
             </Text>
             <Box mt="8px">
-              <Text fontSize="24px" color="#fff" fontWeight="400">
+              <Text type="sub" color="#fff" fontWeight="400">
                 {lang === "ko" ? (
                   <>- 광고 모델 활동 수익 : 연간 약 200억원</>
                 ) : (
@@ -172,8 +172,11 @@ const Market = () => {
               image="/image/thumbnail_02.png"
               follower="3M"
               income="6,000$ ~ 10,000$"
-              activity="캘빈클라인/샤넬/프라다/
-              디올 등 유명 브랜드 모델로 활동"
+              activity={
+                lang === "ko"
+                  ? "캘빈클라인/샤넬/프라다/ 디올 등 유명 브랜드 모델로 활동"
+                  : "Working as a model for famous brands such as Calvin Klein/Chanel/Prada/Dior"
+              }
               description={
                 lang === "ko"
                   ? "브러드의 총괄 책임자 트레버 맥페드리스(Trevor Mc Fedrise)는 회사를 창립한 후 세상의 주목을 끌기 위해 미켈라 프로젝트를 기획했으며, 릴미켈라가 CGI로 만든 가상의 인물임이 알려진 후에도 그녀의 '핫'한 라이프스타일은 대중들의 뜨거운 관심을 받았다."
@@ -202,7 +205,7 @@ const Market = () => {
               )}
             </Text>
             <Box mt="8px">
-              <Text fontSize="24px" color="#fff" fontWeight="400">
+              <Text type="sub" color="#fff" fontWeight="400">
                 {lang === "ko" ? (
                   <>- 광고 모델 활동 수익 : 연간 약 70억원</>
                 ) : (
@@ -218,8 +221,11 @@ const Market = () => {
               image="/image/thumbnail_03.png"
               follower="237M"
               income="3,000$ ~ 5,000$"
-              activity="랑방/ 살바토레 페라가모/
-              삼성전자 등 유명 브랜드 모델로 활동"
+              activity={
+                lang === "ko"
+                  ? "랑방/ 살바토레 페라가모/삼성전자 등 유명 브랜드 모델로 활동"
+                  : "Lanvin/ Salvatore Ferragamo/Act as a model for famous brands such as Samsung Electronics"
+              }
               description={
                 lang === "ko"
                   ? "세계 최초 디지털 영국 슈퍼모델 '슈두'는 여러 명품 브랜드 '랑방', '살바토레 페라가모' 등과 협업했다. 2020년에 삼성전자 'Z 플립' 모델로 발탁되었고 최근 메타버스 플랫폼 '제페토'에서 진행한 ‘크리스티앙 루부탱’ 패션쇼에서 모델로 등장해 주목을 받았다."
@@ -248,7 +254,7 @@ const Market = () => {
               )}
             </Text>
             <Box mt="8px">
-              <Text fontSize="24px" color="#fff" fontWeight="400">
+              <Text type="sub" color="#fff" fontWeight="400">
                 {lang === "ko" ? (
                   <>- 광고 모델 활동 수익 : 연간 약 50억원</>
                 ) : (
@@ -264,8 +270,11 @@ const Market = () => {
               image="/image/thumbnail_04.png"
               follower="404M"
               income="2,000$ ~ 4,000$"
-              activity="이케아/ 아마존/ 포르쉐 등
-              기업 모델로 활동"
+              activity={
+                lang === "ko"
+                  ? "이케아/ 아마존/ 포르쉐 등 기업 모델로 활동"
+                  : "IKEA/ Amazon/ Porsche as corporate models"
+              }
               description={
                 lang === "ko"
                   ? "분홍색 단발머리의 가상 모델 '이마(Imma)'는 일본 에서 핫한 존재로 급부상 했다. 일본 3D 이미징 스 타트업 'AWW'가 지난 2019년 선보인 가상인간 '이마'는 글로벌 가구회사 이케아는 일본 동경의 하라주 쿠 매장을 런칭하면서 모델로 등장해 화제를 불러 일으켰다."

@@ -31,6 +31,21 @@ const FooterWrap = styled.footer`
     height: 264px;
     align-items: center;
     background-color: #000;
+
+    @media screen and (max-width: 768px) {
+      height: 500px;
+      flex-wrap: wrap;
+      justify-content: center;
+      flex-direction: column-reverse;
+      gap: 20px 0;
+    }
+
+    & > div {
+      @media screen and (max-width: 768px) {
+        justify-content: center;
+        text-align: center;
+      }
+    }
     /* opacity: 0; */
 
     &.mobile {
@@ -63,6 +78,13 @@ const Inner = styled(Box)`
   justify-content: start;
   align-items: center;
 
+  & > div {
+    @media screen and (max-width: 768px) {
+      justify-content: center;
+      text-align: center;
+    }
+  }
+
   & p {
     font-size: 14px;
     color: #fff;
@@ -82,6 +104,7 @@ const Inner = styled(Box)`
 const LinkList = styled(Link)`
   color: #fff;
   text-shadow: 0px 0px 4px black;
+
   & + & {
     margin-left: 1rem;
   }
@@ -163,28 +186,49 @@ const _ = () => {
               </Inner>
             </GridBox>
           </Box>
-          <Box display="flex">
-            <IconButton
-              onClick={() =>
-                window.open("https://pf.kakao.com/_HWFnxj", "_blank")
-              }
-            >
-              <img src="/image/footer_icon01.png" alt="kakaotalk icon" />
-            </IconButton>
-            <IconButton
-              onClick={() =>
-                window.open("https://blog.naver.com/mvirtual", "_blank")
-              }
-            >
-              <img src="/image/footer_icon02.png" alt="blog icon" />
-            </IconButton>
-            <IconButton>
-              <img src="/image/footer_icon03.png" alt="telegram icon" />
-            </IconButton>
-            <IconButton>
-              <img src="/image/footer_icon04.png" alt="watchapp icon" />
-            </IconButton>
-          </Box>
+          {lang === "ko" ? (
+            <Box display="flex">
+              <IconButton
+                onClick={() =>
+                  window.open("https://pf.kakao.com/_HWFnxj", "_blank")
+                }
+              >
+                <img src="/image/footer_icon01.png" alt="kakaotalk icon" />
+              </IconButton>
+              <IconButton
+                onClick={() =>
+                  window.open("https://blog.naver.com/mvirtual", "_blank")
+                }
+              >
+                <img src="/image/footer_icon02.png" alt="blog icon" />
+              </IconButton>
+              {/* <IconButton>
+                <img src="/image/footer_icon03.png" alt="telegram icon" />
+              </IconButton>
+              <IconButton>
+                <img src="/image/footer_icon04.png" alt="watchapp icon" />
+              </IconButton> */}
+            </Box>
+          ) : (
+            <Box display="flex" gap="0 10px">
+              <Box>
+                <img src="/image/telegram.png" alt="telegram" />
+                <Box mt="10px">
+                  <Text type="description" color="#fff" fontWeight="400">
+                    Telegram
+                  </Text>
+                </Box>
+              </Box>
+              <Box>
+                <img src="/image/watchapp.png" alt="watchapp" />
+                <Box mt="10px">
+                  <Text type="description" color="#fff" fontWeight="400">
+                    Watchapp
+                  </Text>
+                </Box>
+              </Box>
+            </Box>
+          )}
         </Box>
       </FooterWrap>
     </>

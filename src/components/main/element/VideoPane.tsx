@@ -1,7 +1,5 @@
-import { useState } from "react";
 import styled from "styled-components";
 import Player from "../../elements/Player";
-import { useInView } from "react-intersection-observer";
 import { useRecoilValue } from "recoil";
 import { language } from "../../../atom";
 import Br from "../../elements/Br";
@@ -43,19 +41,11 @@ const TitleBox = styled.h2`
 
 const VideoPane = () => {
   const lang = useRecoilValue(language);
-  const [observer, setObserver] = useState(false);
-  const { ref } = useInView({
-    // threshold: 1,
-    rootMargin: "-50% 0px",
-    onChange: (inView) => {
-      setObserver(inView);
-    },
-  });
 
   return (
-    <Wrap ref={ref}>
+    <Wrap>
       <ViewVideo>
-        <Player url="/video/main01.mp4" active={observer} />
+        <Player url="/video/main01.mp4" active={true} />
         <TitleBox>
           {lang === "ko" ? (
             <>Ai가상인간 모델 공급부터 영상제작, 마케팅까지</>

@@ -30,9 +30,6 @@ const VisualList = styled(Box)`
   width: 100%;
   display: flex;
   justify-content: center;
-  /* display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px 60px; */
 
   & > div {
     display: grid;
@@ -40,6 +37,7 @@ const VisualList = styled(Box)`
     grid-template-columns: 1fr 1fr;
 
     @media screen and (max-width: 768px) {
+      grid-template-columns: 1fr;
       gap: 20px 30px;
     }
   }
@@ -132,9 +130,15 @@ const Service = () => {
                   </motion.div>
                   <Box>
                     <Text type="sub">
-                      Ai가상인간 모델
-                      <br />
-                      에이전시 서비스
+                      {lang === "ko" ? (
+                        <>
+                          Ai가상인간 모델
+                          <br />
+                          에이전시 서비스
+                        </>
+                      ) : (
+                        <>Ai Virtual Human Model Agency Services</>
+                      )}
                     </Text>
                   </Box>
                 </ListBox>
@@ -155,7 +159,13 @@ const Service = () => {
                     <img src="/image/service_list02.jpg" alt="" />
                   </motion.div>
                   <Box>
-                    <Text type="sub">Ai가상인간 영상 제작</Text>
+                    <Text type="sub">
+                      {lang === "ko" ? (
+                        <>Ai가상인간 영상 제작</>
+                      ) : (
+                        <>Ai Virtual Human Video Production</>
+                      )}
+                    </Text>
                   </Box>
                 </ListBox>
                 <ListBox>
@@ -175,7 +185,13 @@ const Service = () => {
                     <img src="/image/service_list03.jpg" alt="" />
                   </motion.div>
                   <Box>
-                    <Text type="sub">Ai가상인간 SNS운영</Text>
+                    <Text type="sub">
+                      {lang === "ko" ? (
+                        <>Ai가상인간 SNS운영</>
+                      ) : (
+                        <>Ai Virtual Human SNS Operations</>
+                      )}
+                    </Text>
                   </Box>
                 </ListBox>
                 <ListBox>
@@ -196,9 +212,15 @@ const Service = () => {
                   </motion.div>
                   <Box>
                     <Text type="sub">
-                      Ai가상인간을 활용한
-                      <br />
-                      기업마케팅
+                      {lang === "ko" ? (
+                        <>
+                          Ai가상인간을 활용한
+                          <br />
+                          기업마케팅
+                        </>
+                      ) : (
+                        <>Ai Corporate Marketing Using Virtual Humans</>
+                      )}
                     </Text>
                   </Box>
                 </ListBox>
@@ -212,7 +234,11 @@ const Service = () => {
           <>
             <Box>
               <Text type="title" color="#26d9c7">
-                Ai가상인간 모델 에이전시 서비스
+                {lang === "ko" ? (
+                  <>Ai가상인간 모델 에이전시 서비스</>
+                ) : (
+                  <>Ai Virtual Human Model Agency Services</>
+                )}
               </Text>
             </Box>
             <HalfBox>
@@ -223,7 +249,11 @@ const Service = () => {
               <Article>
                 <Box>
                   <Text type="description" color="#fff">
-                    영구적으로 소유할 수 있는 Ai가상인간 모델 공급
+                    {lang === "ko" ? (
+                      <>영구적으로 소유할 수 있는 Ai가상인간 모델 공급</>
+                    ) : (
+                      <>Ai Virtual Human Model Agency Services</>
+                    )}
                   </Text>
                 </Box>
                 <Box mt="36px">
@@ -264,7 +294,11 @@ const Service = () => {
           <>
             <Box>
               <Text type="title" color="#26d9c7">
-                가상인간 영상 제작 서비스
+                {lang === "ko" ? (
+                  <>가상인간 영상 제작 서비스</>
+                ) : (
+                  <>Ai Virtual Human Model Agency Services</>
+                )}
               </Text>
             </Box>
 
@@ -274,27 +308,65 @@ const Service = () => {
 
             <Box m="100px auto 0" maxWidth="1080px" textAlign="left">
               <Text type="description" color="#fff">
-                100만 조회수 이상의 인기영상들을 제작했던 전문 영상 촬영팀 보유
+                {lang === "ko" ? (
+                  <>
+                    100만 조회수 이상의 인기영상들을 제작했던 전문 영상 촬영팀
+                    보유
+                  </>
+                ) : (
+                  <>Ai Virtual Human Model Agency Services</>
+                )}
               </Text>
               <Box mt="36px">
                 <Text type="description" color="#fff" fontWeight="400">
-                  엠버추얼은 가상인간 제작 뿐만 아니라 가상인간을 활용한 영상
-                  제작 서비스도 진행하고 있습니다. <br />
-                  <br />
-                  100만 조회수 이상의 인기 영상 콘텐츠를 다수 제작했던 전문
-                  영상팀들이 가상인간을 활용한 영상기획부터 촬영까지 모든 것을
-                  도와드립니다.
-                  <br />
-                  <br />
-                  차별화된 기획력으로 가상인간을 활용한 기업홍보영상,
-                  유튜브영상, 광고CF, 바이럴 영상등이 제작 가능하며 이미 촬영 된
-                  영상의 인물을 가상인간으로 변환하는 것도 가능합니다.
-                  <br />
-                  <br />
-                  가상인간이 출연하는 영상은 일반 영상보다 이슈가 많이 되고
-                  콘텐츠 반응도 좋아서 홍보에 큰 도움이 될 수 있습니다. 또한
-                  영상에 출연한 가상인간으로 별도의 인스타그램, 유튜브 채널을
-                  운영하게 되면 더 큰 홍보효과를 보실 수 있습니다.
+                  {lang === "ko" ? (
+                    <>
+                      엠버추얼은 가상인간 제작 뿐만 아니라 가상인간을 활용한
+                      영상 제작 서비스도 진행하고 있습니다. <br />
+                      <br />
+                      100만 조회수 이상의 인기 영상 콘텐츠를 다수 제작했던 전문
+                      영상팀들이 가상인간을 활용한 영상기획부터 촬영까지 모든
+                      것을 도와드립니다.
+                      <br />
+                      <br />
+                      차별화된 기획력으로 가상인간을 활용한 기업홍보영상,
+                      유튜브영상, 광고CF, 바이럴 영상등이 제작 가능하며 이미
+                      촬영 된 영상의 인물을 가상인간으로 변환하는 것도
+                      가능합니다.
+                      <br />
+                      <br />
+                      가상인간이 출연하는 영상은 일반 영상보다 이슈가 많이 되고
+                      콘텐츠 반응도 좋아서 홍보에 큰 도움이 될 수 있습니다. 또한
+                      영상에 출연한 가상인간으로 별도의 인스타그램, 유튜브
+                      채널을 운영하게 되면 더 큰 홍보효과를 보실 수 있습니다.
+                    </>
+                  ) : (
+                    <>
+                      Amber Tual not only produces virtual humans, but also
+                      provides video production services using virtual humans.
+                      <br />
+                      <br />
+                      Professional video teams that produced a number of popular
+                      video contents with more than 1 million views will help
+                      you with everything from video planning to filming using
+                      virtual humans.
+                      <br />
+                      <br />
+                      With differentiated planning power, corporate promotional
+                      videos, YouTube videos, advertising CFs, and viral videos
+                      using virtual humans can be produced, and it is also
+                      possible to convert people from already filmed videos into
+                      virtual humans.
+                      <br />
+                      <br />
+                      Videos featuring virtual humans have more issues than
+                      regular videos and have a good response to content, which
+                      can be of great help in promoting them. In addition, if
+                      you run a separate Instagram and YouTube channel as a
+                      virtual person who appeared in the video, you can see a
+                      greater promotional effect.
+                    </>
+                  )}
                 </Text>
               </Box>
             </Box>

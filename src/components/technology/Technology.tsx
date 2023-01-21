@@ -57,7 +57,11 @@ const Technology = () => {
       <Box width="100%" px="20px">
         <HighLightBox>
           <Text fontSize="24px">
-            사람과 유사도 98%로 사람처럼 매우 자연스러움
+            {lang === "ko" ? (
+              <>사람과 유사도 98%로 사람처럼 매우 자연스러움</>
+            ) : (
+              <>It's 98% similar to humans, so it's very natural like humans.</>
+            )}
           </Text>
         </HighLightBox>
       </Box>
@@ -65,7 +69,17 @@ const Technology = () => {
       <Box width="100%" mt="16px" px="20px">
         <HighLightBox>
           <Text fontSize="24px">
-            3D컴퓨터그래픽(CG) 제작 방식 보다 가상인간 제작 속도 약 50배 빠름
+            {lang === "ko" ? (
+              <>
+                3D컴퓨터그래픽(CG) 제작 방식 보다 가상인간 제작 속도 약 50배
+                빠름
+              </>
+            ) : (
+              <>
+                Virtual human production speed is about 50 times faster than 3D
+                computer graphics (CG) production method.
+              </>
+            )}
           </Text>
         </HighLightBox>
       </Box>
