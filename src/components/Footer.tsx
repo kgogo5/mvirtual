@@ -21,6 +21,7 @@ const FooterWrap = styled.footer`
   & .animationBox {
     /* transform: translate(0px, -20px); */
     margin: 0 auto;
+    padding: 0 20px;
     max-width: 1164px;
     width: 100%;
     display: flex;
@@ -165,12 +166,16 @@ const _ = () => {
           <Box display="flex">
             <IconButton
               onClick={() =>
-                window.open("http://pf.kakao.com/_HWFnxj/chat", "_blank")
+                window.open("https://pf.kakao.com/_HWFnxj", "_blank")
               }
             >
               <img src="/image/footer_icon01.png" alt="kakaotalk icon" />
             </IconButton>
-            <IconButton>
+            <IconButton
+              onClick={() =>
+                window.open("https://blog.naver.com/mvirtual", "_blank")
+              }
+            >
               <img src="/image/footer_icon02.png" alt="blog icon" />
             </IconButton>
             <IconButton>

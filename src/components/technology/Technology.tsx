@@ -65,7 +65,7 @@ const Technology = () => {
       <Box width="100%" mt="16px" px="20px">
         <HighLightBox>
           <Text fontSize="24px">
-            3d컴퓨터그래픽(CG) 제작 방식 보다 가상인간 제작 속도 약 50배 빠름
+            3D컴퓨터그래픽(CG) 제작 방식 보다 가상인간 제작 속도 약 50배 빠름
           </Text>
         </HighLightBox>
       </Box>
@@ -79,14 +79,16 @@ const Technology = () => {
             maxWidth="1164px"
             textAlign="left"
           >
-            <Text type="description" color="#fff">
+            <Text type="description" color="#fff" fontWeight="400">
               {lang === "ko" ? (
                 <>
                   기존에 3D컴퓨터그래픽(CG)으로 그리는 가상인간 제작방식은
                   제작기간이 수개월이 걸리고 비용도 크다는 문제점이 있었습니다.
-                  엠버추얼의 AI기반 가상인간 제작방식은 1분영상기준 약1일정도의
-                  빠른 제작속도와 사람과 구분하지 못할 정도의 자연스러운
-                  가상인간 구현이 가능합니다.
+                  <br />
+                  <br />
+                  엠버추얼의 Ai 딥러닝 기반 가상인간 제작방식은 기존 수개월
+                  걸리는 제작속도 문제를 약 1일 정도로 획기적으로 단축시켰고
+                  사람과 유사도 98%의 자연스러운 가상인간 구현이 가능합니다.
                 </>
               ) : (
                 <>Virtual human production reference</>

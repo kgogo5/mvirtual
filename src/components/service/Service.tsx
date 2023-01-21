@@ -10,49 +10,6 @@ import ServiceVideo from "./element/ServiceVideo";
 
 const Wrap = styled(Box)``;
 
-const CircleBox = styled.div`
-  position: relative;
-  width: 240px;
-  height: 240px;
-
-  @media screen and (max-width: 1080px) {
-    width: 180px;
-    height: 180px;
-  }
-
-  & .animate {
-    width: 240px;
-    height: 240px;
-    background: #fff;
-
-    @media screen and (max-width: 1080px) {
-      width: 180px;
-      height: 180px;
-    }
-  }
-
-  & .text {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #000;
-    font-size: 23px;
-    font-weight: bold;
-    line-height: 1.6;
-    z-index: 3;
-    font-family: "Pretendard", sans-serif;
-
-    @media screen and (max-width: 1080px) {
-      font-size: 18px;
-    }
-  }
-`;
-
 const ImgGrid = styled(Box)`
   img {
     max-width: 100%;
@@ -68,9 +25,27 @@ const ImageBox = styled.div`
 `;
 
 const VisualList = styled(Box)`
+  margin: 0 auto;
+  max-width: 1164px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 60px; */
+
+  & > div {
+    display: grid;
+    gap: 40px 60px;
+    grid-template-columns: 1fr 1fr;
+
+    @media screen and (max-width: 768px) {
+      gap: 20px 30px;
+    }
+  }
+
   && {
     @media screen and (max-width: 1080px) {
-      flex-direction: column;
       gap: 48px 0;
     }
   }
@@ -79,6 +54,45 @@ const VisualList = styled(Box)`
 const HalfBoxReverse = styled(HalfBox)`
   @media screen and (max-width: 1080px) {
     flex-direction: column-reverse;
+  }
+`;
+
+const ListBox = styled.div`
+  position: relative;
+  padding-bottom: 30px;
+  max-width: 290px;
+  width: 100%;
+  border: 1px solid #fff;
+  overflow: hidden;
+
+  & > div:nth-child(2) {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80px;
+    background-color: #26d9c7;
+    z-index: 2;
+  }
+
+  & img {
+    max-width: 100%;
+    width: 100%;
+  }
+`;
+const ImgBox = styled(Box)`
+  && {
+    margin-bottom: 40px;
+
+    img {
+      @media screen and (max-width: 1080px) {
+        max-width: 100%;
+        width: 100%;
+      }
+    }
   }
 `;
 
@@ -99,129 +113,154 @@ const Service = () => {
               </Text>
             </Box>
 
-            <VisualList
-              mt="60px"
-              display="flex"
-              justifyContent="center"
-              alignItems="center"
-              gap="0 60px"
-            >
-              <CircleBox>
-                <motion.span
-                  className="text"
-                  animate={{
-                    color: ["#000", "#fff", "#fff", "#000", "#000"],
-                    scale: [1, 1.2, 1.2, 1, 1],
-                  }}
-                  transition={{
-                    duration: 2,
-                    ease: "easeInOut",
-                    times: [0, 0.2, 0.5, 0.8, 1],
-                    repeat: Infinity,
-                    repeatDelay: 3,
-                  }}
-                >
-                  가상인간 영상 제작
-                </motion.span>
-                <motion.div
-                  className="animate"
-                  animate={{
-                    scale: [1, 1.2, 1.2, 1, 1],
-                    rotate: [0, 0, 90, 90, 0],
-                    background: ["#fff", "#26d9c7", "#26d9c7", "#fff", "#fff"],
-                    borderRadius: ["5%", "5%", "50%", "50%", "5%"],
-                  }}
-                  transition={{
-                    duration: 2,
-                    ease: "easeInOut",
-                    times: [0, 0.2, 0.5, 0.8, 1],
-                    repeat: Infinity,
-                    repeatDelay: 3,
-                  }}
-                />
-              </CircleBox>
-
-              <CircleBox>
-                <motion.span
-                  className="text"
-                  animate={{
-                    color: ["#000", "#fff", "#fff", "#000", "#000"],
-                    scale: [1, 1.2, 1.2, 1, 1],
-                  }}
-                  transition={{
-                    duration: 2,
-                    ease: "easeInOut",
-                    times: [0, 0.2, 0.5, 0.8, 1],
-                    repeat: Infinity,
-                    repeatDelay: 3,
-                    delay: 1,
-                  }}
-                >
-                  가상인간 SNS운영
-                </motion.span>
-                <motion.div
-                  className="animate"
-                  animate={{
-                    scale: [1, 1.2, 1.2, 1, 1],
-                    rotate: [0, 0, 90, 90, 0],
-                    background: ["#fff", "#26d9c7", "#26d9c7", "#fff", "#fff"],
-                    borderRadius: ["5%", "5%", "50%", "50%", "5%"],
-                  }}
-                  transition={{
-                    duration: 2,
-                    ease: "easeInOut",
-                    times: [0, 0.2, 0.5, 0.8, 1],
-                    repeat: Infinity,
-                    repeatDelay: 3,
-                    delay: 1,
-                  }}
-                />
-              </CircleBox>
-
-              <CircleBox>
-                <motion.span
-                  className="text"
-                  animate={{
-                    color: ["#000", "#fff", "#fff", "#000", "#000"],
-                    scale: [1, 1.2, 1.2, 1, 1],
-                  }}
-                  transition={{
-                    duration: 2,
-                    ease: "easeInOut",
-                    times: [0, 0.2, 0.5, 0.8, 1],
-                    repeat: Infinity,
-                    repeatDelay: 3,
-                    delay: 2,
-                  }}
-                >
-                  가상인간을 활용한
-                  <br />
-                  기업마케팅
-                </motion.span>
-                <motion.div
-                  className="animate"
-                  animate={{
-                    scale: [1, 1.2, 1.2, 1, 1],
-                    rotate: [0, 0, 90, 90, 0],
-                    background: ["#fff", "#26d9c7", "#26d9c7", "#fff", "#fff"],
-                    borderRadius: ["5%", "5%", "50%", "50%", "5%"],
-                  }}
-                  transition={{
-                    duration: 2,
-                    ease: "easeInOut",
-                    times: [0, 0.2, 0.5, 0.8, 1],
-                    repeat: Infinity,
-                    repeatDelay: 3,
-                    delay: 2,
-                  }}
-                />
-              </CircleBox>
+            <VisualList mt="60px">
+              <Box>
+                <ListBox>
+                  <motion.div
+                    animate={{
+                      scale: [1, 1.4, 1],
+                    }}
+                    transition={{
+                      duration: 2,
+                      ease: "circInOut",
+                      times: [0, 0.5, 1],
+                      repeat: Infinity,
+                      repeatDelay: 3,
+                    }}
+                  >
+                    <img src="/image/service_list01.jpg" alt="" />
+                  </motion.div>
+                  <Box>
+                    <Text type="sub">
+                      Ai가상인간 모델
+                      <br />
+                      에이전시 서비스
+                    </Text>
+                  </Box>
+                </ListBox>
+                <ListBox>
+                  <motion.div
+                    animate={{
+                      scale: [1, 1.4, 1],
+                    }}
+                    transition={{
+                      duration: 2,
+                      ease: "circInOut",
+                      times: [0, 0.5, 1],
+                      repeat: Infinity,
+                      repeatDelay: 3,
+                      delay: 1,
+                    }}
+                  >
+                    <img src="/image/service_list02.jpg" alt="" />
+                  </motion.div>
+                  <Box>
+                    <Text type="sub">Ai가상인간 영상 제작</Text>
+                  </Box>
+                </ListBox>
+                <ListBox>
+                  <motion.div
+                    animate={{
+                      scale: [1, 1.4, 1],
+                    }}
+                    transition={{
+                      duration: 2,
+                      ease: "circInOut",
+                      times: [0, 0.5, 1],
+                      repeat: Infinity,
+                      repeatDelay: 3,
+                      delay: 2,
+                    }}
+                  >
+                    <img src="/image/service_list03.jpg" alt="" />
+                  </motion.div>
+                  <Box>
+                    <Text type="sub">Ai가상인간 SNS운영</Text>
+                  </Box>
+                </ListBox>
+                <ListBox>
+                  <motion.div
+                    animate={{
+                      scale: [1, 1.4, 1],
+                    }}
+                    transition={{
+                      duration: 2,
+                      ease: "circInOut",
+                      times: [0, 0.5, 1],
+                      repeat: Infinity,
+                      repeatDelay: 3,
+                      delay: 3,
+                    }}
+                  >
+                    <img src="/image/service_list04.jpg" alt="" />
+                  </motion.div>
+                  <Box>
+                    <Text type="sub">
+                      Ai가상인간을 활용한
+                      <br />
+                      기업마케팅
+                    </Text>
+                  </Box>
+                </ListBox>
+              </Box>
             </VisualList>
           </>
         </Section>
 
+        {/* Ai가상인간 모델 에이전시 서비스 */}
+        <Section color="sub" id="agency">
+          <>
+            <Box>
+              <Text type="title" color="#26d9c7">
+                Ai가상인간 모델 에이전시 서비스
+              </Text>
+            </Box>
+            <HalfBox>
+              <ImgBox mt="60px">
+                <img src="/image/service01.png" alt="Service Grid" />
+              </ImgBox>
+
+              <Article>
+                <Box>
+                  <Text type="description" color="#fff">
+                    영구적으로 소유할 수 있는 Ai가상인간 모델 공급
+                  </Text>
+                </Box>
+                <Box mt="36px">
+                  <Text type="description" color="#fff" fontWeight="400">
+                    {lang === "ko" ? (
+                      <>
+                        엠버추얼은 모델을 필요로 하는 여러 분야에 오직 한
+                        기업만을 위해 활동하며 영구적으로 소유할 수 있는
+                        Ai가상인간 모델을 공급해드리고 있습니다. 
+                        <br /> <br />
+                          변화에 빠른 기업들은 사람모델 보다 Ai가상인간 모델을
+                        활용하여 광고영상, 유튜브/인스타그램의 콘텐츠, 쇼핑몰
+                        운영, 신제품과 콜라보, 화보촬영, 회사홍보영상등을
+                        제작하면서 큰 효과를 보고 있습니다.  
+                        <br /> <br />  이제 당신의 기업만을 위해 활동하는
+                        Ai가상인간 모델을 영구적으로 소유하세요!
+                      </>
+                    ) : (
+                      <>
+                        A video featuring an Ai virtual human with a similarity
+                        of 98% to a human becomes a big issue and is a great
+                        help in publicity.
+                      </>
+                    )}
+                  </Text>
+                </Box>
+              </Article>
+            </HalfBox>
+
+            <ImgGrid mt="60px">
+              <img src="/image/service_grid.png" alt="Service Grid" />
+            </ImgGrid>
+          </>
+        </Section>
+
         {/* 가상인간 영상 제작 서비스 */}
-        <Section color="sub">
+        <Section id="aiservice">
           <>
             <Box>
               <Text type="title" color="#26d9c7">
@@ -235,30 +274,35 @@ const Service = () => {
 
             <Box m="100px auto 0" maxWidth="1080px" textAlign="left">
               <Text type="description" color="#fff">
-                차별화된 기획력으로 가상인간을 활용한 유튜브 영상, 기업 홍보
-                영상, 광고CF영상등이 제작 가능하며 이미 촬영 된 영상의 인물을
-                가상인간으로 변환하는 것도 가능합니다.
-                <br />
-                100만 조회수 이상의 인기 영상 콘텐츠를 다수 제작했던 전문
-                작가팀, PD팀들이 가상인간을 활용한 영상 기획부터 촬영까지 모든
-                것을 도와드립니다.
-                <br />
-                <br />
-                가상인간이 출연하는 영상은 일반 모델이 출연하는 영상 보다 이슈도
-                많이 되고 조회수도 잘 나와 홍보에 많은 도움이 될 수 있습니다.
-                또한 영상에 출연한 가상인간으로 별도의 인스타그램, 유튜브 채널을
-                운영하게 되면 더 큰 홍보 효과를 보실 수 있습니다.{" "}
+                100만 조회수 이상의 인기영상들을 제작했던 전문 영상 촬영팀 보유
               </Text>
+              <Box mt="36px">
+                <Text type="description" color="#fff" fontWeight="400">
+                  엠버추얼은 가상인간 제작 뿐만 아니라 가상인간을 활용한 영상
+                  제작 서비스도 진행하고 있습니다. <br />
+                  <br />
+                  100만 조회수 이상의 인기 영상 콘텐츠를 다수 제작했던 전문
+                  영상팀들이 가상인간을 활용한 영상기획부터 촬영까지 모든 것을
+                  도와드립니다.
+                  <br />
+                  <br />
+                  차별화된 기획력으로 가상인간을 활용한 기업홍보영상,
+                  유튜브영상, 광고CF, 바이럴 영상등이 제작 가능하며 이미 촬영 된
+                  영상의 인물을 가상인간으로 변환하는 것도 가능합니다.
+                  <br />
+                  <br />
+                  가상인간이 출연하는 영상은 일반 영상보다 이슈가 많이 되고
+                  콘텐츠 반응도 좋아서 홍보에 큰 도움이 될 수 있습니다. 또한
+                  영상에 출연한 가상인간으로 별도의 인스타그램, 유튜브 채널을
+                  운영하게 되면 더 큰 홍보효과를 보실 수 있습니다.
+                </Text>
+              </Box>
             </Box>
-
-            <ImgGrid mt="100px">
-              <img src="/image/service_grid.png" alt="Service Grid" />
-            </ImgGrid>
           </>
         </Section>
 
         {/* 가상인간 SNS운영 서비스 */}
-        <Section>
+        <Section color="sub" id="sns">
           <>
             <Box mb="60px">
               <Text component="h2" type="title" color="#26d9c7">
@@ -281,8 +325,8 @@ const Service = () => {
                   <Text type="sub" color="#fff">
                     {lang === "ko" ? (
                       <>
-                        가상인간 인스타그램의 좋아요, 댓글이 평균 약{" "}
-                        <PointColor>400%가 더 높게</PointColor> 나옵니다.
+                        사람보다 가상인간이 인스타그램 좋아요, 댓글, 팔로워 수가{" "}
+                        <PointColor>평균 약 400% 더 높음</PointColor>
                       </>
                     ) : (
                       <>Do you want to create a special video?</>
@@ -291,7 +335,7 @@ const Service = () => {
                 </Box>
 
                 <Box mt="18px">
-                  <Text type="description" color="#fff">
+                  <Text type="description" color="#fff" fontWeight="400">
                     {lang === "ko" ? (
                       <>
                         엠버추얼은 가상인간에 매력적인 세계관, 콘텐츠 기획력을
@@ -324,7 +368,7 @@ const Service = () => {
         </Section>
 
         {/* 가상인간을 활용한 기업 마케팅 */}
-        <Section color="sub">
+        <Section id="marketing">
           <>
             <Box mb="60px">
               <Text component="h2" type="title" color="#26d9c7">
@@ -337,8 +381,20 @@ const Service = () => {
             </Box>
             <HalfBoxReverse>
               <Article>
-                <Box>
-                  <Text type="description" color="#fff">
+                <Box mt="18px" width="100%">
+                  <Text type="sub" color="#fff">
+                    {lang === "ko" ? (
+                      <>
+                        A스타트업 <PointColor>월 매출 80억</PointColor>을 만들어
+                        낸 전문 마케팅 보유
+                      </>
+                    ) : (
+                      <>Do you want to create a special video?</>
+                    )}
+                  </Text>
+                </Box>
+                <Box mt="18px">
+                  <Text type="description" color="#fff" fontWeight="400">
                     {lang === "ko" ? (
                       <>
                         많은 기업들이 가상인간을 어떻게 활용을 해야 될 지에 대해

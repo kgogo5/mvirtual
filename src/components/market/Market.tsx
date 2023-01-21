@@ -16,6 +16,7 @@ const ImageBox = styled.div`
 `;
 
 const HalfBoxMobile = styled(HalfBox)`
+  gap: 40px;
   @media screen and (max-width: 1080px) {
     gap: 20px;
   }

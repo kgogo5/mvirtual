@@ -46,7 +46,7 @@ const Reference = () => {
       <Box width="100%">
         <Section sectionPadding="40px 15px" animation={false}>
           <>
-            <Box mb="60px">
+            <Box mb="110px">
               <Text type="title" color="#fff">
                 <PointColor>
                   {lang === "ko" ? (
@@ -75,9 +75,9 @@ const Reference = () => {
                 <Box textAlign="left">
                   <Text component="strong" fontSize="26px" color="#fff">
                     {lang === "ko" ? (
-                      <>가상인간 벨라 댄스영상</>
+                      <>가상인간 비타 댄스영상</>
                     ) : (
-                      <>Virtual human Bella photoshoot video</>
+                      <>Virtual human Vita photoshoot video</>
                     )}
                   </Text>
                 </Box>

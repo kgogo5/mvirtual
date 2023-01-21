@@ -17,7 +17,7 @@ const Wrap = styled.section<{
   sectionPadding: "default" | string;
 }>`
   padding: ${(props) =>
-    props.sectionPadding === "default" ? `250px 15px` : props.sectionPadding};
+    props.sectionPadding === "default" ? `240px 15px` : props.sectionPadding};
   display: flex;
   align-items: center;
   justify-content: space-around;

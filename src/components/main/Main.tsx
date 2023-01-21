@@ -107,7 +107,7 @@ const Main = () => {
                 </Box>
 
                 <Box mt="30px" width="100%">
-                  <Button to="market#ludomagalu">
+                  <Button to="service#agency">
                     <Box
                       component="span"
                       display="flex"
@@ -168,7 +168,7 @@ const Main = () => {
                 </Box>
 
                 <Box mt="30px" width="100%">
-                  <Button to="market#ludomagalu">
+                  <Button to="service#aiservice">
                     <Box
                       component="span"
                       display="flex"
@@ -194,7 +194,7 @@ const Main = () => {
         </Section>
 
         {/* Ai가상인간 SNS운영 서비스 */}
-        <Section>
+        <Section id="sns">
           <>
             <Box mb="60px">
               <Text component="h2" type="title" color="#26d9c7">
@@ -238,7 +238,7 @@ const Main = () => {
                 </Box>
 
                 <Box mt="30px" width="100%">
-                  <Button to="market#ludomagalu">
+                  <Button to="service#sns">
                     <Box
                       component="span"
                       display="flex"
@@ -300,7 +300,7 @@ const Main = () => {
                 </Box>
 
                 <Box mt="30px" width="100%">
-                  <Button to="market#ludomagalu">
+                  <Button to="service#marketing">
                     <Box
                       component="span"
                       display="flex"

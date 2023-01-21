@@ -134,7 +134,7 @@ const KakaoText = styled(Button)`
 
 const SubmitButton = styled(Button)`
   && {
-    max-width: 350px;
+    max-width: 260px;
     width: 100%;
     color: #000 !important;
     background-color: #26d9c7;
@@ -239,7 +239,7 @@ const Contact = () => {
               <Box mt="15px" display="flex" justifyContent="center">
                 <KakaoText
                   onClick={() =>
-                    window.open("http://pf.kakao.com/_HWFnxj/chat", "_blank")
+                    window.open("https://pf.kakao.com/_HWFnxj", "_blank")
                   }
                 >
                   <img src="/image/kakao.png" alt="kakao logo" />
@@ -353,7 +353,7 @@ const Contact = () => {
                 }
                 label={
                   lang === "ko"
-                    ? "가상인간 영상제작"
+                    ? "Ai가상인간 영상제작"
                     : "Virtual human video production"
                 }
               />
@@ -378,7 +378,7 @@ const Contact = () => {
                 }
                 label={
                   lang === "ko"
-                    ? "가상인간 SNS 운영 대행"
+                    ? "Ai가상인간 SNS 운영 대행"
                     : "Acting Virtual Human SNS Management"
                 }
               />
@@ -403,7 +403,7 @@ const Contact = () => {
                 }
                 label={
                   lang === "ko"
-                    ? "가상인간 활용한 기업 마케팅"
+                    ? "Ai가상인간 활용한 기업 마케팅"
                     : "Enterprise Marketing Using Virtual Humans"
                 }
               />

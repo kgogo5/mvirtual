@@ -13,6 +13,10 @@ const ViewVideo = styled.div`
   max-width: 1161px;
   width: 100%;
 
+  @media screen and (max-width: 1080px) {
+    padding: 0 20px 80px;
+  }
+
   & .reactPlayer {
     width: 100% !important;
     height: auto !important;

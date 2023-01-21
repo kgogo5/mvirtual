@@ -14,6 +14,7 @@ const Wrap = styled.div`
 const FlexBox = styled(Box)`
   @media screen and (max-width: 1080px) {
     flex-direction: column;
+    gap: 80px 0;
   }
 `;
 
