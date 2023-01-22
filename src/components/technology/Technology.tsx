@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import { useRecoilValue } from "recoil";
 import styled from "styled-components";
-import { language } from "../../atom";
+import { language, mobile } from "../../atom";
 import { PointColor } from "../../styles/common";
 import Section from "../elements/Section";
 import Text from "../elements/Text";
@@ -35,6 +35,7 @@ const HighLightBox = styled.div`
 
 const Technology = () => {
   const lang = useRecoilValue(language);
+  const isMobile = useRecoilValue(mobile);
 
   return (
     <Wrap width="100%">
@@ -46,7 +47,7 @@ const Technology = () => {
                 {lang === "ko" ? (
                   <>엠버추얼 가상인간 기술</>
                 ) : (
-                  <>Virtual human production reference</>
+                  <>Mvirtual’s virtual human technology</>
                 )}
               </PointColor>
             </Text>
@@ -60,7 +61,10 @@ const Technology = () => {
             {lang === "ko" ? (
               <>사람과 유사도 98%로 사람처럼 매우 자연스러움</>
             ) : (
-              <>It's 98% similar to humans, so it's very natural like humans.</>
+              <>
+                With its 98% similarity to humans, it is extremely natural like
+                humans.
+              </>
             )}
           </Text>
         </HighLightBox>
@@ -76,8 +80,8 @@ const Technology = () => {
               </>
             ) : (
               <>
-                Virtual human production speed is about 50 times faster than 3D
-                computer graphics (CG) production method.
+                It is about 50 times faster than 3D computer graphics (CG)
+                production method.
               </>
             )}
           </Text>
@@ -105,15 +109,40 @@ const Technology = () => {
                   사람과 유사도 98%의 자연스러운 가상인간 구현이 가능합니다.
                 </>
               ) : (
-                <>Virtual human production reference</>
+                <>
+                  The virtual human production method, which is drawn with 3D
+                  computer graphics (CG), took months to produce and was
+                  expensive.
+                  <br />
+                  <br />
+                  Mvirtual’s Ai deep learning-based virtual human production
+                  method dramatically reduced the production speed problem,
+                  which takes months, to about 1 day, and enables natural
+                  virtual human embodiment with 98% similarity to humans.
+                </>
               )}
             </Text>
 
             <Box mt="30px" textAlign="center">
-              <img
-                src="/image/technology_grid.png"
-                alt="엠버추얼 가상인간 기술"
-              />
+              {isMobile ? (
+                <img
+                  src={
+                    lang === "ko"
+                      ? "/image/technology_grid_mo.png"
+                      : "/image/technology_grid_en_mo.png"
+                  }
+                  alt="엠버추얼 가상인간 기술"
+                />
+              ) : (
+                <img
+                  src={
+                    lang === "ko"
+                      ? "/image/technology_grid.png"
+                      : "/image/technology_grid_en.png"
+                  }
+                  alt="엠버추얼 가상인간 기술"
+                />
+              )}
             </Box>
           </Box>
         </>

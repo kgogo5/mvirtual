@@ -105,7 +105,7 @@ const Instagram = (props: IInstagram) => {
         <ImageBox ref={ref}>
           <motion.img
             src={image}
-            alt={name}
+            alt={title}
             variants={{
               on: {
                 y: 0,
@@ -128,10 +128,12 @@ const Instagram = (props: IInstagram) => {
             lang === "ko" ? "인스타그램" : "Instagram"
           }: ${name}`}</Info>
           <Info type="description" color="#fff" fontWeight="400">{`${
-            lang === "ko" ? "팔로워" : "Followers"
+            lang === "ko" ? "팔로워" : "Follower"
           }: ${follower}`}</Info>
           <Info type="description" color="#fff" fontWeight="400">{`${
-            lang === "ko" ? "게시물당 예상 수입" : "Estimated income per post"
+            lang === "ko"
+              ? "게시물당 예상 수입"
+              : "Expected revenue for a posting"
           }: ${income}`}</Info>
           {activity && (
             <Info
@@ -142,7 +144,7 @@ const Instagram = (props: IInstagram) => {
             >{`${
               lang === "ko"
                 ? "광고 모델 활동"
-                : "advertising modeling activities"
+                : "Activities for advertisement model"
             }: ${activity}`}</Info>
           )}
         </InstagramBox>

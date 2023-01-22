@@ -78,7 +78,7 @@ const Main = () => {
               <ImageBox>
                 <img
                   src="/image/section_01.jpg"
-                  alt="Ai가상인간으로 구현한 가상인간 모델"
+                  alt="Ai Virtual Human Video Production Service"
                 />
               </ImageBox>
               <Article>
@@ -137,7 +137,7 @@ const Main = () => {
                 {lang === "ko" ? (
                   <>Ai가상인간 영상제작 서비스</>
                 ) : (
-                  <>Wanting to create unique video?</>
+                  <>Ai Virtual Human Video Production Service</>
                 )}
               </Text>
             </Box>
@@ -189,7 +189,7 @@ const Main = () => {
               <ImageBox>
                 <img
                   src="/image/section_02.jpg"
-                  alt="Ai가상인간이 출연하는 영상"
+                  alt="Ai Virtual Human Video Production Service"
                 />
               </ImageBox>
             </HalfBoxReverse>
@@ -204,13 +204,16 @@ const Main = () => {
                 {lang === "ko" ? (
                   <>Ai가상인간 SNS운영 서비스</>
                 ) : (
-                  <>Ai Virtual Human SNS Operation Service</>
+                  <>Ai Virtual Human Social Media Management Service</>
                 )}
               </Text>
             </Box>
             <HalfBox>
               <ImageBox>
-                <img src="/image/section_03.jpg" alt="인스타그램 채널" />
+                <img
+                  src="/image/section_03.jpg"
+                  alt="Ai Virtual Human Social Media Management Service"
+                />
               </ImageBox>
               <Article>
                 <Box mt="18px" width="100%">
@@ -218,7 +221,7 @@ const Main = () => {
                     {lang === "ko" ? (
                       <>인스타그램, 유튜브 채널 활성화가 안되시나요?</>
                     ) : (
-                      <>Do you want to create a special video?</>
+                      <>Hard to boost Instagram, Youtube account traffic?</>
                     )}
                   </Text>
                 </Box>
@@ -232,9 +235,9 @@ const Main = () => {
                       </>
                     ) : (
                       <>
-                        A video featuring an Ai virtual human with a similarity
-                        of 98% to a human becomes a big issue and is a great
-                        help in publicity.
+                        Virtual Human is 400 % more likely to receive likes,
+                        comments & followers than human Social Media
+                        influencers.
                       </>
                     )}
                   </Text>
@@ -268,7 +271,7 @@ const Main = () => {
                 {lang === "ko" ? (
                   <>Ai가상인간 마케팅 서비스</>
                 ) : (
-                  <>Ai Virtual Human Marketing Services</>
+                  <>Ai Virtual Human Marketing Service</>
                 )}
               </Text>
             </Box>
@@ -279,7 +282,7 @@ const Main = () => {
                     {lang === "ko" ? (
                       <>마케팅이 안되어서 어려움을 겪고 있으신가요?</>
                     ) : (
-                      <>Do you want to create a special video?</>
+                      <>Frustrated looking for breakthrough in marketing?</>
                     )}
                   </Text>
                 </Box>
@@ -294,9 +297,9 @@ const Main = () => {
                       </>
                     ) : (
                       <>
-                        A video featuring an Ai virtual human with a similarity
-                        of 98% to a human becomes a big issue and is a great
-                        help in publicity.
+                        Our team of marketing experts has increased $ 6 million
+                        in monthly sales And will solve your marketing
+                        difficulties using Ai Virtual Human.
                       </>
                     )}
                   </Text>
@@ -321,7 +324,7 @@ const Main = () => {
               <ImageBox>
                 <img
                   src="/image/section_04.jpg"
-                  alt="Ai가상인간을 활용한 기업의 마케팅"
+                  alt="Ai Virtual Human Marketing Service"
                 />
               </ImageBox>
             </HalfBoxReverse>
@@ -331,33 +334,34 @@ const Main = () => {
         {/* 엠버추얼 가상인간 기술 */}
         <Section>
           <>
-            <Box mb="40px">
+            <Box m="0 auto" maxWidth="1164px" width="100%">
               <Text component="h2" type="title" color="#26d9c7">
                 {lang === "ko" ? (
                   <>엠버추얼 가상인간 기술</>
                 ) : (
-                  <>Emerging Virtual Human Technology</>
+                  <>M.Virtual’s Ai Virtual Human Technology</>
                 )}
               </Text>
             </Box>
 
-            <Text type="title" color="#fff">
-              {lang === "ko" ? (
-                <>
-                  우리의 가상인간 기술은 너무 사람 같아서
-                  <Br />
-                  사람과 구분을 하지 못합니다.
-                </>
-              ) : (
-                <>
-                  Without our knowledge, other companies are using virtual
-                  humans. It <PointColor>generates 600 billion won</PointColor>{" "}
-                  in annual sales.
-                </>
-              )}
-            </Text>
+            <Box m="40px auto 0" maxWidth="1164px" width="100%">
+              <Text type="title" color="#fff">
+                {lang === "ko" ? (
+                  <>
+                    우리의 가상인간 기술은 너무 사람 같아서
+                    <Br />
+                    사람과 구분을 하지 못합니다.
+                  </>
+                ) : (
+                  <>
+                    Our Virtual Human Technology results in hyper reality <Br />
+                    And cannot tell the difference from actual human being.
+                  </>
+                )}
+              </Text>
+            </Box>
 
-            <Box mt="20px">
+            <Box m="20px auto 0" maxWidth="1164px" width="100%">
               <Text type="description" color="#fff">
                 {lang === "ko" ? (
                   <>
@@ -369,8 +373,11 @@ const Main = () => {
                   </>
                 ) : (
                   <>
-                    From video production using virtual humans to marketing,
-                    Amber Tual will help you.
+                    Our virtual Human production technology doesn’t use 3D
+                    computer graphic (CGI) which looks unnatural and expensive,
+                    But we use Ai deep learning production method with results
+                    in 98% similarity rate to real human, so people cannot
+                    distinguish which is real or virtual.
                   </>
                 )}
               </Text>

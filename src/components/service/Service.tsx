@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import { Article, HalfBox, PointColor } from "../../styles/common";
 import { useRecoilValue } from "recoil";
-import { language } from "../../atom";
+import { language, mobile } from "../../atom";
 import Section from "../elements/Section";
 import styled from "styled-components";
 import Text from "../elements/Text";
@@ -96,6 +96,7 @@ const ImgBox = styled(Box)`
 
 const Service = () => {
   const lang = useRecoilValue(language);
+  const isMobile = useRecoilValue(mobile);
 
   return (
     <>
@@ -106,7 +107,11 @@ const Service = () => {
             <Box mb="60px">
               <Text type="title" color="#fff">
                 <PointColor>
-                  {lang === "ko" ? <>엠버추얼 서비스</> : <>MVirtual service</>}
+                  {lang === "ko" ? (
+                    <>엠버추얼 서비스</>
+                  ) : (
+                    <>M.Virtual Service</>
+                  )}
                 </PointColor>
               </Text>
             </Box>
@@ -126,7 +131,10 @@ const Service = () => {
                       repeatDelay: 3,
                     }}
                   >
-                    <img src="/image/service_list01.jpg" alt="" />
+                    <img
+                      src="/image/service_list01.jpg"
+                      alt="Ai Virtual Human Model Agency Service"
+                    />
                   </motion.div>
                   <Box>
                     <Text type="sub">
@@ -137,7 +145,7 @@ const Service = () => {
                           에이전시 서비스
                         </>
                       ) : (
-                        <>Ai Virtual Human Model Agency Services</>
+                        <>Ai Virtual Human Model Agency Service</>
                       )}
                     </Text>
                   </Box>
@@ -156,7 +164,10 @@ const Service = () => {
                       delay: 1,
                     }}
                   >
-                    <img src="/image/service_list02.jpg" alt="" />
+                    <img
+                      src="/image/service_list02.jpg"
+                      alt="Ai Virtual Human Video Production"
+                    />
                   </motion.div>
                   <Box>
                     <Text type="sub">
@@ -182,14 +193,17 @@ const Service = () => {
                       delay: 2,
                     }}
                   >
-                    <img src="/image/service_list03.jpg" alt="" />
+                    <img
+                      src="/image/service_list03.jpg"
+                      alt="Ai Virtual Human Social Media Management"
+                    />
                   </motion.div>
                   <Box>
                     <Text type="sub">
                       {lang === "ko" ? (
                         <>Ai가상인간 SNS운영</>
                       ) : (
-                        <>Ai Virtual Human SNS Operations</>
+                        <>Ai Virtual Human Social Media Management</>
                       )}
                     </Text>
                   </Box>
@@ -208,7 +222,10 @@ const Service = () => {
                       delay: 3,
                     }}
                   >
-                    <img src="/image/service_list04.jpg" alt="" />
+                    <img
+                      src="/image/service_list04.jpg"
+                      alt="Ai Virtual Human Enterprise Marketing"
+                    />
                   </motion.div>
                   <Box>
                     <Text type="sub">
@@ -219,7 +236,7 @@ const Service = () => {
                           기업마케팅
                         </>
                       ) : (
-                        <>Ai Corporate Marketing Using Virtual Humans</>
+                        <>Ai Virtual Human Enterprise Marketing</>
                       )}
                     </Text>
                   </Box>
@@ -237,13 +254,16 @@ const Service = () => {
                 {lang === "ko" ? (
                   <>Ai가상인간 모델 에이전시 서비스</>
                 ) : (
-                  <>Ai Virtual Human Model Agency Services</>
+                  <>Ai Virtual Human Model Agency Service</>
                 )}
               </Text>
             </Box>
             <HalfBox>
               <ImgBox mt="60px">
-                <img src="/image/service01.png" alt="Service Grid" />
+                <img
+                  src="/image/service01.png"
+                  alt="We provide permanent ownership of Ai Virtual Human Model"
+                />
               </ImgBox>
 
               <Article>
@@ -252,7 +272,9 @@ const Service = () => {
                     {lang === "ko" ? (
                       <>영구적으로 소유할 수 있는 Ai가상인간 모델 공급</>
                     ) : (
-                      <>Ai Virtual Human Model Agency Services</>
+                      <>
+                        We provide permanent ownership of Ai Virtual Human Model
+                      </>
                     )}
                   </Text>
                 </Box>
@@ -273,9 +295,19 @@ const Service = () => {
                       </>
                     ) : (
                       <>
-                        A video featuring an Ai virtual human with a similarity
-                        of 98% to a human becomes a big issue and is a great
-                        help in publicity.
+                        M.Virtual offers Ai Virtual Human Model who is
+                        permanently available and will be devoted exclusively to
+                        only one designated company.
+                        <br /> <br />
+                        Enterprises keen to trends has already produced
+                        promotional videos of Tv commercial, YouTube/Instagram
+                        contents, online shopping mall ads, new product launch,
+                        collaboration, printed media photoshoot, and company PR
+                        by utilizing Ai Virtual Human Model instead of hiring
+                        existing human influencers.
+                        <br /> <br />
+                        Now you can permanently own your Virtual Human Model
+                        only working for your company endlessly.
                       </>
                     )}
                   </Text>
@@ -284,7 +316,25 @@ const Service = () => {
             </HalfBox>
 
             <ImgGrid mt="60px">
-              <img src="/image/service_grid.png" alt="Service Grid" />
+              {isMobile ? (
+                <img
+                  src={
+                    lang === "ko"
+                      ? "/image/service_grid_mo.png"
+                      : "/image/service_grid_en_mo.png"
+                  }
+                  alt="Service Grid"
+                />
+              ) : (
+                <img
+                  src={
+                    lang === "ko"
+                      ? "/image/service_grid.png"
+                      : "/image/service_grid_en.png"
+                  }
+                  alt="Service Grid"
+                />
+              )}
             </ImgGrid>
           </>
         </Section>
@@ -297,7 +347,7 @@ const Service = () => {
                 {lang === "ko" ? (
                   <>가상인간 영상 제작 서비스</>
                 ) : (
-                  <>Ai Virtual Human Model Agency Services</>
+                  <>Virtual Human Video Production Service</>
                 )}
               </Text>
             </Box>
@@ -314,7 +364,10 @@ const Service = () => {
                     보유
                   </>
                 ) : (
-                  <>Ai Virtual Human Model Agency Services</>
+                  <>
+                    Our professional production crew has created many viral
+                    videos with millions of views.
+                  </>
                 )}
               </Text>
               <Box mt="36px">
@@ -342,29 +395,29 @@ const Service = () => {
                     </>
                   ) : (
                     <>
-                      Amber Tual not only produces virtual humans, but also
+                      Mvirtual not only produces virtual humans, but also
                       provides video production services using virtual humans.
                       <br />
                       <br />
-                      Professional video teams that produced a number of popular
-                      video contents with more than 1 million views will help
-                      you with everything from video planning to filming using
-                      virtual humans.
+                      Professional video production crew that produced a lot of
+                      popular video contents each with more than 1 million views
+                      will help you with everything from video storyboard
+                      planning to filming using virtual humans.
                       <br />
                       <br />
-                      With differentiated planning power, corporate promotional
-                      videos, YouTube videos, advertising CFs, and viral videos
-                      using virtual humans can be produced, and it is also
-                      possible to convert people from already filmed videos into
-                      virtual humans.
+                      With differentiated planning power, we can produce
+                      promotional videos, YouTube videos, tv commercial videos,
+                      and social media viral videos using virtual humans, and
+                      it’s also possible to convert people from already finished
+                      videos into virtual humans.
                       <br />
                       <br />
-                      Videos featuring virtual humans have more issues than
-                      regular videos and have a good response to content, which
-                      can be of great help in promoting them. In addition, if
-                      you run a separate Instagram and YouTube channel as a
-                      virtual person who appeared in the video, you can see a
-                      greater promotional effect.
+                      The videos featuring virtual humans have more attention
+                      than regular videos and its content draws great boost in
+                      response, so that you can reach the publicity you
+                      expected. In addition, if you run a separate Instagram
+                      account or YouTube channel with a virtual human in the
+                      videos, you will see explosive PR results.
                     </>
                   )}
                 </Text>
@@ -381,15 +434,19 @@ const Service = () => {
                 {lang === "ko" ? (
                   <>가상인간 SNS운영 서비스</>
                 ) : (
-                  <>Ai Virtual Human Video Production Service</>
+                  <>Virtual human SNS management service.</>
                 )}
               </Text>
             </Box>
             <HalfBox>
               <ImageBox>
                 <img
-                  src="/image/service_chart.png"
-                  alt="사람보다 '좋아요' 더 많이 받는 가상인간"
+                  src={
+                    lang === "ko"
+                      ? "/image/service_chart.png"
+                      : "/image/service_chart_en.png"
+                  }
+                  alt="Virtual human SNS management service."
                 />
               </ImageBox>
               <Article>
@@ -401,7 +458,11 @@ const Service = () => {
                         <PointColor>평균 약 400% 더 높음</PointColor>
                       </>
                     ) : (
-                      <>Do you want to create a special video?</>
+                      <>
+                        Likes and comments on virtual human Instagram are about
+                        400% higher on average than real human influencer’s
+                        Instagram.
+                      </>
                     )}
                   </Text>
                 </Box>
@@ -427,9 +488,27 @@ const Service = () => {
                       </>
                     ) : (
                       <>
-                        A video featuring an Ai virtual human with a similarity
-                        of 98% to a human becomes a big issue and is a great
-                        help in publicity.
+                        With years of experience in planning marketing contents,
+                        M.virtual creates an attractive virtual human universe,
+                        produced in virtual human Instagram & YouTube contents
+                        that fans can respond to, and provides a management
+                        service filled in with our professional marketing
+                        experts.
+                        <br />
+                        <br />
+                        Consumers no longer respond to companies' official
+                        Social Media channels. Consumers are opting in greatly
+                        to virtual human influencers in which virtual human
+                        characters itself appear more intimate and relatable to
+                        people. Now enterprises can communicate to consumers on
+                        personal level via our directly managed Virtual Human’s
+                        Social Media accounts delivering corporate messages.
+                        <br />
+                        <br />
+                        In addition, according to recent statistics, the average
+                        participation traffic of posts on virtual human-run
+                        Instagram is about 400% higher than that of real human
+                        based Instagram.
                       </>
                     )}
                   </Text>
@@ -447,7 +526,7 @@ const Service = () => {
                 {lang === "ko" ? (
                   <>가상인간을 활용한 기업 마케팅</>
                 ) : (
-                  <>Ai Virtual Human Video Production Service</>
+                  <>Corporate marketing using the virtual human.</>
                 )}
               </Text>
             </Box>
@@ -461,7 +540,10 @@ const Service = () => {
                         낸 전문 마케팅 보유
                       </>
                     ) : (
-                      <>Do you want to create a special video?</>
+                      <>
+                        A startup has professional marketing that generated 8
+                        billion won in monthly sales.
+                      </>
                     )}
                   </Text>
                 </Box>
@@ -484,18 +566,33 @@ const Service = () => {
                       </>
                     ) : (
                       <>
-                        A video featuring an Ai virtual human with a similarity
-                        of 98% to a human becomes a big issue and is a great
-                        help in publicity.
+                        Many companies are agonized on how to utilize virtual
+                        humans.
+                        <br />
+                        <br />
+                        M.virtual does not just end service at producing virtual
+                        humans, but we also develop marketing strategies using
+                        our tailored virtual humans.
+                        <br />
+                        <br />A professional marketing team, which grew startup
+                        A's sales up to $6 million a month within 7 months of
+                        its launch, provides consulting on virtual human
+                        marketing strategies that can increase the brand value
+                        and sales of companies by utilizing virtual humans.
                       </>
                     )}
                   </Text>
                 </Box>
               </Article>
+
               <ImageBox>
                 <img
-                  src="/image/service_list.png"
-                  alt="가상인간을 활용한 마케팅 프로세스"
+                  src={
+                    lang === "ko"
+                      ? "/image/service_list.png"
+                      : "/image/service_list_en.png"
+                  }
+                  alt="Corporate marketing using the virtual human."
                 />
               </ImageBox>
             </HalfBoxReverse>

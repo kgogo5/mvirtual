@@ -35,6 +35,10 @@ const CustomHalfBox = styled(HalfBox)`
     width: 100% !important;
     height: auto !important;
   }
+
+  & .description {
+    min-height: 78px;
+  }
 `;
 
 const HrStyle = styled.div`
@@ -62,7 +66,7 @@ const Reference = () => {
                   {lang === "ko" ? (
                     <>가상인간 제작 레퍼런스</>
                   ) : (
-                    <>Virtual human production reference</>
+                    <>Virtual Human Production References</>
                   )}
                 </PointColor>
               </Text>
@@ -70,24 +74,24 @@ const Reference = () => {
             <CustomHalfBox>
               <Box>
                 <Player url="/video/main01.mp4" active={false} controls />
-                <Box textAlign="left">
+                <Box textAlign="left" className="description">
                   <Text component="strong" fontSize="26px" color="#fff">
                     {lang === "ko" ? (
                       <>가상인간 벨라 화보촬영 영상</>
                     ) : (
-                      <>Virtual human Bella photoshoot video</>
+                      <>Virtual Human “Bella” photoshoot making video</>
                     )}
                   </Text>
                 </Box>
               </Box>
               <Box>
                 <Player url="/video/reference01.mp4" active={false} controls />
-                <Box textAlign="left">
+                <Box textAlign="left" className="description">
                   <Text component="strong" fontSize="26px" color="#fff">
                     {lang === "ko" ? (
                       <>가상인간 비타 댄스영상</>
                     ) : (
-                      <>Virtual human Vita photoshoot video</>
+                      <>Virtual Human “Vita” Dance video</>
                     )}
                   </Text>
                 </Box>
@@ -105,24 +109,26 @@ const Reference = () => {
             <CustomHalfBox>
               <Box>
                 <Player url="/video/reference02.mp4" active={false} controls />
-                <Box textAlign="left">
+                <Box textAlign="left" className="description">
                   <Text component="strong" fontSize="26px" color="#fff">
                     {lang === "ko" ? (
                       <>50대여자를 젊은 가상인간으로 제작</>
                     ) : (
-                      <>Virtual human Bella photoshoot video</>
+                      <>
+                        Producing a young Virtual Human with a woman in her 50s.
+                      </>
                     )}
                   </Text>
                 </Box>
               </Box>
               <Box>
                 <Player url="/video/reference03.mp4" active={false} controls />
-                <Box textAlign="left">
+                <Box textAlign="left" className="description">
                   <Text component="strong" fontSize="26px" color="#fff">
                     {lang === "ko" ? (
                       <>싱가포르 남자를 가상인간으로 제작</>
                     ) : (
-                      <>Virtual human Bella photoshoot video</>
+                      <>Producing a virtual human with a Singaporean man.</>
                     )}
                   </Text>
                 </Box>

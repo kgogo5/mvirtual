@@ -83,7 +83,7 @@ const MainAnimation = () => {
                 {lang === "ko" ? (
                   <>타사 3D 제작방식(CG) 가상인간</>
                 ) : (
-                  <>Third-Party 3D Production (CG) Virtual Human</>
+                  <>Alternate 3D production method (CGI) Virtual Human</>
                 )}
               </PointColor>
             </Text>
@@ -94,7 +94,7 @@ const MainAnimation = () => {
             {lang === "ko" ? (
               <>가상인간 사람과 유사도 비교</>
             ) : (
-              <>Comparison of similarities with virtual human beings</>
+              <>Human to Virtual Human Similarity rate comparison</>
             )}
           </Text>
           <Animation
@@ -214,7 +214,7 @@ const MainAnimation = () => {
                 {lang === "ko" ? (
                   <>엠버추얼 Ai제작방식 가상인간</>
                 ) : (
-                  <>Ambassadorial Ai Production Method Virtual Human</>
+                  <>M.Virtual’s Ai Deep learning Production method</>
                 )}
               </PointColor>
             </Text>

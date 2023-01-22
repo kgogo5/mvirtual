@@ -8,7 +8,7 @@ import {
   TextField,
 } from "@mui/material";
 import { useRecoilValue } from "recoil";
-import { language } from "../../atom";
+import { language, mobile } from "../../atom";
 import Section from "../elements/Section";
 import styled from "styled-components";
 import Text from "../elements/Text";
@@ -177,6 +177,8 @@ const Tell = styled.a`
 
 const Contact = () => {
   const lang = useRecoilValue(language);
+  const isMobile = useRecoilValue(mobile);
+
   const { control, setValue, register, handleSubmit, reset } = useForm();
 
   const [videoChecked, setVideoChecked] = useState(false);
@@ -220,11 +222,7 @@ const Contact = () => {
           </Text>
           <Box mt="40px">
             <Text type="description" color="#fff" fontWeight="400">
-              {lang === "ko" ? (
-                <>엠버추얼 문의하기</>
-              ) : (
-                <>Enquire about Amber Tual</>
-              )}
+              {lang === "ko" ? <>엠버추얼 문의하기</> : <>Inquire Mvirtual</>}
             </Text>
           </Box>
           {lang === "ko" ? (
@@ -232,7 +230,8 @@ const Contact = () => {
               <Box mt="80px" display="flex" justifyContent="center">
                 <Tell href="tel:07043481972">
                   <Text type="description" color="#000">
-                    전화상담 : 070-4348-1972 (오전 9시 ~ 오후 6시)
+                    전화상담 : 070-4348-1972 {isMobile && <br />}(오전 9시 ~
+                    오후 6시)
                   </Text>
                 </Tell>
               </Box>
@@ -276,32 +275,38 @@ const Contact = () => {
         <Box width="100%">
           <FormControl>
             <FormLabel>
-              {lang === "ko" ? <>성함/회사명</> : <>Name/Company Name</>}
+              {lang === "ko" ? <>성함/회사명</> : <>Name/Company</>}
             </FormLabel>
             <Input
               placeholder={
                 lang === "ko"
                   ? "성함/회사명을 입력해주세요."
-                  : "Please enter your name/company name."
+                  : "Type name/company."
               }
-              {...register("name", { required: "성함/회사명을 입력해주세요." })}
+              {...register("name", {
+                required:
+                  lang === "ko"
+                    ? "성함/회사명을 입력해주세요."
+                    : "Type name/company.",
+              })}
             />
           </FormControl>
         </Box>
         <Box mt="32px" width="100%">
           <FormControl>
-            <FormLabel>
-              {lang === "ko" ? <>연락처</> : <>Contact information</>}
-            </FormLabel>
+            <FormLabel>{lang === "ko" ? <>연락처</> : <>Contact</>}</FormLabel>
             <Input
               type="tel"
               placeholder={
                 lang === "ko"
                   ? "연착처를 입력해주세요."
-                  : "Please enter a delayed destination."
+                  : "Type contact information."
               }
               {...register("phone", {
-                required: "연착처를 입력해주세요.",
+                required:
+                  lang === "ko"
+                    ? "연착처를 입력해주세요."
+                    : "Type contact information.",
               })}
             />
           </FormControl>
@@ -312,12 +317,11 @@ const Contact = () => {
             <Input
               type="number"
               placeholder={
-                lang === "ko"
-                  ? "예산을 입력해주세요."
-                  : "Please enter your budget."
+                lang === "ko" ? "예산을 입력해주세요." : "Type your budget."
               }
               {...register("budget", {
-                required: "예산을 입력해주세요.",
+                required:
+                  lang === "ko" ? "예산을 입력해주세요." : "Type your budget.",
               })}
             />
           </FormControl>
@@ -329,8 +333,8 @@ const Contact = () => {
               <>관심있는 엠버추얼 서비스를 선택해주세요(복수 선택 가능)</>
             ) : (
               <>
-                Please select the ambient service that you are interested in
-                (multiple choices are available)
+                Choose Mvirtual’s services you are interested in (Multiple
+                selections available)
               </>
             )}
           </Text>
@@ -379,7 +383,7 @@ const Contact = () => {
                 label={
                   lang === "ko"
                     ? "Ai가상인간 SNS 운영 대행"
-                    : "Acting Virtual Human SNS Management"
+                    : "Proxy operation of virtual human SNS"
                 }
               />
             )}
@@ -404,7 +408,7 @@ const Contact = () => {
                 label={
                   lang === "ko"
                     ? "Ai가상인간 활용한 기업 마케팅"
-                    : "Enterprise Marketing Using Virtual Humans"
+                    : "Corporate marketing using the virtual human"
                 }
               />
             )}
@@ -416,9 +420,7 @@ const Contact = () => {
             {lang === "ko" ? (
               <>업체의 구체적인 니즈를 자유롭게 작성해주세요.</>
             ) : (
-              <>
-                Please feel free to fill out the specific needs of the company.
-              </>
+              <>Fill out specific needs of your company freely.</>
             )}
           </Text>
         </Box>
@@ -429,8 +431,8 @@ const Contact = () => {
             size="small"
             placeholder={
               lang === "ko"
-                ? "내용을 입력해주세요."
-                : "Please enter the contents."
+                ? "업체소개, 가상인간 활용계획등에 대하여 상세히 작성해주시면 좀 더 구체적인 답변을 드릴 수 있습니다."
+                : "We can give you a more specific answer if you write in detail about your company, virtual human utilization plan, etc."
             }
             variant="outlined"
             multiline
@@ -443,7 +445,7 @@ const Contact = () => {
 
         <Box mt="42px">
           <SubmitButton type="submit">
-            {lang === "ko" ? <>문의하기</> : <>Contact Us</>}
+            {lang === "ko" ? <>문의하기</> : <>Inquire</>}
           </SubmitButton>
         </Box>
       </FormWrap>
