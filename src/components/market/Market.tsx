@@ -35,7 +35,7 @@ const Market = () => {
               {lang === "ko" ? (
                 <>가상인간 시장규모</>
               ) : (
-                <>Market size of the virtual human</>
+                <>Market size of Virtual Human</>
               )}
             </Text>
           </Box>
@@ -47,7 +47,7 @@ const Market = () => {
                     ? "/image/market_section_01.png"
                     : "/image/market_section_en_01.png"
                 }
-                alt="Market size of the virtual human"
+                alt="Market size of Virtual Human"
               />
             </ImageBox>
             <Article>
@@ -157,7 +157,7 @@ const Market = () => {
               description={
                 lang === "ko"
                   ? "브라질 가전 제품 최대 유통업체 Magazine Luiza에서 만든 가상인간으로 제품 리뷰나 언박싱 비디오, 제품 사용 시범등의 다양한 동영상을 올리면서 큰 이슈가 되어 가상인간 Lu do Magalu 쇼핑몰 연간 매출이 5억$가 넘는다."
-                  : "Lu Do Magalu is virtual human made by the largest Brazilian distribution enterprise for home appliances. Uploading products reviews and unboxing videos, usage demonstration of products, Lu Do Magalu have dragged much attention and its shopping mall have earned over $500 million yearly."
+                  : "Lu Do Magalu is virtual human made by the largest Brazilian distribution enterprise for home appliances. Uploading products reviews and unboxing videos, usage demonstration of products, Lu Do Magalu have drawn amazing attention and its shopping mall have earned over $500 million yearly."
               }
             />
             <ImageBox>
@@ -206,14 +206,11 @@ const Market = () => {
               description={
                 lang === "ko"
                   ? "브러드의 총괄 책임자 트레버 맥페드리스(Trevor Mc Fedrise)는 회사를 창립한 후 세상의 주목을 끌기 위해 미켈라 프로젝트를 기획했으며, 릴미켈라가 CGI로 만든 가상의 인물임이 알려진 후에도 그녀의 '핫'한 라이프스타일은 대중들의 뜨거운 관심을 받았다."
-                  : "Chief officer of Brud, Travor McFedries made the business planning for Miquela project to get the attention of the world. After Lil Miquela is revealed as a virtual figure made by CGI, her hot lifestyle has drown lots of attentions."
+                  : "Chief officer of Brud, Travor McFedries made the business planning for Miquela project to get world wide attention. After Lil Miquela was launched as a virtual figure made by CGI, her luxurious lifestyle has drown lots of attentions."
               }
             />
             <ImageBox>
-              <img
-                src="/image/technology_02.png"
-                alt="Ai가상인간이 출연하는 영상"
-              />
+              <img src="/image/technology_02.png" alt="Lil Miquela" />
             </ImageBox>
           </HalfBoxMobile>
         </>
@@ -248,7 +245,7 @@ const Market = () => {
               title={lang === "ko" ? "슈두(Shudu)" : "Shudu"}
               name="@shudu.gram"
               image="/image/thumbnail_03.png"
-              follower="237M"
+              follower="237K"
               income="3,000$ ~ 5,000$"
               activity={
                 lang === "ko"
@@ -262,10 +259,7 @@ const Market = () => {
               }
             />
             <ImageBox>
-              <img
-                src="/image/technology_03.png"
-                alt="Ai가상인간이 출연하는 영상"
-              />
+              <img src="/image/technology_03.png" alt="Shudu" />
             </ImageBox>
           </HalfBoxMobile>
         </>
@@ -300,7 +294,7 @@ const Market = () => {
               title={lang === "ko" ? "이마(Imma)" : "IMMA"}
               name="@imma.gram"
               image="/image/thumbnail_04.png"
-              follower="404M"
+              follower="404K"
               income="2,000$ ~ 4,000$"
               activity={
                 lang === "ko"
@@ -310,14 +304,11 @@ const Market = () => {
               description={
                 lang === "ko"
                   ? "분홍색 단발머리의 가상 모델 '이마(Imma)'는 일본 에서 핫한 존재로 급부상 했다. 일본 3D 이미징 스 타트업 'AWW'가 지난 2019년 선보인 가상인간 '이마'는 글로벌 가구회사 이케아는 일본 동경의 하라주 쿠 매장을 런칭하면서 모델로 등장해 화제를 불러 일으켰다."
-                  : "Virtual human model with pink bobbed hair, IMMA, got huge spotlight in Japan. IMMA was shown by AMW, emerging Japanese 3D start-up, when it appeared as a model for IKEA, global furniture company, when IKEA launched a store in Harajuku of Tokyo."
+                  : "Virtual human model with pink bobbed hair, IMMA, has earned huge spotlight in Japan. IMMA was shown by AMW, emerging Japanese 3D start-up, when it appeared as a model for IKEA, global furniture company, when IKEA launched a store in Harajuku of Tokyo."
               }
             />
             <ImageBox>
-              <img
-                src="/image/technology_04.png"
-                alt="Ai가상인간이 출연하는 영상"
-              />
+              <img src="/image/technology_04.png" alt="IMMA" />
             </ImageBox>
           </HalfBoxMobile>
         </>

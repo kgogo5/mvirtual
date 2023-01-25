@@ -12,7 +12,7 @@ import { language, mobile } from "../../atom";
 import Section from "../elements/Section";
 import styled from "styled-components";
 import Text from "../elements/Text";
-import { Button } from "../../styles/common";
+import { Button, DefaultButton } from "../../styles/common";
 import axios from "axios";
 import { Controller, useForm } from "react-hook-form";
 import { useState } from "react";
@@ -175,6 +175,19 @@ const Tell = styled.a`
   }
 `;
 
+const Qrcode = styled(DefaultButton)`
+  && {
+    width: auto;
+    min-width: auto;
+    display: inline-block;
+    transition: 0.5s;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+`;
+
 const Contact = () => {
   const lang = useRecoilValue(language);
   const isMobile = useRecoilValue(mobile);
@@ -215,7 +228,7 @@ const Contact = () => {
 
   return (
     <Wrap>
-      <Section sectionPadding="160px 15px 110px">
+      <Section sectionPadding="160px 15px 110px" animation={false}>
         <>
           <Text type="title" color="#26d9c7">
             CONTACT US
@@ -250,22 +263,26 @@ const Contact = () => {
             </>
           ) : (
             <Box mt="30px" display="flex" justifyContent="center" gap="0 40px">
-              <Box>
+              <Qrcode
+                onClick={() => window.open("https://t.me/Ethan_d_k", "_blank")}
+              >
                 <img src="/image/telegram.png" alt="telegram" />
                 <Box mt="10px">
                   <Text type="description" color="#fff" fontWeight="400">
                     Telegram
                   </Text>
                 </Box>
-              </Box>
-              <Box>
+              </Qrcode>
+              <Qrcode
+                onClick={() => window.open("https://wa.link/e1vmws", "_blank")}
+              >
                 <img src="/image/watchapp.png" alt="watchapp" />
                 <Box mt="10px">
                   <Text type="description" color="#fff" fontWeight="400">
                     Watchapp
                   </Text>
                 </Box>
-              </Box>
+              </Qrcode>
             </Box>
           )}
         </>
@@ -333,7 +350,7 @@ const Contact = () => {
               <>관심있는 엠버추얼 서비스를 선택해주세요(복수 선택 가능)</>
             ) : (
               <>
-                Choose Mvirtual’s services you are interested in (Multiple
+                Choose M.Virtual’s services you are interested in (Multiple
                 selections available)
               </>
             )}

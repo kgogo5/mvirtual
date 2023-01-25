@@ -29,6 +29,7 @@ const HeaderWrap = styled.header`
     top: 0;
     left: 0;
     right: 0;
+    max-width: 100%;
     width: 100%;
     background-color: #000;
     text-align: center;
@@ -154,11 +155,12 @@ const MobileMenuList = styled(Box)`
   }
 
   & li span {
-    font-size: 24px;
+    font-size: 18px;
     color: #fff;
   }
 
   & .MuiListItem-button {
+    padding: 6px 16px;
     text-align: center;
   }
 

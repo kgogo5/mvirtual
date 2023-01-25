@@ -8,6 +8,7 @@ import { language } from "../../../atom";
 import { useRecoilValue } from "recoil";
 
 const Wrap = styled.div`
+  margin-bottom: 80px;
   width: 100%;
   background-color: #000;
 `;

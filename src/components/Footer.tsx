@@ -63,7 +63,7 @@ const FooterWrap = styled.footer`
 `;
 
 const GridBox = styled(Box)`
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -158,7 +158,7 @@ const _ = () => {
                   <Box mt="10px">
                     <Text component="span" fontSize="15px" fontWeight="400">
                       {lang === "ko"
-                        ? "대표이사: 이화영 | 서울시 강남구 테헤란로 5길 7 KG타워 (우)06134"
+                        ? "대표이사: 이화영 | 서울시 강남구 테헤란로 5길 7 KG타워"
                         : "CEO: hwa-young Lee | #9F 118, KG tower,  Teheran-ro 5-gil 7 Gangnam-gu, Seoul."}
                     </Text>
                   </Box>
@@ -186,49 +186,33 @@ const _ = () => {
               </Inner>
             </GridBox>
           </Box>
-          {lang === "ko" ? (
-            <Box display="flex">
-              <IconButton
-                onClick={() =>
-                  window.open("https://pf.kakao.com/_HWFnxj", "_blank")
-                }
-              >
-                <img src="/image/footer_icon01.png" alt="kakaotalk icon" />
-              </IconButton>
-              <IconButton
-                onClick={() =>
-                  window.open("https://blog.naver.com/mvirtual", "_blank")
-                }
-              >
-                <img src="/image/footer_icon02.png" alt="blog icon" />
-              </IconButton>
-              {/* <IconButton>
-                <img src="/image/footer_icon03.png" alt="telegram icon" />
-              </IconButton>
-              <IconButton>
-                <img src="/image/footer_icon04.png" alt="watchapp icon" />
-              </IconButton> */}
-            </Box>
-          ) : (
-            <Box display="flex" gap="0 10px">
-              <Box>
-                <img src="/image/telegram.png" alt="telegram" />
-                <Box mt="10px">
-                  <Text type="description" color="#fff" fontWeight="400">
-                    Telegram
-                  </Text>
-                </Box>
-              </Box>
-              <Box>
-                <img src="/image/watchapp.png" alt="watchapp" />
-                <Box mt="10px">
-                  <Text type="description" color="#fff" fontWeight="400">
-                    Watchapp
-                  </Text>
-                </Box>
-              </Box>
-            </Box>
-          )}
+
+          <Box display="flex">
+            <IconButton
+              onClick={() =>
+                window.open("https://pf.kakao.com/_HWFnxj", "_blank")
+              }
+            >
+              <img src="/image/footer_icon01.png" alt="kakaotalk icon" />
+            </IconButton>
+            <IconButton
+              onClick={() =>
+                window.open("https://blog.naver.com/mvirtual", "_blank")
+              }
+            >
+              <img src="/image/footer_icon02.png" alt="blog icon" />
+            </IconButton>
+            <IconButton
+              onClick={() => window.open("https://t.me/Ethan_d_k", "_blank")}
+            >
+              <img src="/image/footer_icon03.png" alt="telegram icon" />
+            </IconButton>
+            <IconButton
+              onClick={() => window.open("https://wa.link/e1vmws", "_blank")}
+            >
+              <img src="/image/footer_icon04.png" alt="watchapp icon" />
+            </IconButton>
+          </Box>
         </Box>
       </FooterWrap>
     </>

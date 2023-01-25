@@ -47,7 +47,7 @@ const Technology = () => {
                 {lang === "ko" ? (
                   <>엠버추얼 가상인간 기술</>
                 ) : (
-                  <>Mvirtual’s virtual human technology</>
+                  <>M.Virtual’s Virtual Human Technology</>
                 )}
               </PointColor>
             </Text>
@@ -62,8 +62,8 @@ const Technology = () => {
               <>사람과 유사도 98%로 사람처럼 매우 자연스러움</>
             ) : (
               <>
-                With its 98% similarity to humans, it is extremely natural like
-                humans.
+                With its 98% similarity rate to humans, it is extremely natural
+                like a human.
               </>
             )}
           </Text>
@@ -80,8 +80,8 @@ const Technology = () => {
               </>
             ) : (
               <>
-                It is about 50 times faster than 3D computer graphics (CG)
-                production method.
+                It’s approximately 50 times faster than 3D computer graphics
+                (CG) production method.
               </>
             )}
           </Text>
@@ -110,20 +110,20 @@ const Technology = () => {
                 </>
               ) : (
                 <>
-                  The virtual human production method, which is drawn with 3D
-                  computer graphics (CG), took months to produce and was
-                  expensive.
+                  The virtual human production method drawn with 3D computer
+                  graphics (CG), normally takes months to produce and requires
+                  huge budget.
                   <br />
                   <br />
-                  Mvirtual’s Ai deep learning-based virtual human production
-                  method dramatically reduced the production speed problem,
-                  which takes months, to about 1 day, and enables natural
-                  virtual human embodiment with 98% similarity to humans.
+                  M.Virtual’s Ai learning-based virtual human production method
+                  dramatically reduces the production time, from months to 1
+                  day, and enables natural virtual human expression with 98%
+                  similarity rate to human.
                 </>
               )}
             </Text>
 
-            <Box mt="30px" textAlign="center">
+            <Box mt="50px" textAlign="center">
               {isMobile ? (
                 <img
                   src={
@@ -131,7 +131,7 @@ const Technology = () => {
                       ? "/image/technology_grid_mo.png"
                       : "/image/technology_grid_en_mo.png"
                   }
-                  alt="엠버추얼 가상인간 기술"
+                  alt="M.Virtual’s Virtual Human Technology"
                 />
               ) : (
                 <img
@@ -140,7 +140,7 @@ const Technology = () => {
                       ? "/image/technology_grid.png"
                       : "/image/technology_grid_en.png"
                   }
-                  alt="엠버추얼 가상인간 기술"
+                  alt="M.Virtual’s Virtual Human Technology"
                 />
               )}
             </Box>

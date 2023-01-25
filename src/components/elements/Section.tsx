@@ -17,13 +17,13 @@ const Wrap = styled.section<{
   sectionPadding: "default" | string;
 }>`
   padding: ${(props) =>
-    props.sectionPadding === "default" ? `240px 15px` : props.sectionPadding};
+    props.sectionPadding === "default" ? `180px 15px` : props.sectionPadding};
   display: flex;
   align-items: center;
   justify-content: space-around;
   min-height: 20vh;
   flex-direction: column;
-  background-color: ${(props) => (props.bg === "main" ? "#000" : "#141414")};
+  background-color: ${(props) => (props.bg === "main" ? "#000" : "#1d1d1d")};
 
   @media screen and (max-width: 768px) {
     padding: ${(props) =>

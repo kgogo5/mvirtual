@@ -38,7 +38,7 @@ const VisualList = styled(Box)`
 
     @media screen and (max-width: 768px) {
       grid-template-columns: 1fr;
-      gap: 20px 30px;
+      gap: 40px 30px;
     }
   }
 
@@ -137,7 +137,7 @@ const Service = () => {
                     />
                   </motion.div>
                   <Box>
-                    <Text type="sub">
+                    <Text type="sub" fontWeight={500}>
                       {lang === "ko" ? (
                         <>
                           Ai가상인간 모델
@@ -170,7 +170,7 @@ const Service = () => {
                     />
                   </motion.div>
                   <Box>
-                    <Text type="sub">
+                    <Text type="sub" fontWeight={500}>
                       {lang === "ko" ? (
                         <>Ai가상인간 영상 제작</>
                       ) : (
@@ -199,7 +199,7 @@ const Service = () => {
                     />
                   </motion.div>
                   <Box>
-                    <Text type="sub">
+                    <Text type="sub" fontWeight={500}>
                       {lang === "ko" ? (
                         <>Ai가상인간 SNS운영</>
                       ) : (
@@ -228,7 +228,7 @@ const Service = () => {
                     />
                   </motion.div>
                   <Box>
-                    <Text type="sub">
+                    <Text type="sub" fontWeight={500}>
                       {lang === "ko" ? (
                         <>
                           Ai가상인간을 활용한
@@ -268,7 +268,7 @@ const Service = () => {
 
               <Article>
                 <Box>
-                  <Text type="description" color="#fff">
+                  <Text type="sub" color="#fff">
                     {lang === "ko" ? (
                       <>영구적으로 소유할 수 있는 Ai가상인간 모델 공급</>
                     ) : (
@@ -284,28 +284,33 @@ const Service = () => {
                       <>
                         엠버추얼은 모델을 필요로 하는 여러 분야에 오직 한
                         기업만을 위해 활동하며 영구적으로 소유할 수 있는
-                        Ai가상인간 모델을 공급해드리고 있습니다. 
-                        <br /> <br />
-                          변화에 빠른 기업들은 사람모델 보다 Ai가상인간 모델을
-                        활용하여 광고영상, 유튜브/인스타그램의 콘텐츠, 쇼핑몰
-                        운영, 신제품과 콜라보, 화보촬영, 회사홍보영상등을
-                        제작하면서 큰 효과를 보고 있습니다.  
-                        <br /> <br />  이제 당신의 기업만을 위해 활동하는
-                        Ai가상인간 모델을 영구적으로 소유하세요!
+                        Ai가상인간 모델을 공급해드리고 있습니다.
+                        <br />
+                        <br />
+                        변화에 빠른 기업들은 사람모델 보다 Ai가상인간 모델을
+                        활용하여 광고영상, 유튜브/인스타그램의 콘텐츠, 쇼핑몰
+                        운영, 신제품과 콜라보, 화보촬영, 회사홍보영상등을
+                        제작하면서 큰 효과를 보고 있습니다.
+                        <br />
+                        <br />
+                        이제 당신의 기업만을 위해 활동하는 Ai가상인간 모델을
+                        영구적으로 소유하세요!
                       </>
                     ) : (
                       <>
                         M.Virtual offers Ai Virtual Human Model who is
                         permanently available and will be devoted exclusively to
                         only one designated company.
-                        <br /> <br />
+                        <br />
+                        <br />
                         Enterprises keen to trends has already produced
                         promotional videos of Tv commercial, YouTube/Instagram
                         contents, online shopping mall ads, new product launch,
                         collaboration, printed media photoshoot, and company PR
                         by utilizing Ai Virtual Human Model instead of hiring
                         existing human influencers.
-                        <br /> <br />
+                        <br />
+                        <br />
                         Now you can permanently own your Virtual Human Model
                         only working for your company endlessly.
                       </>
@@ -357,23 +362,13 @@ const Service = () => {
             </Box>
 
             <Box m="100px auto 0" maxWidth="1080px" textAlign="left">
-              <Text type="description" color="#fff">
-                {lang === "ko" ? (
-                  <>
-                    100만 조회수 이상의 인기영상들을 제작했던 전문 영상 촬영팀
-                    보유
-                  </>
-                ) : (
-                  <>
-                    Our professional production crew has created many viral
-                    videos with millions of views.
-                  </>
-                )}
-              </Text>
-              <Box mt="36px">
+              <Box>
                 <Text type="description" color="#fff" fontWeight="400">
                   {lang === "ko" ? (
                     <>
+                      100만 조회수 이상의 인기영상들을 제작했던 전문 영상 촬영팀
+                      보유 <br />
+                      <br />
                       엠버추얼은 가상인간 제작 뿐만 아니라 가상인간을 활용한
                       영상 제작 서비스도 진행하고 있습니다. <br />
                       <br />
@@ -395,13 +390,17 @@ const Service = () => {
                     </>
                   ) : (
                     <>
-                      Mvirtual not only produces virtual humans, but also
+                      Our professional production crew has created many viral
+                      videos with millions of views.
+                      <br />
+                      <br />
+                      M.Virtual not only produces virtual humans, but also
                       provides video production services using virtual humans.
                       <br />
                       <br />
-                      Professional video production crew that produced a lot of
-                      popular video contents each with more than 1 million views
-                      will help you with everything from video storyboard
+                      Our professional video production crew that produced a lot
+                      of popular video contents each with more than 1 million
+                      views will help you with everything from video storyboard
                       planning to filming using virtual humans.
                       <br />
                       <br />

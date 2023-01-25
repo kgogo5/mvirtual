@@ -7,7 +7,7 @@ import { PointColor } from "../../../styles/common";
 import { motion } from "framer-motion";
 import Text from "../../elements/Text";
 import { useRecoilValue } from "recoil";
-import { language } from "../../../atom";
+import { language, mobile } from "../../../atom";
 
 const Wrap = styled.div`
   width: 100%;
@@ -47,6 +47,8 @@ const AnimationText = styled(motion.strong)`
 
 const MainAnimation = () => {
   const lang = useRecoilValue(language);
+  const isMobile = useRecoilValue(mobile);
+
   const [observer, setObserver] = useState(false);
   const [arrowObserver, setArrowObserver] = useState(false);
   const { ref } = useInView({
@@ -97,112 +99,116 @@ const MainAnimation = () => {
               <>Human to Virtual Human Similarity rate comparison</>
             )}
           </Text>
-          <Animation
-            variants={{
-              on: {
-                transition: {
-                  delayChildren: 0.3,
-                  staggerChildren: 0.2,
-                },
-              },
-            }}
-            animate={arrowObserver ? "on" : "off"}
-          >
-            <motion.img
-              variants={{
-                off: {
-                  x: -30,
-                  opacity: 0,
-                },
-                on: {
-                  x: 0,
-                  opacity: 1,
-                },
-              }}
-              src="/image/section_arrows_01.png"
-              alt="arrow images"
-            />
-            <motion.img
-              variants={{
-                off: {
-                  x: -30,
-                  opacity: 0,
-                },
-                on: {
-                  x: 0,
-                  opacity: 1,
-                },
-              }}
-              src="/image/section_arrows_02.png"
-              alt="arrow images"
-            />
-            <motion.img
-              variants={{
-                off: {
-                  x: -30,
-                  opacity: 0,
-                },
-                on: {
-                  x: 0,
-                  opacity: 1,
-                },
-              }}
-              src="/image/section_arrows_03.png"
-              alt="arrow images"
-            />
-            <motion.img
-              variants={{
-                off: {
-                  x: -30,
-                  opacity: 0,
-                },
-                on: {
-                  x: 0,
-                  opacity: 1,
-                },
-              }}
-              src="/image/section_arrows_04.png"
-              alt="arrow images"
-            />
-            <motion.img
-              variants={{
-                off: {
-                  x: -30,
-                  opacity: 0,
-                },
-                on: {
-                  x: 0,
-                  opacity: 1,
-                },
-              }}
-              src="/image/section_arrows_05.png"
-              alt="arrow images"
-            />
-          </Animation>
-
-          <Box mt="24px" display="flex" justifyContent="space-between">
-            <Text type="description" color="#fff" fontWeight={400}>
-              40%
-            </Text>
-            <AnimationText
-              variants={{
-                off: {
-                  scale: 1,
-                },
-                on: {
-                  scale: 1.4,
-                  color: "#26d9c7",
-                  transition: {
-                    delay: 1.3,
-                    duration: 0.3,
+          {!isMobile && (
+            <>
+              <Animation
+                variants={{
+                  on: {
+                    transition: {
+                      delayChildren: 0.3,
+                      staggerChildren: 0.2,
+                    },
                   },
-                },
-              }}
-              animate={arrowObserver ? "on" : "off"}
-            >
-              98%
-            </AnimationText>
-          </Box>
+                }}
+                animate={arrowObserver ? "on" : "off"}
+              >
+                <motion.img
+                  variants={{
+                    off: {
+                      x: -30,
+                      opacity: 0,
+                    },
+                    on: {
+                      x: 0,
+                      opacity: 1,
+                    },
+                  }}
+                  src="/image/section_arrows_01.png"
+                  alt="arrow images"
+                />
+                <motion.img
+                  variants={{
+                    off: {
+                      x: -30,
+                      opacity: 0,
+                    },
+                    on: {
+                      x: 0,
+                      opacity: 1,
+                    },
+                  }}
+                  src="/image/section_arrows_02.png"
+                  alt="arrow images"
+                />
+                <motion.img
+                  variants={{
+                    off: {
+                      x: -30,
+                      opacity: 0,
+                    },
+                    on: {
+                      x: 0,
+                      opacity: 1,
+                    },
+                  }}
+                  src="/image/section_arrows_03.png"
+                  alt="arrow images"
+                />
+                <motion.img
+                  variants={{
+                    off: {
+                      x: -30,
+                      opacity: 0,
+                    },
+                    on: {
+                      x: 0,
+                      opacity: 1,
+                    },
+                  }}
+                  src="/image/section_arrows_04.png"
+                  alt="arrow images"
+                />
+                <motion.img
+                  variants={{
+                    off: {
+                      x: -30,
+                      opacity: 0,
+                    },
+                    on: {
+                      x: 0,
+                      opacity: 1,
+                    },
+                  }}
+                  src="/image/section_arrows_05.png"
+                  alt="arrow images"
+                />
+              </Animation>
+
+              <Box mt="24px" display="flex" justifyContent="space-between">
+                <Text type="description" color="#fff" fontWeight={400}>
+                  40%
+                </Text>
+                <AnimationText
+                  variants={{
+                    off: {
+                      scale: 1,
+                    },
+                    on: {
+                      scale: 1.4,
+                      color: "#26d9c7",
+                      transition: {
+                        delay: 1.3,
+                        duration: 0.3,
+                      },
+                    },
+                  }}
+                  animate={arrowObserver ? "on" : "off"}
+                >
+                  98%
+                </AnimationText>
+              </Box>
+            </>
+          )}
         </Box>
         <Box>
           <ViewVideo>
@@ -214,7 +220,7 @@ const MainAnimation = () => {
                 {lang === "ko" ? (
                   <>엠버추얼 Ai제작방식 가상인간</>
                 ) : (
-                  <>M.Virtual’s Ai Deep learning Production method</>
+                  <>M.Virtual’s Ai Deep Learning Production method</>
                 )}
               </PointColor>
             </Text>

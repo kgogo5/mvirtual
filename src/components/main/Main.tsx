@@ -70,7 +70,7 @@ const Main = () => {
                 {lang === "ko" ? (
                   <>Ai가상인간 모델 에이전시 서비스</>
                 ) : (
-                  <>Ai Virtual Human Video Production Service</>
+                  <>Ai Virtual Human Model Agency Service</>
                 )}
               </Text>
             </Box>
@@ -78,12 +78,12 @@ const Main = () => {
               <ImageBox>
                 <img
                   src="/image/section_01.jpg"
-                  alt="Ai Virtual Human Video Production Service"
+                  alt="Ai Virtual Human Model Agency Service"
                 />
               </ImageBox>
               <Article>
                 <Box width="100%">
-                  <Text type="description" color="#fff">
+                  <Text type="description" color="#fff" fontWeight={400}>
                     {lang === "ko" ? (
                       <>원하는 이미지의 모델을 찾기 힘드신가요?</>
                     ) : (
@@ -118,7 +118,7 @@ const Main = () => {
                       alignItems="center"
                     >
                       <Box component="span" mr="10px">
-                        {lang === "ko" ? <>자세히 보기</> : <>More detail</>}
+                        {lang === "ko" ? <>자세히 보기</> : <>view detail</>}
                       </Box>
                       <img src="/image/mint_arrow.png" alt="arrow icon" />
                     </Box>
@@ -162,9 +162,9 @@ const Main = () => {
                       </>
                     ) : (
                       <>
-                        A video featuring an Ai virtual human with a similarity
-                        of 98% to a human becomes a big issue and is a great
-                        help in publicity.
+                        A promotional video starring Ai Virtual Human with 98%
+                        similarity rate to human will stir up viral attentions,
+                        adding on to marketing strategy PR.
                       </>
                     )}
                   </Text>
@@ -179,7 +179,7 @@ const Main = () => {
                       alignItems="center"
                     >
                       <Box component="span" mr="10px">
-                        {lang === "ko" ? <>자세히 보기</> : <>More detail</>}
+                        {lang === "ko" ? <>자세히 보기</> : <>view detail</>}
                       </Box>
                       <img src="/image/mint_arrow.png" alt="arrow icon" />
                     </Box>
@@ -221,7 +221,10 @@ const Main = () => {
                     {lang === "ko" ? (
                       <>인스타그램, 유튜브 채널 활성화가 안되시나요?</>
                     ) : (
-                      <>Hard to boost Instagram, Youtube account traffic?</>
+                      <>
+                        Having difficulty to boost Instagram, Youtube channel
+                        traffic?
+                      </>
                     )}
                   </Text>
                 </Box>
@@ -252,7 +255,7 @@ const Main = () => {
                       alignItems="center"
                     >
                       <Box component="span" mr="10px">
-                        {lang === "ko" ? <>자세히 보기</> : <>More detail</>}
+                        {lang === "ko" ? <>자세히 보기</> : <>view detail</>}
                       </Box>
                       <img src="/image/mint_arrow.png" alt="arrow icon" />
                     </Box>
@@ -314,7 +317,7 @@ const Main = () => {
                       alignItems="center"
                     >
                       <Box component="span" mr="10px">
-                        {lang === "ko" ? <>자세히 보기</> : <>More detail</>}
+                        {lang === "ko" ? <>자세히 보기</> : <>view detail</>}
                       </Box>
                       <img src="/image/mint_arrow.png" alt="arrow icon" />
                     </Box>
@@ -362,7 +365,7 @@ const Main = () => {
             </Box>
 
             <Box m="20px auto 0" maxWidth="1164px" width="100%">
-              <Text type="description" color="#fff">
+              <Text type="description" color="#fff" fontWeight={400}>
                 {lang === "ko" ? (
                   <>
                     우리의 가상인간 제작기술은 부자연스러운

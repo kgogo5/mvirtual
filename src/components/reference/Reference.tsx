@@ -74,7 +74,7 @@ const Reference = () => {
             <CustomHalfBox>
               <Box>
                 <Player url="/video/main01.mp4" active={false} controls />
-                <Box textAlign="left" className="description">
+                <Box mt="10px" textAlign="left" className="description">
                   <Text component="strong" fontSize="26px" color="#fff">
                     {lang === "ko" ? (
                       <>가상인간 벨라 화보촬영 영상</>
@@ -86,12 +86,12 @@ const Reference = () => {
               </Box>
               <Box>
                 <Player url="/video/reference01.mp4" active={false} controls />
-                <Box textAlign="left" className="description">
+                <Box mt="10px" textAlign="left" className="description">
                   <Text component="strong" fontSize="26px" color="#fff">
                     {lang === "ko" ? (
-                      <>가상인간 비타 댄스영상</>
+                      <>가상인간 제니 댄스영상</>
                     ) : (
-                      <>Virtual Human “Vita” Dance video</>
+                      <>Virtual Human “jenny” Dance video</>
                     )}
                   </Text>
                 </Box>
@@ -109,7 +109,7 @@ const Reference = () => {
             <CustomHalfBox>
               <Box>
                 <Player url="/video/reference02.mp4" active={false} controls />
-                <Box textAlign="left" className="description">
+                <Box mt="10px" textAlign="left" className="description">
                   <Text component="strong" fontSize="26px" color="#fff">
                     {lang === "ko" ? (
                       <>50대여자를 젊은 가상인간으로 제작</>
@@ -123,12 +123,12 @@ const Reference = () => {
               </Box>
               <Box>
                 <Player url="/video/reference03.mp4" active={false} controls />
-                <Box textAlign="left" className="description">
+                <Box mt="10px" textAlign="left" className="description">
                   <Text component="strong" fontSize="26px" color="#fff">
                     {lang === "ko" ? (
-                      <>싱가포르 남자를 가상인간으로 제작</>
+                      <>아랍 여성을 가상인간으로 제작</>
                     ) : (
-                      <>Producing a virtual human with a Singaporean man.</>
+                      <>Making Arab Women Virtual.</>
                     )}
                   </Text>
                 </Box>

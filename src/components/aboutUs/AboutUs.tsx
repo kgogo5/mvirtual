@@ -485,11 +485,9 @@ const AboutUs = () => {
                   <br />
                   <br />
                   M.Virtual’s Virtual Human Solution uses Ai deep learning
-                  production method, which reduced
-                  <br />
-                  Existing 3D CGI production’s speed of 2 months per
-                  1-minute-long video to 24 hours, and has 98% similarity rate
-                  to human being.
+                  production method, which reduced Existing 3D CGI production’s
+                  speed of 2 months per 1-minute-long video to 24 hours, and has
+                  98% similarity rate to human being.
                   <br />
                   <br />
                   Also, our teams include marketing experts who increased $ 6
@@ -526,7 +524,7 @@ const AboutUs = () => {
             </Box>
             <BgAnimation>
               <BgImage />
-              <BgBox p="70px 20px 70px 70px" zIndex={2} maxWidth="624px">
+              <BgBox p="40px 20px 40px 70px" zIndex={2} maxWidth="624px">
                 <Box textAlign="left">
                   <Text type="title" color="#fff">
                     {lang === "ko" ? (
@@ -543,7 +541,7 @@ const AboutUs = () => {
                     )}
                   </Text>
                 </Box>
-                <Box mt="50px" textAlign="left">
+                <Box mt="40px" textAlign="left">
                   <Text type="description" color="#fff" fontWeight={400}>
                     {lang === "ko" ? (
                       <>
@@ -568,25 +566,20 @@ const AboutUs = () => {
                     ) : (
                       <>
                         Our goal is not simply getting more Virtual Human
-                        production orders.
-                        <br />
-                        Our goal is to significantly increase revenue and
-                        marketing traffic for enterprises Who implement our Ai
-                        Virtual Human Technology.
+                        production orders. Our goal is to significantly increase
+                        revenue and marketing traffic for enterprises Who
+                        implement our Ai Virtual Human Technology.
                         <br />
                         <br />
                         M.Virtual wants to be a company that sincerely
-                        contributes to partner’s success.
-                        <br />
-                        The mindset that helps our partners succeed, the mindset
-                        to offer solution for partner’s problems, and the
-                        mindset to accelerate partner’s growth, are all how we
-                        intend to approach clients.
-                        <br />
-                        We thrive to pursuit the mind of “Giver” for each of our
-                        collaboration with clients regarding Virtual Human and
-                        marketing solution, to do our best in bringing success
-                        to your Virtual Human projects.
+                        contributes to partner’s success. The mindset that helps
+                        our partners succeed, the mindset to offer solution for
+                        partner’s problems, and the mindset to accelerate
+                        partner’s growth, are all how we intend to approach
+                        clients. We thrive to pursuit the mind of “Giver” for
+                        each of our collaboration with clients regarding Virtual
+                        Human and marketing solution, to do our best in bringing
+                        success to your Virtual Human projects.
                       </>
                     )}
                   </Text>
