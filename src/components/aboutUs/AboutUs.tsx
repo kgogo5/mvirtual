@@ -42,7 +42,7 @@ const Wrap = styled(Box)`
 
 const Visual = styled.section`
   position: relative;
-  padding: 250px 15px;
+  padding: 180px 15px 250px;
   display: flex;
   align-items: center;
   justify-content: space-around;
