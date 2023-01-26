@@ -11,6 +11,8 @@ import ServiceVideo from "./element/ServiceVideo";
 const Wrap = styled(Box)``;
 
 const ImgGrid = styled(Box)`
+  margin: 60px auto 0;
+  max-width: 1164px;
   img {
     max-width: 100%;
   }
@@ -102,7 +104,7 @@ const Service = () => {
     <>
       <Wrap width="100%">
         {/* 엠버추얼 서비스 */}
-        <Section animation={false}>
+        <Section sectionPadding="40px 15px 120px" animation={false}>
           <>
             <Box mb="60px">
               <Text type="title" color="#fff">
@@ -142,10 +144,10 @@ const Service = () => {
                         <>
                           Ai가상인간 모델
                           <br />
-                          에이전시 서비스
+                          에이전시
                         </>
                       ) : (
-                        <>Ai Virtual Human Model Agency Service</>
+                        <>Ai Virtual Human Model Agency</>
                       )}
                     </Text>
                   </Box>
@@ -320,7 +322,7 @@ const Service = () => {
               </Article>
             </HalfBox>
 
-            <ImgGrid mt="60px">
+            <ImgGrid>
               {isMobile ? (
                 <img
                   src={
@@ -540,8 +542,8 @@ const Service = () => {
                       </>
                     ) : (
                       <>
-                        A startup has professional marketing that generated 8
-                        billion won in monthly sales.
+                        Expert marketing team that raised start up A's revenue u
+                        up to $ 8 million per month
                       </>
                     )}
                   </Text>

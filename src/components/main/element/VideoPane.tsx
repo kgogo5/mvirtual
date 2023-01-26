@@ -24,7 +24,7 @@ const TitleBox = styled.h2`
   position: absolute;
   left: 0;
   top: 50%;
-  padding: 0 20px;
+  padding: 0 20px 0 6%;
   max-width: 1164px;
   width: 100%;
   text-align: left;
@@ -37,7 +37,7 @@ const TitleBox = styled.h2`
   box-sizing: border-box;
 
   @media screen and (max-width: 1164px) {
-    padding: 0 10px;
+    padding: 0 10px 0 6%;
     font-size: 18px;
   }
 `;

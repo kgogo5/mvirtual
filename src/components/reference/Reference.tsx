@@ -128,7 +128,7 @@ const Reference = () => {
                     {lang === "ko" ? (
                       <>아랍 여성을 가상인간으로 제작</>
                     ) : (
-                      <>Making Arab Women Virtual.</>
+                      <>Virtual Human production of Arabic woman.</>
                     )}
                   </Text>
                 </Box>

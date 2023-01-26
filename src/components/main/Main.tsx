@@ -68,9 +68,9 @@ const Main = () => {
             <Box mb="60px">
               <Text component="h2" type="title" color="#26d9c7">
                 {lang === "ko" ? (
-                  <>Ai가상인간 모델 에이전시 서비스</>
+                  <>Ai가상인간 모델 에이전시</>
                 ) : (
-                  <>Ai Virtual Human Model Agency Service</>
+                  <>Ai Virtual Human Model Agency</>
                 )}
               </Text>
             </Box>
@@ -78,7 +78,7 @@ const Main = () => {
               <ImageBox>
                 <img
                   src="/image/section_01.jpg"
-                  alt="Ai Virtual Human Model Agency Service"
+                  alt="Ai Virtual Human Model Agency"
                 />
               </ImageBox>
               <Article>

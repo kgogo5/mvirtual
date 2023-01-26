@@ -228,7 +228,7 @@ const Contact = () => {
 
   return (
     <Wrap>
-      <Section sectionPadding="160px 15px 110px" animation={false}>
+      <Section sectionPadding="40px 15px 110px" animation={false}>
         <>
           <Text type="title" color="#26d9c7">
             CONTACT US

@@ -28,7 +28,7 @@ const Market = () => {
   return (
     <Box width="100%">
       {/* 가상인간 시장규모 */}
-      <Section sectionPadding="160px 15px">
+      <Section sectionPadding="40px 15px 120px" animation={false}>
         <>
           <Box mb="60px">
             <Text component="h2" type="title" color="#26d9c7">
