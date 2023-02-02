@@ -6,6 +6,7 @@ import Section from "../elements/Section";
 import styled from "styled-components";
 import Player from "../elements/Player";
 import Text from "../elements/Text";
+import { Helmet } from "react-helmet";
 
 const Wrap = styled.div`
   width: 100%;
@@ -57,6 +58,11 @@ const Reference = () => {
 
   return (
     <>
+      <Helmet>
+        <title>엠버추얼 | Reference</title>
+        <meta name="description" content="가상인간 제작 레퍼런스" />
+      </Helmet>
+
       <Wrap>
         <Section sectionPadding="40px 15px" animation={false}>
           <>

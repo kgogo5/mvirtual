@@ -9,6 +9,7 @@ import { HashLink as Link } from "react-router-hash-link";
 import MainAnimation from "./element/MainAnimation";
 import Text from "../elements/Text";
 import Br from "../elements/Br";
+import { Helmet } from "react-helmet";
 
 const Button = styled(Link)`
   && {
@@ -59,6 +60,14 @@ const Main = () => {
 
   return (
     <>
+      <Helmet>
+        <title>엠버추얼</title>
+        <meta
+          name="description"
+          content="가상인간 제작 및 가상인간을 활용한 마케팅 전문기업, 가상인간 모델 공급, 가상인간 영상제작, 가상인간 SNS채널 운영, 가상인간을 활용한 기업마케팅"
+        />
+      </Helmet>
+
       <Box width="100%">
         <VideoPane />
 

@@ -7,6 +7,7 @@ import styled from "styled-components";
 import Text from "../elements/Text";
 import { motion } from "framer-motion";
 import ServiceVideo from "./element/ServiceVideo";
+import { Helmet } from "react-helmet";
 
 const Wrap = styled(Box)``;
 
@@ -102,6 +103,11 @@ const Service = () => {
 
   return (
     <>
+      <Helmet>
+        <title>엠버추얼 | Service</title>
+        <meta name="description" content="엠버추얼 서비스" />
+      </Helmet>
+
       <Wrap width="100%">
         {/* 엠버추얼 서비스 */}
         <Section sectionPadding="40px 15px 120px" animation={false}>

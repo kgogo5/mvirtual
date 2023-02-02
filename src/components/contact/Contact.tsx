@@ -16,6 +16,7 @@ import { Button, DefaultButton } from "../../styles/common";
 import axios from "axios";
 import { Controller, useForm } from "react-hook-form";
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 
 const Wrap = styled.div`
   width: 100%;
@@ -227,246 +228,266 @@ const Contact = () => {
   });
 
   return (
-    <Wrap>
-      <Section sectionPadding="40px 15px 110px" animation={false}>
-        <>
-          <Text type="title" color="#26d9c7">
-            CONTACT US
-          </Text>
-          <Box mt="40px">
-            <Text type="description" color="#fff" fontWeight="400">
-              {lang === "ko" ? <>엠버추얼 문의하기</> : <>Inquire Mvirtual</>}
+    <>
+      <Helmet>
+        <title>엠버추얼 | Contact</title>
+        <meta name="description" content="CONTACT US 엠버추얼 문의하기" />
+      </Helmet>
+
+      <Wrap>
+        <Section sectionPadding="40px 15px 110px" animation={false}>
+          <>
+            <Text type="title" color="#26d9c7">
+              CONTACT US
             </Text>
-          </Box>
-          {lang === "ko" ? (
-            <>
-              <Box mt="80px" display="flex" justifyContent="center">
-                <Tell href="tel:07043481972">
-                  <Text type="description" color="#000">
-                    전화상담 : 070-4348-1972 {isMobile && <br />}(오전 9시 ~
-                    오후 6시)
-                  </Text>
-                </Tell>
-              </Box>
-              <Box mt="15px" display="flex" justifyContent="center">
-                <KakaoText
+            <Box mt="40px">
+              <Text type="description" color="#fff" fontWeight="400">
+                {lang === "ko" ? <>엠버추얼 문의하기</> : <>Inquire Mvirtual</>}
+              </Text>
+            </Box>
+            {lang === "ko" ? (
+              <>
+                <Box mt="80px" display="flex" justifyContent="center">
+                  <Tell href="tel:07043481972">
+                    <Text type="description" color="#000">
+                      전화상담 : 070-4348-1972 {isMobile && <br />}(오전 9시 ~
+                      오후 6시)
+                    </Text>
+                  </Tell>
+                </Box>
+                <Box mt="15px" display="flex" justifyContent="center">
+                  <KakaoText
+                    onClick={() =>
+                      window.open("https://pf.kakao.com/_HWFnxj", "_blank")
+                    }
+                  >
+                    <img src="/image/kakao.png" alt="kakao logo" />
+                    <Text type="description" color="#391b1b">
+                      카톡상담 : 실시간 카톡 상담 문의
+                    </Text>
+                  </KakaoText>
+                </Box>
+              </>
+            ) : (
+              <Box
+                mt="30px"
+                display="flex"
+                justifyContent="center"
+                gap="0 40px"
+              >
+                <Qrcode
                   onClick={() =>
-                    window.open("https://pf.kakao.com/_HWFnxj", "_blank")
+                    window.open("https://t.me/Ethan_d_k", "_blank")
                   }
                 >
-                  <img src="/image/kakao.png" alt="kakao logo" />
-                  <Text type="description" color="#391b1b">
-                    카톡상담 : 실시간 카톡 상담 문의
-                  </Text>
-                </KakaoText>
+                  <img src="/image/telegram.png" alt="telegram" />
+                  <Box mt="10px">
+                    <Text type="description" color="#fff" fontWeight="400">
+                      Telegram
+                    </Text>
+                  </Box>
+                </Qrcode>
+                <Qrcode
+                  onClick={() =>
+                    window.open("https://wa.link/e1vmws", "_blank")
+                  }
+                >
+                  <img src="/image/watchapp.png" alt="watchapp" />
+                  <Box mt="10px">
+                    <Text type="description" color="#fff" fontWeight="400">
+                      Watchapp
+                    </Text>
+                  </Box>
+                </Qrcode>
               </Box>
-            </>
-          ) : (
-            <Box mt="30px" display="flex" justifyContent="center" gap="0 40px">
-              <Qrcode
-                onClick={() => window.open("https://t.me/Ethan_d_k", "_blank")}
-              >
-                <img src="/image/telegram.png" alt="telegram" />
-                <Box mt="10px">
-                  <Text type="description" color="#fff" fontWeight="400">
-                    Telegram
-                  </Text>
-                </Box>
-              </Qrcode>
-              <Qrcode
-                onClick={() => window.open("https://wa.link/e1vmws", "_blank")}
-              >
-                <img src="/image/watchapp.png" alt="watchapp" />
-                <Box mt="10px">
-                  <Text type="description" color="#fff" fontWeight="400">
-                    Watchapp
-                  </Text>
-                </Box>
-              </Qrcode>
-            </Box>
-          )}
-        </>
-      </Section>
+            )}
+          </>
+        </Section>
 
-      <FormWrap noValidate autoComplete="off" onSubmit={onSubmit}>
-        <Box width="100%">
-          <FormControl>
-            <FormLabel>
-              {lang === "ko" ? <>성함/회사명</> : <>Name/Company</>}
-            </FormLabel>
-            <Input
-              placeholder={
-                lang === "ko"
-                  ? "성함/회사명을 입력해주세요."
-                  : "Type name/company."
-              }
-              {...register("name", {
-                required:
+        <FormWrap noValidate autoComplete="off" onSubmit={onSubmit}>
+          <Box width="100%">
+            <FormControl>
+              <FormLabel>
+                {lang === "ko" ? <>성함/회사명</> : <>Name/Company</>}
+              </FormLabel>
+              <Input
+                placeholder={
                   lang === "ko"
                     ? "성함/회사명을 입력해주세요."
-                    : "Type name/company.",
-              })}
-            />
-          </FormControl>
-        </Box>
-        <Box mt="32px" width="100%">
-          <FormControl>
-            <FormLabel>{lang === "ko" ? <>연락처</> : <>Contact</>}</FormLabel>
-            <Input
-              type="tel"
-              placeholder={
-                lang === "ko"
-                  ? "연착처를 입력해주세요."
-                  : "Type contact information."
-              }
-              {...register("phone", {
-                required:
+                    : "Type name/company."
+                }
+                {...register("name", {
+                  required:
+                    lang === "ko"
+                      ? "성함/회사명을 입력해주세요."
+                      : "Type name/company.",
+                })}
+              />
+            </FormControl>
+          </Box>
+          <Box mt="32px" width="100%">
+            <FormControl>
+              <FormLabel>
+                {lang === "ko" ? <>연락처</> : <>Contact</>}
+              </FormLabel>
+              <Input
+                type="tel"
+                placeholder={
                   lang === "ko"
                     ? "연착처를 입력해주세요."
-                    : "Type contact information.",
-              })}
+                    : "Type contact information."
+                }
+                {...register("phone", {
+                  required:
+                    lang === "ko"
+                      ? "연착처를 입력해주세요."
+                      : "Type contact information.",
+                })}
+              />
+            </FormControl>
+          </Box>
+          <Box mt="32px" width="100%">
+            <FormControl>
+              <FormLabel>{lang === "ko" ? <>예산</> : <>Budget</>}</FormLabel>
+              <Input
+                type="number"
+                placeholder={
+                  lang === "ko" ? "예산을 입력해주세요." : "Type your budget."
+                }
+                {...register("budget", {
+                  required:
+                    lang === "ko"
+                      ? "예산을 입력해주세요."
+                      : "Type your budget.",
+                })}
+              />
+            </FormControl>
+          </Box>
+
+          <Box mt="32px" width="100%">
+            <Text type="description" color="#fff" fontWeight="400">
+              {lang === "ko" ? (
+                <>관심있는 엠버추얼 서비스를 선택해주세요(복수 선택 가능)</>
+              ) : (
+                <>
+                  Choose M.Virtual’s services you are interested in (Multiple
+                  selections available)
+                </>
+              )}
+            </Text>
+          </Box>
+
+          <Box mt="10px" width="100%">
+            <Controller
+              control={control}
+              name="video"
+              render={({ field }: any) => (
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      onChange={() => {
+                        setVideoChecked(!field.value);
+                        setValue("video", !field.value);
+                      }}
+                      checked={videoChecked}
+                    />
+                  }
+                  label={
+                    lang === "ko"
+                      ? "Ai가상인간 영상제작"
+                      : "Virtual human video production"
+                  }
+                />
+              )}
             />
-          </FormControl>
-        </Box>
-        <Box mt="32px" width="100%">
-          <FormControl>
-            <FormLabel>{lang === "ko" ? <>예산</> : <>Budget</>}</FormLabel>
-            <Input
-              type="number"
+          </Box>
+
+          <Box mt="10px" width="100%">
+            <Controller
+              control={control}
+              name="sns"
+              render={({ field }: any) => (
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      onChange={() => {
+                        setSnsChecked(!field.value);
+                        setValue("sns", !field.value);
+                      }}
+                      checked={snsChecked}
+                    />
+                  }
+                  label={
+                    lang === "ko"
+                      ? "Ai가상인간 SNS 운영 대행"
+                      : "Proxy operation of virtual human SNS"
+                  }
+                />
+              )}
+            />
+          </Box>
+
+          <Box mt="10px" width="100%">
+            <Controller
+              control={control}
+              name="marketing"
+              render={({ field }: any) => (
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      onChange={() => {
+                        setMarketingChecked(!field.value);
+                        setValue("marketing", !field.value);
+                      }}
+                      checked={marketingChecked}
+                    />
+                  }
+                  label={
+                    lang === "ko"
+                      ? "Ai가상인간 활용한 기업 마케팅"
+                      : "Corporate marketing using the virtual human"
+                  }
+                />
+              )}
+            />
+          </Box>
+
+          <Box mt="32px" width="100%">
+            <Text type="description" color="#fff" fontWeight="400">
+              {lang === "ko" ? (
+                <>업체의 구체적인 니즈를 자유롭게 작성해주세요.</>
+              ) : (
+                <>Fill out specific needs of your company freely.</>
+              )}
+            </Text>
+          </Box>
+
+          <Box mt="12px" width="100%">
+            <TextField
+              fullWidth
+              size="small"
               placeholder={
-                lang === "ko" ? "예산을 입력해주세요." : "Type your budget."
+                lang === "ko"
+                  ? "업체소개, 가상인간 활용계획등에 대하여 상세히 작성해주시면 좀 더 구체적인 답변을 드릴 수 있습니다."
+                  : "We can give you a more specific answer if you write in detail about your company, virtual human utilization plan, etc."
               }
-              {...register("budget", {
-                required:
-                  lang === "ko" ? "예산을 입력해주세요." : "Type your budget.",
-              })}
+              variant="outlined"
+              multiline
+              minRows={5}
+              maxRows={5}
+              inputProps={{ maxLength: 2000 }}
+              {...register("content")}
             />
-          </FormControl>
-        </Box>
+          </Box>
 
-        <Box mt="32px" width="100%">
-          <Text type="description" color="#fff" fontWeight="400">
-            {lang === "ko" ? (
-              <>관심있는 엠버추얼 서비스를 선택해주세요(복수 선택 가능)</>
-            ) : (
-              <>
-                Choose M.Virtual’s services you are interested in (Multiple
-                selections available)
-              </>
-            )}
-          </Text>
-        </Box>
-
-        <Box mt="10px" width="100%">
-          <Controller
-            control={control}
-            name="video"
-            render={({ field }: any) => (
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    onChange={() => {
-                      setVideoChecked(!field.value);
-                      setValue("video", !field.value);
-                    }}
-                    checked={videoChecked}
-                  />
-                }
-                label={
-                  lang === "ko"
-                    ? "Ai가상인간 영상제작"
-                    : "Virtual human video production"
-                }
-              />
-            )}
-          />
-        </Box>
-
-        <Box mt="10px" width="100%">
-          <Controller
-            control={control}
-            name="sns"
-            render={({ field }: any) => (
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    onChange={() => {
-                      setSnsChecked(!field.value);
-                      setValue("sns", !field.value);
-                    }}
-                    checked={snsChecked}
-                  />
-                }
-                label={
-                  lang === "ko"
-                    ? "Ai가상인간 SNS 운영 대행"
-                    : "Proxy operation of virtual human SNS"
-                }
-              />
-            )}
-          />
-        </Box>
-
-        <Box mt="10px" width="100%">
-          <Controller
-            control={control}
-            name="marketing"
-            render={({ field }: any) => (
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    onChange={() => {
-                      setMarketingChecked(!field.value);
-                      setValue("marketing", !field.value);
-                    }}
-                    checked={marketingChecked}
-                  />
-                }
-                label={
-                  lang === "ko"
-                    ? "Ai가상인간 활용한 기업 마케팅"
-                    : "Corporate marketing using the virtual human"
-                }
-              />
-            )}
-          />
-        </Box>
-
-        <Box mt="32px" width="100%">
-          <Text type="description" color="#fff" fontWeight="400">
-            {lang === "ko" ? (
-              <>업체의 구체적인 니즈를 자유롭게 작성해주세요.</>
-            ) : (
-              <>Fill out specific needs of your company freely.</>
-            )}
-          </Text>
-        </Box>
-
-        <Box mt="12px" width="100%">
-          <TextField
-            fullWidth
-            size="small"
-            placeholder={
-              lang === "ko"
-                ? "업체소개, 가상인간 활용계획등에 대하여 상세히 작성해주시면 좀 더 구체적인 답변을 드릴 수 있습니다."
-                : "We can give you a more specific answer if you write in detail about your company, virtual human utilization plan, etc."
-            }
-            variant="outlined"
-            multiline
-            minRows={5}
-            maxRows={5}
-            inputProps={{ maxLength: 2000 }}
-            {...register("content")}
-          />
-        </Box>
-
-        <Box mt="42px">
-          <SubmitButton type="submit">
-            {lang === "ko" ? <>문의하기</> : <>Inquire</>}
-          </SubmitButton>
-        </Box>
-      </FormWrap>
-    </Wrap>
+          <Box mt="42px">
+            <SubmitButton type="submit">
+              {lang === "ko" ? <>문의하기</> : <>Inquire</>}
+            </SubmitButton>
+          </Box>
+        </FormWrap>
+      </Wrap>
+    </>
   );
 };
 

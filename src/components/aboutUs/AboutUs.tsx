@@ -7,6 +7,7 @@ import { Add } from "@material-ui/icons";
 import { motion } from "framer-motion";
 import Text from "../elements/Text";
 import Br from "../elements/Br";
+import { Helmet } from "react-helmet";
 
 const opacities = keyframes`
 0%{
@@ -198,6 +199,14 @@ const AboutUs = () => {
 
   return (
     <>
+      <Helmet>
+        <title>엠버추얼 | About us</title>
+        <meta
+          name="description"
+          content="Ai가상인간 모델 공급부터 영상제작, 마케팅 까지"
+        />
+      </Helmet>
+
       <Wrap width="100%">
         <Visual>
           <Box zIndex={2}>
