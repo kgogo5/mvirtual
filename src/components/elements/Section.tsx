@@ -23,7 +23,7 @@ const Wrap = styled.section<{
   justify-content: space-around;
   min-height: 20vh;
   flex-direction: column;
-  background-color: ${(props) => (props.bg === "main" ? "#000" : "#1d1d1d")};
+  background-color: ${(props) => (props.bg === "main" ? "#000" : "#191919")};
 
   @media screen and (max-width: 768px) {
     padding: ${(props) =>

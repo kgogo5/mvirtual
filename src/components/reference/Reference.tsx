@@ -79,7 +79,7 @@ const Reference = () => {
             </Box>
             <CustomHalfBox>
               <Box>
-                <Player url="/video/main01.mp4" active={false} controls />
+                <Player url="/video/reference01.mp4" active={false} controls />
                 <Box mt="10px" textAlign="left" className="description">
                   <Text component="strong" fontSize="26px" color="#fff">
                     {lang === "ko" ? (
@@ -91,7 +91,7 @@ const Reference = () => {
                 </Box>
               </Box>
               <Box>
-                <Player url="/video/reference01.mp4" active={false} controls />
+                <Player url="/video/reference02.mp4" active={false} controls />
                 <Box mt="10px" textAlign="left" className="description">
                   <Text component="strong" fontSize="26px" color="#fff">
                     {lang === "ko" ? (
@@ -114,7 +114,7 @@ const Reference = () => {
           <>
             <CustomHalfBox>
               <Box>
-                <Player url="/video/reference02.mp4" active={false} controls />
+                <Player url="/video/reference03.mp4" active={false} controls />
                 <Box mt="10px" textAlign="left" className="description">
                   <Text component="strong" fontSize="26px" color="#fff">
                     {lang === "ko" ? (
@@ -128,7 +128,7 @@ const Reference = () => {
                 </Box>
               </Box>
               <Box>
-                <Player url="/video/reference03.mp4" active={false} controls />
+                <Player url="/video/reference04.mp4" active={false} controls />
                 <Box mt="10px" textAlign="left" className="description">
                   <Text component="strong" fontSize="26px" color="#fff">
                     {lang === "ko" ? (

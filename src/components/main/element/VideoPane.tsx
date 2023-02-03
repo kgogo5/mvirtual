@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Player from "../../elements/Player";
 import { useRecoilValue } from "recoil";
-import { language } from "../../../atom";
+import { language, mobile } from "../../../atom";
 import Br from "../../elements/Br";
 
 const Wrap = styled.div`
@@ -44,11 +44,16 @@ const TitleBox = styled.h2`
 
 const VideoPane = () => {
   const lang = useRecoilValue(language);
+  const isMobile = useRecoilValue(mobile);
 
   return (
     <Wrap>
       <ViewVideo>
-        <Player url="/video/main01.mp4" active={true} />
+        {!isMobile ? (
+          <Player url="/video/main01.mp4" active={true} />
+        ) : (
+          <Player url="/video/main01_mo.mp4" active={true} />
+        )}
         <TitleBox>
           {lang === "ko" ? (
             <>
