@@ -145,7 +145,7 @@ const Service = () => {
                     />
                   </motion.div>
                   <Box>
-                    <Text type="sub" fontWeight={500}>
+                    <Text type="sub" fontWeight={600}>
                       {lang === "ko" ? (
                         <>
                           Ai가상인간 모델
@@ -178,7 +178,7 @@ const Service = () => {
                     />
                   </motion.div>
                   <Box>
-                    <Text type="sub" fontWeight={500}>
+                    <Text type="sub" fontWeight={600}>
                       {lang === "ko" ? (
                         <>Ai가상인간 영상 제작</>
                       ) : (
@@ -207,7 +207,7 @@ const Service = () => {
                     />
                   </motion.div>
                   <Box>
-                    <Text type="sub" fontWeight={500}>
+                    <Text type="sub" fontWeight={600}>
                       {lang === "ko" ? (
                         <>Ai가상인간 SNS운영</>
                       ) : (
@@ -236,7 +236,7 @@ const Service = () => {
                     />
                   </motion.div>
                   <Box>
-                    <Text type="sub" fontWeight={500}>
+                    <Text type="sub" fontWeight={600}>
                       {lang === "ko" ? (
                         <>
                           Ai가상인간을 활용한
@@ -371,12 +371,25 @@ const Service = () => {
 
             <Box m="100px auto 0" maxWidth="1080px" textAlign="left">
               <Box>
-                <Text type="description" color="#fff" fontWeight="400">
+                <Text type="sub" color="#fff">
                   {lang === "ko" ? (
                     <>
                       100만 조회수 이상의 인기영상들을 제작했던 전문 영상 촬영팀
-                      보유 <br />
-                      <br />
+                      보유
+                    </>
+                  ) : (
+                    <>
+                      Our professional production crew has created many viral
+                      videos with millions of views.
+                    </>
+                  )}
+                </Text>
+              </Box>
+
+              <Box mt="30px">
+                <Text type="description" color="#fff" fontWeight="400">
+                  {lang === "ko" ? (
+                    <>
                       엠버추얼은 가상인간 제작 뿐만 아니라 가상인간을 활용한
                       영상 제작 서비스도 진행하고 있습니다. <br />
                       <br />
@@ -398,10 +411,6 @@ const Service = () => {
                     </>
                   ) : (
                     <>
-                      Our professional production crew has created many viral
-                      videos with millions of views.
-                      <br />
-                      <br />
                       M.Virtual not only produces virtual humans, but also
                       provides video production services using virtual humans.
                       <br />

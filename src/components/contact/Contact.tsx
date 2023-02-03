@@ -195,6 +195,7 @@ const Contact = () => {
 
   const { control, setValue, register, handleSubmit, reset } = useForm();
 
+  const [agencyChecked, setAgencyChecked] = useState(false);
   const [videoChecked, setVideoChecked] = useState(false);
   const [snsChecked, setSnsChecked] = useState(false);
   const [marketingChecked, setMarketingChecked] = useState(false);
@@ -204,6 +205,7 @@ const Contact = () => {
       name: item.name,
       phone: item.phone,
       budget: item.budget || 0,
+      agency: item.agency ? "Y" : "N",
       video: item.video ? "Y" : "N",
       sns: item.sns ? "Y" : "N",
       marketing: item.marketing ? "Y" : "N",
@@ -219,6 +221,7 @@ const Contact = () => {
         setVideoChecked(false);
         setSnsChecked(false);
         setMarketingChecked(false);
+        setValue("agency", false);
         setValue("video", false);
         setValue("sns", false);
         setValue("marketing", false);
@@ -375,6 +378,31 @@ const Contact = () => {
                 </>
               )}
             </Text>
+          </Box>
+
+          <Box mt="10px" width="100%">
+            <Controller
+              control={control}
+              name="agency"
+              render={({ field }: any) => (
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      onChange={() => {
+                        setAgencyChecked(!field.value);
+                        setValue("agency", !field.value);
+                      }}
+                      checked={agencyChecked}
+                    />
+                  }
+                  label={
+                    lang === "ko"
+                      ? "Ai가상인간 모델 에이전시"
+                      : "Ai Virtual Human Model Agency"
+                  }
+                />
+              )}
+            />
           </Box>
 
           <Box mt="10px" width="100%">

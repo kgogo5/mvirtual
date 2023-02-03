@@ -81,7 +81,12 @@ const Reference = () => {
               <Box>
                 <Player url="/video/reference01.mp4" active={false} controls />
                 <Box mt="10px" textAlign="left" className="description">
-                  <Text component="strong" fontSize="26px" color="#fff">
+                  <Text
+                    component="strong"
+                    fontSize="26px"
+                    color="#fff"
+                    fontWeight={500}
+                  >
                     {lang === "ko" ? (
                       <>가상인간 벨라 화보촬영 영상</>
                     ) : (
@@ -93,7 +98,12 @@ const Reference = () => {
               <Box>
                 <Player url="/video/reference02.mp4" active={false} controls />
                 <Box mt="10px" textAlign="left" className="description">
-                  <Text component="strong" fontSize="26px" color="#fff">
+                  <Text
+                    component="strong"
+                    fontSize="26px"
+                    color="#fff"
+                    fontWeight={500}
+                  >
                     {lang === "ko" ? (
                       <>가상인간 제니 댄스영상</>
                     ) : (
@@ -116,7 +126,12 @@ const Reference = () => {
               <Box>
                 <Player url="/video/reference03.mp4" active={false} controls />
                 <Box mt="10px" textAlign="left" className="description">
-                  <Text component="strong" fontSize="26px" color="#fff">
+                  <Text
+                    component="strong"
+                    fontSize="26px"
+                    color="#fff"
+                    fontWeight={500}
+                  >
                     {lang === "ko" ? (
                       <>50대여자를 젊은 가상인간으로 제작</>
                     ) : (
@@ -130,7 +145,12 @@ const Reference = () => {
               <Box>
                 <Player url="/video/reference04.mp4" active={false} controls />
                 <Box mt="10px" textAlign="left" className="description">
-                  <Text component="strong" fontSize="26px" color="#fff">
+                  <Text
+                    component="strong"
+                    fontSize="26px"
+                    color="#fff"
+                    fontWeight={500}
+                  >
                     {lang === "ko" ? (
                       <>아랍 여성을 가상인간으로 제작</>
                     ) : (

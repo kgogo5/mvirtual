@@ -46,7 +46,7 @@ const HeaderWrap = styled.header`
 const Inner = styled.div`
   position: relative;
   margin: 0 auto;
-  padding: 32px 20px 32px 183px;
+  padding: 32px 20px 32px 233px;
   max-width: 1164px;
 
   @media screen and (max-width: 768px) {
@@ -182,7 +182,7 @@ const LanguageStyle = styled.div`
   & span {
     color: #b9b9b9;
     font-weight: 300;
-    font-size: 15px;
+    font-size: 13px;
   }
 
   & .active span {

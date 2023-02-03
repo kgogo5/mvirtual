@@ -64,7 +64,7 @@ const TechnologyVideo = () => {
           <Box display="flex" justifyContent="center" width="100%">
             <Text color="#26d9c7">
               {lang === "ko" ? (
-                <>엠버추얼 가상인간 비타</>
+                <>엠버추얼 가상인간 제니</>
               ) : (
                 <>Mvirtual’s Vita</>
               )}

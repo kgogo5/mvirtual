@@ -92,7 +92,7 @@ const Main = () => {
               </ImageBox>
               <Article>
                 <Box width="100%">
-                  <Text type="description" color="#fff" fontWeight={400}>
+                  <Text type="description" color="#fff" fontWeight={500}>
                     {lang === "ko" ? (
                       <>원하는 이미지의 모델을 찾기 힘드신가요?</>
                     ) : (
@@ -102,7 +102,7 @@ const Main = () => {
                 </Box>
 
                 <Box mt="18px">
-                  <Text type="title" color="#fff">
+                  <Text type="title" color="#fff" fontWeight={500}>
                     {lang === "ko" ? (
                       <>
                         기업이 원하는 모든 모델 이미지를 Ai가상인간으로 구현하여
@@ -153,7 +153,7 @@ const Main = () => {
             <HalfBoxReverse>
               <Article>
                 <Box mt="18px" width="100%">
-                  <Text type="description" color="#fff">
+                  <Text type="description" color="#fff" fontWeight={500}>
                     {lang === "ko" ? (
                       <>특별한 영상을 제작하고 싶으신가요?</>
                     ) : (
@@ -163,7 +163,7 @@ const Main = () => {
                 </Box>
 
                 <Box mt="18px">
-                  <Text type="title" color="#fff">
+                  <Text type="title" color="#fff" fontWeight={500}>
                     {lang === "ko" ? (
                       <>
                         사람과 유사도 98%의 Ai가상인간이 출연하는 영상은 큰
@@ -226,7 +226,7 @@ const Main = () => {
               </ImageBox>
               <Article>
                 <Box mt="18px" width="100%">
-                  <Text type="description" color="#fff">
+                  <Text type="description" color="#fff" fontWeight={500}>
                     {lang === "ko" ? (
                       <>인스타그램, 유튜브 채널 활성화가 안되시나요?</>
                     ) : (
@@ -239,7 +239,7 @@ const Main = () => {
                 </Box>
 
                 <Box mt="18px">
-                  <Text type="title" color="#fff">
+                  <Text type="title" color="#fff" fontWeight={500}>
                     {lang === "ko" ? (
                       <>
                         사람보다 가상인간이 인스타그램 좋아요, 댓글 팔로워수가
@@ -290,7 +290,7 @@ const Main = () => {
             <HalfBoxReverse>
               <Article>
                 <Box mt="18px" width="100%">
-                  <Text type="description" color="#fff">
+                  <Text type="description" color="#fff" fontWeight={500}>
                     {lang === "ko" ? (
                       <>마케팅이 안되어서 어려움을 겪고 있으신가요?</>
                     ) : (
@@ -300,7 +300,7 @@ const Main = () => {
                 </Box>
 
                 <Box mt="18px">
-                  <Text type="title" color="#fff">
+                  <Text type="title" color="#fff" fontWeight={500}>
                     {lang === "ko" ? (
                       <>
                         월매출 <PointColor>80억 매출</PointColor>을 만들어낸
@@ -357,7 +357,7 @@ const Main = () => {
             </Box>
 
             <Box m="40px auto 0" maxWidth="1164px" width="100%">
-              <Text type="title" color="#fff">
+              <Text type="title" color="#fff" fontWeight={500}>
                 {lang === "ko" ? (
                   <>
                     우리의 가상인간 기술은 너무 사람 같아서

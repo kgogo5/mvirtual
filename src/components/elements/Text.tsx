@@ -18,7 +18,6 @@ const Wrap = styled(Typography)`
   &.title {
     font-size: 35px;
     line-height: 1.2;
-    font-weight: bold;
 
     @media screen and (max-width: 768px) {
       font-size: 28px;
