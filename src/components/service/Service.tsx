@@ -137,38 +137,6 @@ const Service = () => {
                       times: [0, 0.5, 1],
                       repeat: Infinity,
                       repeatDelay: 3,
-                    }}
-                  >
-                    <img
-                      src="/image/service_list01.jpg"
-                      alt="Ai Virtual Human Model Agency Service"
-                    />
-                  </motion.div>
-                  <Box>
-                    <Text type="sub" fontWeight={600}>
-                      {lang === "ko" ? (
-                        <>
-                          Ai가상인간 모델
-                          <br />
-                          에이전시
-                        </>
-                      ) : (
-                        <>Ai Virtual Human Model Agency</>
-                      )}
-                    </Text>
-                  </Box>
-                </ListBox>
-                <ListBox>
-                  <motion.div
-                    animate={{
-                      scale: [1, 1.4, 1],
-                    }}
-                    transition={{
-                      duration: 2,
-                      ease: "circInOut",
-                      times: [0, 0.5, 1],
-                      repeat: Infinity,
-                      repeatDelay: 3,
                       delay: 1,
                     }}
                   >
@@ -209,9 +177,45 @@ const Service = () => {
                   <Box>
                     <Text type="sub" fontWeight={600}>
                       {lang === "ko" ? (
-                        <>Ai가상인간 SNS운영</>
+                        <>
+                          Ai가상인간 브랜드
+                          <br />
+                          SNS운영 대행
+                        </>
                       ) : (
                         <>Ai Virtual Human Social Media Management</>
+                      )}
+                    </Text>
+                  </Box>
+                </ListBox>
+                <ListBox>
+                  <motion.div
+                    animate={{
+                      scale: [1, 1.4, 1],
+                    }}
+                    transition={{
+                      duration: 2,
+                      ease: "circInOut",
+                      times: [0, 0.5, 1],
+                      repeat: Infinity,
+                      repeatDelay: 3,
+                    }}
+                  >
+                    <img
+                      src="/image/service_list01.jpg"
+                      alt="Ai Virtual Human Model Agency Service"
+                    />
+                  </motion.div>
+                  <Box>
+                    <Text type="sub" fontWeight={600}>
+                      {lang === "ko" ? (
+                        <>
+                          Ai가상인간 모델
+                          <br />
+                          에이전시
+                        </>
+                      ) : (
+                        <>Ai Virtual Human Model Agency</>
                       )}
                     </Text>
                   </Box>
@@ -254,113 +258,15 @@ const Service = () => {
           </>
         </Section>
 
-        {/* Ai가상인간 모델 에이전시 서비스 */}
-        <Section color="sub" id="agency">
+        {/* Ai가상인간 영상 제작 */}
+        <Section color="sub" id="aiservice">
           <>
             <Box>
               <Text type="title" color="#26d9c7">
                 {lang === "ko" ? (
-                  <>Ai가상인간 모델 에이전시 서비스</>
+                  <>Ai가상인간 영상 제작</>
                 ) : (
-                  <>Ai Virtual Human Model Agency Service</>
-                )}
-              </Text>
-            </Box>
-            <HalfBox>
-              <ImgBox mt="60px">
-                <img
-                  src="/image/service01.png"
-                  alt="We provide permanent ownership of Ai Virtual Human Model"
-                />
-              </ImgBox>
-
-              <Article>
-                <Box>
-                  <Text type="sub" color="#fff">
-                    {lang === "ko" ? (
-                      <>영구적으로 소유할 수 있는 Ai가상인간 모델 공급</>
-                    ) : (
-                      <>
-                        We provide permanent ownership of Ai Virtual Human Model
-                      </>
-                    )}
-                  </Text>
-                </Box>
-                <Box mt="36px">
-                  <Text type="description" color="#fff" fontWeight="400">
-                    {lang === "ko" ? (
-                      <>
-                        엠버추얼은 모델을 필요로 하는 여러 분야에 오직 한
-                        기업만을 위해 활동하며 영구적으로 소유할 수 있는
-                        Ai가상인간 모델을 공급해드리고 있습니다.
-                        <br />
-                        <br />
-                        변화에 빠른 기업들은 사람모델 보다 Ai가상인간 모델을
-                        활용하여 광고영상, 유튜브/인스타그램의 콘텐츠, 쇼핑몰
-                        운영, 신제품과 콜라보, 화보촬영, 회사홍보영상등을
-                        제작하면서 큰 효과를 보고 있습니다.
-                        <br />
-                        <br />
-                        이제 당신의 기업만을 위해 활동하는 Ai가상인간 모델을
-                        영구적으로 소유하세요!
-                      </>
-                    ) : (
-                      <>
-                        M.Virtual offers Ai Virtual Human Model who is
-                        permanently available and will be devoted exclusively to
-                        only one designated company.
-                        <br />
-                        <br />
-                        Enterprises keen to trends has already produced
-                        promotional videos of Tv commercial, YouTube/Instagram
-                        contents, online shopping mall ads, new product launch,
-                        collaboration, printed media photoshoot, and company PR
-                        by utilizing Ai Virtual Human Model instead of hiring
-                        existing human influencers.
-                        <br />
-                        <br />
-                        Now you can permanently own your Virtual Human Model
-                        only working for your company endlessly.
-                      </>
-                    )}
-                  </Text>
-                </Box>
-              </Article>
-            </HalfBox>
-
-            <ImgGrid>
-              {isMobile ? (
-                <img
-                  src={
-                    lang === "ko"
-                      ? "/image/service_grid_mo.png"
-                      : "/image/service_grid_en_mo.png"
-                  }
-                  alt="Service Grid"
-                />
-              ) : (
-                <img
-                  src={
-                    lang === "ko"
-                      ? "/image/service_grid.png"
-                      : "/image/service_grid_en.png"
-                  }
-                  alt="Service Grid"
-                />
-              )}
-            </ImgGrid>
-          </>
-        </Section>
-
-        {/* 가상인간 영상 제작 서비스 */}
-        <Section id="aiservice">
-          <>
-            <Box>
-              <Text type="title" color="#26d9c7">
-                {lang === "ko" ? (
-                  <>가상인간 영상 제작 서비스</>
-                ) : (
-                  <>Virtual Human Video Production Service</>
+                  <>Ai Virtual Human Video Production Service</>
                 )}
               </Text>
             </Box>
@@ -442,15 +348,51 @@ const Service = () => {
           </>
         </Section>
 
-        {/* 가상인간 SNS운영 서비스 */}
+        <Section>
+          <>
+            <Box>
+              <Text type="title" color="#26d9c7">
+                {lang === "ko" ? (
+                  <>사람 모델 VS Ai가상인간 모델</>
+                ) : (
+                  <>Human Model VS Ai Virtual Human Model</>
+                )}
+              </Text>
+            </Box>
+
+            <ImgGrid>
+              {isMobile ? (
+                <img
+                  src={
+                    lang === "ko"
+                      ? "/image/service_grid_mo.png"
+                      : "/image/service_grid_en_mo.png"
+                  }
+                  alt="Service Grid"
+                />
+              ) : (
+                <img
+                  src={
+                    lang === "ko"
+                      ? "/image/service_grid.png"
+                      : "/image/service_grid_en.png"
+                  }
+                  alt="Service Grid"
+                />
+              )}
+            </ImgGrid>
+          </>
+        </Section>
+
+        {/* Ai가상인간 브랜드 SNS운영 대행 */}
         <Section color="sub" id="sns">
           <>
             <Box mb="60px">
               <Text component="h2" type="title" color="#26d9c7">
                 {lang === "ko" ? (
-                  <>가상인간 SNS운영 서비스</>
+                  <>Ai가상인간 브랜드 SNS운영 대행</>
                 ) : (
-                  <>Virtual human SNS management service.</>
+                  <>Virtual Human Social Media Management Service.</>
                 )}
               </Text>
             </Box>
@@ -462,7 +404,7 @@ const Service = () => {
                       ? "/image/service_chart.png"
                       : "/image/service_chart_en.png"
                   }
-                  alt="Virtual human SNS management service."
+                  alt="Virtual Human Social Media Management Service."
                 />
               </ImageBox>
               <Article>
@@ -534,15 +476,91 @@ const Service = () => {
           </>
         </Section>
 
-        {/* 가상인간을 활용한 기업 마케팅 */}
-        <Section id="marketing">
+        {/* Ai가상인간 모델 에이전시 */}
+        <Section id="agency">
+          <>
+            <Box>
+              <Text type="title" color="#26d9c7">
+                {lang === "ko" ? (
+                  <>Ai가상인간 모델 에이전시</>
+                ) : (
+                  <>Ai Virtual Human Model Agency Service</>
+                )}
+              </Text>
+            </Box>
+            <HalfBox>
+              <ImgBox mt="60px">
+                <img
+                  src="/image/service01.png"
+                  alt="We provide permanent ownership of Ai Virtual Human Model"
+                />
+              </ImgBox>
+
+              <Article>
+                <Box>
+                  <Text type="sub" color="#fff">
+                    {lang === "ko" ? (
+                      <>영구적으로 소유할 수 있는 Ai가상인간 모델 공급</>
+                    ) : (
+                      <>
+                        We provide permanent ownership of Ai Virtual Human Model
+                      </>
+                    )}
+                  </Text>
+                </Box>
+                <Box mt="36px">
+                  <Text type="description" color="#fff" fontWeight="400">
+                    {lang === "ko" ? (
+                      <>
+                        엠버추얼은 모델을 필요로 하는 여러 분야에 오직 한
+                        기업만을 위해 활동하며 영구적으로 소유할 수 있는
+                        Ai가상인간 모델을 공급해드리고 있습니다.
+                        <br />
+                        <br />
+                        변화에 빠른 기업들은 사람모델 보다 Ai가상인간 모델을
+                        활용하여 광고영상, 유튜브/인스타그램의 콘텐츠, 쇼핑몰
+                        운영, 신제품과 콜라보, 화보촬영, 회사홍보영상등을
+                        제작하면서 큰 효과를 보고 있습니다.
+                        <br />
+                        <br />
+                        이제 당신의 기업만을 위해 활동하는 Ai가상인간 모델을
+                        영구적으로 소유하세요!
+                      </>
+                    ) : (
+                      <>
+                        M.Virtual offers Ai Virtual Human Model who is
+                        permanently available and will be devoted exclusively to
+                        only one designated company.
+                        <br />
+                        <br />
+                        Enterprises keen to trends has already produced
+                        promotional videos of Tv commercial, YouTube/Instagram
+                        contents, online shopping mall ads, new product launch,
+                        collaboration, printed media photoshoot, and company PR
+                        by utilizing Ai Virtual Human Model instead of hiring
+                        existing human influencers.
+                        <br />
+                        <br />
+                        Now you can permanently own your Virtual Human Model
+                        only working for your company endlessly.
+                      </>
+                    )}
+                  </Text>
+                </Box>
+              </Article>
+            </HalfBox>
+          </>
+        </Section>
+
+        {/* Ai가상인간을 활용한 기업마케팅 */}
+        <Section color="sub" id="marketing">
           <>
             <Box mb="60px">
               <Text component="h2" type="title" color="#26d9c7">
                 {lang === "ko" ? (
-                  <>가상인간을 활용한 기업 마케팅</>
+                  <>Ai가상인간을 활용한 기업마케팅</>
                 ) : (
-                  <>Corporate marketing using the virtual human.</>
+                  <>Corporate Marketing Utilizing Virtual Human.</>
                 )}
               </Text>
             </Box>

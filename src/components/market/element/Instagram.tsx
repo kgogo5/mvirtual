@@ -27,7 +27,6 @@ const Wrap = styled.div`
   text-align: left;
   align-items: flex-start;
   flex-direction: column;
-  background-color: #1a1a1a;
   border-radius: 20px;
   @media screen and (max-width: 1080px) {
     margin: 0;

@@ -5,7 +5,7 @@ import { useInView } from "react-intersection-observer";
 
 const Wrap = styled.div`
   width: 100%;
-  background-color: #141414;
+  background-color: #191919;
 `;
 
 const ViewVideo = styled.div`

@@ -158,7 +158,7 @@ const _ = () => {
                   <Box mt="10px">
                     <Text component="span" fontSize="15px" fontWeight="400">
                       {lang === "ko"
-                        ? "대표이사: 이화영 | 서울시 강남구 테헤란로 5길 7 KG타워"
+                        ? "대표이사: 이화영 | 서울시 강남구 테헤란로 5길 7 KG타워 9층 118호"
                         : "CEO: hwa-young Lee | #9F 118, KG tower,  Teheran-ro 5-gil 7 Gangnam-gu, Seoul."}
                     </Text>
                   </Box>

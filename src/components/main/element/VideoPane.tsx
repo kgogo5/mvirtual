@@ -36,6 +36,10 @@ const TitleBox = styled.h2`
   font-size: 45px;
   box-sizing: border-box;
 
+  &.en {
+    font-size: 30px;
+  }
+
   @media screen and (max-width: 1164px) {
     padding: 0 10px 0 6%;
     font-size: 18px;
@@ -54,19 +58,20 @@ const VideoPane = () => {
         ) : (
           <Player url="/video/main01_mo.mp4" active={true} />
         )}
-        <TitleBox>
+        <>
           {lang === "ko" ? (
-            <>
-              Ai가상인간 모델 공급부터 <br />
-              영상제작, 마케팅까지
-            </>
+            <TitleBox>
+              놀라지 마세요! 사람이 아닙니다! <br />
+              사람과 유사도 98% 실사형 가상인간 제작 전문
+            </TitleBox>
           ) : (
-            <>
-              From Ai Virtual Human Model Creation <Br />
-              to Video Production & Marketing Solution
-            </>
+            <TitleBox className="en">
+              Don't Get Stunned ! It's Not Human! Expert Hyper-Real Virtual
+              Human <Br />
+              Production with 98% Human Similarity Rate
+            </TitleBox>
           )}
-        </TitleBox>
+        </>
       </ViewVideo>
     </Wrap>
   );
